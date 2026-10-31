@@ -53,6 +53,71 @@ The application is intentionally account-free and database-free. Flow state live
 
 ## Architecture
 
+### System Architecture
+
+```mermaid
+flowchart LR
+    User[User browser]
+
+    subgraph Client[Next.js client]
+        Screens[App Router screens]
+        State[React context flow state]
+        Screens <--> State
+    end
+
+    subgraph Server[Next.js serverless API routes]
+        Quality[Quality check]
+        Extract[Look extraction]
+        Tone[Skin-tone analysis]
+        Match[Catalog matching]
+        TryOn[Virtual try-on]
+    end
+
+    User <--> Screens
+    State --> Quality
+    State --> Extract
+    State --> Tone
+    State --> Match
+    State --> TryOn
+
+    Quality --> Local[Local image checks]
+    Extract --> LLM[Vision LLM]
+    Match --> Catalog[(Local product catalog)]
+    Tone --> Cache[Image-hash cache]
+    TryOn --> Cache
+    Cache --> YouCam[YouCam APIs]
+    Tone -. mock mode .-> Mocks[Saved mock responses]
+    TryOn -. mock mode .-> Mocks
+```
+
+The browser owns navigation, previews, loading states, and the current flow data. It sends only the inputs required by each server route. Next.js API routes keep provider credentials private, validate responses, and return the shared typed contract to the client.
+
+### Request Flow
+
+1. The inspiration image is sent to `/api/extract`, where the vision LLM returns strict structured JSON.
+2. The selfie is checked by `/api/quality` before any paid provider call is made.
+3. `/api/skin-tone` resolves the user's tone through the cache, YouCam, or saved mocks.
+4. `/api/match` uses extracted items, skin tone, budget, and `catalog.json` to choose products deterministically.
+5. `/api/tryon` runs clothes and makeup VTO through the cache, with mock responses available during frontend development.
+6. The client stores each result in React context and presents the final products and total in the cart.
+
+### Component Responsibilities
+
+| Layer | Responsibilities |
+| --- | --- |
+| App Router screens | Capture images and budget, display progress, comparisons, products, and errors |
+| React context | Hold temporary flow state across the six screens |
+| API routes | Validate input, orchestrate providers, and keep credentials server-side |
+| `lib/llm.ts` | Call the vision model and enforce structured extraction output |
+| `lib/youcam.ts` | Implement the documented YouCam asynchronous task flow |
+| `lib/matching.ts` | Score catalog similarity, adapt shades, and enforce the budget |
+| `lib/cache.ts` | Reuse YouCam results by image hash to conserve API units |
+| `lib/types.ts` | Define the shared client/server data contract |
+| `data/catalog.json` | Provide the only products eligible for matching |
+| `data/mocks/` | Provide deterministic YouCam responses in mock mode |
+
+### Planned Project Structure
+
 ```text
 app/
   page.tsx
