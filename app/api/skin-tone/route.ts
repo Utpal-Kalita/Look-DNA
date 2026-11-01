@@ -1,9 +1,11 @@
 import { NextResponse } from "next/server";
+import sharp from "sharp";
 
 import { createCacheKey, getOrComputeCached } from "@/lib/cache";
 import { AppError } from "@/lib/errors";
 import { routeErrorResponse } from "@/lib/http";
-import { readImageUpload } from "@/lib/image";
+import { hashBytes, readImageUpload, type ImageUpload } from "@/lib/image";
+import { locateFaceCrop } from "@/lib/quality";
 import { getMockSkinTone, mockYouCamEnabled } from "@/lib/mocks";
 import { enforceRateLimit } from "@/lib/rate-limit";
 import type { UserTone } from "@/lib/types";
@@ -29,7 +31,7 @@ export async function POST(request: Request): Promise<NextResponse> {
         const analysis = mockYouCamEnabled()
           ? getMockSkinTone()
           : await analyzeSkinTone({
-              fileId: await uploadImageToYouCam(image),
+              fileId: await uploadImageToYouCam(await faceCrop(image)),
             });
 
         if (analysis.face_quality?.has_face === false) {
@@ -63,4 +65,28 @@ export async function POST(request: Request): Promise<NextResponse> {
   } catch (error) {
     return routeErrorResponse(error);
   }
+}
+
+/**
+ * The photo runs head to hips for try-on, so skin tone analysis gets a crop
+ * of just the face, enlarged to give YouCam enough detail. Falls back to the
+ * whole photo if no face is found locally.
+ */
+async function faceCrop(image: ImageUpload): Promise<ImageUpload> {
+  let box: Awaited<ReturnType<typeof locateFaceCrop>> = null;
+  try {
+    box = await locateFaceCrop(image.bytes);
+  } catch {
+    box = null;
+  }
+  if (!box) {
+    return image;
+  }
+
+  const bytes = await sharp(image.bytes)
+    .extract(box)
+    .resize({ width: 720, height: 720, fit: "inside" })
+    .jpeg({ quality: 92 })
+    .toBuffer();
+  return { bytes, contentType: "image/jpeg", fileName: "face.jpg", hash: hashBytes(bytes) };
 }

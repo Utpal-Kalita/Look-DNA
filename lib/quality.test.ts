@@ -8,11 +8,12 @@ const centeredFace = async (
   width: number,
   height: number,
 ): Promise<FaceBox[]> => [
+  // A head-to-hips photo: the face is near the top, about a sixth of the height.
   {
-    x: width * 0.3,
-    y: height * 0.25,
-    width: width * 0.4,
-    height: height * 0.5,
+    x: width * 0.4,
+    y: height * 0.08,
+    width: width * 0.2,
+    height: height * 0.2,
   },
 ];
 
@@ -80,3 +81,26 @@ async function checkerboard(
     .jpeg()
     .toBuffer();
 }
+
+describe("head-to-hips photos", () => {
+  it("asks a close-up selfie to step back", async () => {
+    const image = await checkerboard(400, 400, "#555555", "#dddddd");
+    const result = await analyzeImageQuality(image, async (_p, width, height) => [
+      { x: width * 0.3, y: height * 0.2, width: width * 0.4, height: height * 0.5 },
+    ]);
+    expect(result).toMatchObject({ pass: false, issue: "too_close" });
+  });
+
+  it("finds a small face by looking again at the top of the photo", async () => {
+    const image = await checkerboard(400, 800, "#555555", "#dddddd");
+    let calls = 0;
+    const result = await analyzeImageQuality(image, async (_p, width, height) => {
+      calls += 1;
+      // The full photo finds nothing; the upper square crop finds the face.
+      return width === height ? [{ x: width * 0.4, y: height * 0.15, width: width * 0.2, height: height * 0.25 }] : [];
+    });
+    expect(calls).toBe(2);
+    expect(result.metrics.faceCount).toBe(1);
+    expect(result.issue).not.toBe("no_face");
+  });
+});
