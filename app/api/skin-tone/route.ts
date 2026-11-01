@@ -1,11 +1,10 @@
 import { NextResponse } from "next/server";
-import sharp from "sharp";
 
 import { createCacheKey, getOrComputeCached } from "@/lib/cache";
 import { AppError } from "@/lib/errors";
 import { routeErrorResponse } from "@/lib/http";
-import { hashBytes, readImageUpload, type ImageUpload } from "@/lib/image";
-import { locateFaceCrop } from "@/lib/quality";
+import { faceCrop, tiltRetryRotation } from "@/lib/face-crop";
+import { readImageUpload } from "@/lib/image";
 import { getMockSkinTone, mockYouCamEnabled } from "@/lib/mocks";
 import { enforceRateLimit } from "@/lib/rate-limit";
 import type { UserTone } from "@/lib/types";
@@ -30,9 +29,7 @@ export async function POST(request: Request): Promise<NextResponse> {
       async () => {
         const analysis = mockYouCamEnabled()
           ? getMockSkinTone()
-          : await analyzeSkinTone({
-              fileId: await uploadImageToYouCam(await faceCrop(image)),
-            });
+          : await analyzeLevelled(image);
 
         if (analysis.face_quality?.has_face === false) {
           throw new AppError(
@@ -68,27 +65,18 @@ export async function POST(request: Request): Promise<NextResponse> {
 }
 
 /**
- * The photo runs head to hips for try-on, so skin tone analysis gets a crop
- * of just the face, enlarged to give YouCam enough detail. Falls back to the
- * whole photo if no face is found locally.
+ * Skin tone on the levelled face crop. If YouCam still says the head is
+ * tilted, rotate the way it says and try once more.
  */
-async function faceCrop(image: ImageUpload): Promise<ImageUpload> {
-  let box: Awaited<ReturnType<typeof locateFaceCrop>> = null;
+async function analyzeLevelled(image: Parameters<typeof faceCrop>[0]) {
   try {
-    box = await locateFaceCrop(image.bytes);
-  } catch {
-    box = null;
+    return await analyzeSkinTone({ fileId: await uploadImageToYouCam(await faceCrop(image)) });
+  } catch (error) {
+    const extra = error instanceof AppError && error.code === "SELFIE_RETAKE" ? tiltRetryRotation(error.message) : null;
+    if (extra === null) {
+      throw error;
+    }
+    console.info(`skin-tone: YouCam said "${error instanceof Error ? error.message : ""}", retrying rotated ${extra} deg`);
+    return analyzeSkinTone({ fileId: await uploadImageToYouCam(await faceCrop(image, extra)) });
   }
-  if (!box) {
-    console.warn("skin-tone: no face found locally, sending the whole photo");
-    return image;
-  }
-  console.info(`skin-tone: sending a ${box.width}px face crop`);
-
-  const bytes = await sharp(image.bytes)
-    .extract(box)
-    .resize({ width: 720, height: 720, fit: "inside" })
-    .jpeg({ quality: 92 })
-    .toBuffer();
-  return { bytes, contentType: "image/jpeg", fileName: "face.jpg", hash: hashBytes(bytes) };
 }
