@@ -32,7 +32,7 @@ Upload a screenshot of any outfit or makeup look, take a selfie, and set a budge
 
 ### Accomplishments we're proud of
 - Makeup shades adapted to the shopper's own undertone, explained in plain language.
-- Under budget in [10] of 10 test runs, with [X]% of look items matched.
+- Under budget in 10 of 10 test runs, with 81% of look items matched and a median 23 s from upload to try-on.
 - Three YouCam APIs working together in one shopping flow.
 
 ### What we learned
@@ -79,7 +79,7 @@ Take at phone width (390 × 844) from the live app:
 
 - [ ] Real catalog in `data/catalog.csv`, imported with `npm run catalog:import`
 - [ ] Deployed on Vercel with `YOUCAM_API_KEY`, `GEMINI_API_KEY` (and ideally Upstash) set, mock flags unset
-- [ ] 10-image test run, results pasted into the README
+- [x] 10-image test run, results pasted into the README
 - [ ] Repo public with a license, **or** private and shared with contact_event@PerfectCorp.com
 - [ ] README: setup steps, YouCam APIs used, architecture, test results
 - [ ] Devpost description (above), with the brackets filled in
