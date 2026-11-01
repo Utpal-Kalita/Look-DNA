@@ -1,9 +1,11 @@
 export function RetakeBanner({
   message,
   tone = "warning",
+  title,
   onRetake,
 }: {
   message: string;
+  title?: string;
   tone?: "warning" | "error";
   onRetake?: () => void;
 }) {
@@ -15,7 +17,7 @@ export function RetakeBanner({
   return (
     <div role="alert" className={`rounded-xl border p-3 text-sm ${colors}`}>
       <p className="font-medium">
-        {tone === "error" ? "Something went wrong" : "Let's retake that photo"}
+        {title ?? (tone === "error" ? "Something went wrong" : "Let's retake that photo")}
       </p>
       <p className="mt-0.5">{message}</p>
       {onRetake ? (

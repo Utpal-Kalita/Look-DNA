@@ -19,7 +19,7 @@ const DEFAULT_GEMINI_FALLBACK_MODEL = "gemini-flash-lite-latest";
 const extractionSchema = z.object({
   items: z.array(
     z.object({
-      category: z.enum(["top", "bottom", "dress", "outerwear", "lipstick", "eyeshadow", "blush"]),
+      category: z.enum(["top", "bottom", "dress", "kurta", "outerwear", "lipstick", "eyeshadow", "blush"]),
       color: z.string().describe("Dominant colour as a 6-digit hex code, e.g. #C8A2C8"),
       style: z.array(z.string()).describe("2-4 short lowercase style tags"),
       finish: z
@@ -32,11 +32,11 @@ const extractionSchema = z.object({
 const SYSTEM_PROMPT = `You extract the "Look DNA" from a fashion or beauty inspiration image for a shopping app.
 
 Return each visible element of the look that someone could buy:
-- Clothing: top, bottom (trousers, jeans, skirts, shorts), dress, outerwear (jackets, coats, blazers). Use "dress" for a one-piece instead of top + bottom.
+- Clothing: top, bottom (trousers, jeans, skirts, shorts, palazzos, salwar), dress, kurta (any kurta, kurti, kurta set, salwar suit or anarkali), outerwear (jackets, coats, blazers). Use "dress" for a western one-piece instead of top + bottom. A kurta worn with matching pants is one "kurta" item; add a "bottom" only if the bottom is clearly a different piece.
 - Makeup: lipstick, eyeshadow, blush. Only include makeup that is clearly visible.
 
 For each element give its dominant colour as a hex code sampled from the image (not a generic colour name), and style tags.
-For clothing, use tags such as: oversized, fitted, cropped, relaxed, wide-leg, straight, high-waist, mini, midi, flowy, slip, wrap, bodycon, tailored, pleated, tiered, ruffle, puff-sleeve, knit, denim, satin, linen, leather, fleece, cotton, floral, striped, polka-dot, casual, formal, party, minimal, vintage, streetwear, feminine, classic, summer.
+For clothing, use tags such as: oversized, fitted, cropped, relaxed, wide-leg, straight, high-waist, mini, midi, flowy, slip, wrap, bodycon, tailored, pleated, tiered, ruffle, puff-sleeve, knit, denim, satin, linen, leather, fleece, cotton, floral, striped, polka-dot, casual, formal, party, minimal, vintage, streetwear, feminine, classic, summer, ethnic, straight-kurta, a-line, printed, embroidered, block-print, festive, silk, chanderi.
 For makeup, the style list may be empty; set finish to matte, satin, gloss or shimmer. For clothing set finish to "none".
 
 At most one item per category. If the image shows no fashion or makeup, return an empty items list. Describe only the look, never the person's body or skin.`;
@@ -176,7 +176,7 @@ async function requestGroq(image: ImageUpload, model: string): Promise<LookItem[
 
 /** JSON mode needs the shape spelled out in the prompt. */
 const JSON_INSTRUCTIONS = `Reply with a JSON object of exactly this shape and nothing else:
-{"items": [{"category": "top" | "bottom" | "dress" | "outerwear" | "lipstick" | "eyeshadow" | "blush", "color": "#RRGGBB", "style": ["tag", ...], "finish": "matte" | "satin" | "gloss" | "shimmer" | "none"}]}`;
+{"items": [{"category": "top" | "bottom" | "dress" | "kurta" | "outerwear" | "lipstick" | "eyeshadow" | "blush", "color": "#RRGGBB", "style": ["tag", ...], "finish": "matte" | "satin" | "gloss" | "shimmer" | "none"}]}`;
 
 function stripFences(text: string): string {
   return text.replace(/^\s*```(?:json)?\s*/i, "").replace(/\s*```\s*$/, "").trim();

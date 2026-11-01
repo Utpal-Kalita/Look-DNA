@@ -29,7 +29,7 @@ export default function DnaPage() {
     setStatus({ kind: "loading" });
     try {
       const extracted = await extractLook(await dataUrlToBlob(inspiration));
-      update({ items: extracted, ...CLEAR_MATCHES });
+      update({ items: extracted.items, itemsMock: Boolean(extracted.mock), ...CLEAR_MATCHES });
       setStatus({ kind: "ready" });
     } catch (error) {
       setStatus({
@@ -103,6 +103,14 @@ export default function DnaPage() {
         />
       ) : null}
 
+      {status.kind === "ready" && items.length > 0 && state.itemsMock ? (
+        <div className="mb-3">
+          <RetakeBanner
+            title="Sample results"
+            message="Demo mode is on (MOCK_LLM=1), so these are sample items, not read from your image. Remove MOCK_LLM and set an AI key to read real looks."
+          />
+        </div>
+      ) : null}
       {status.kind === "ready" && items.length > 0 ? <DnaCard items={items} image={inspiration} /> : null}
 
       <div className="mt-auto pt-6">

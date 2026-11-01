@@ -78,11 +78,10 @@ export function runTryOn(
   return postForm<TryOnResult>("/api/tryon", body);
 }
 
-export async function extractLook(inspiration: Blob): Promise<LookItem[]> {
+export async function extractLook(inspiration: Blob): Promise<ExtractResponse> {
   const body = new FormData();
   body.append("inspiration", inspiration, "inspiration.jpg");
-  const result = await postForm<ExtractResponse>("/api/extract", body);
-  return result.items;
+  return postForm<ExtractResponse>("/api/extract", body);
 }
 
 export function matchProducts(request: MatchRequest): Promise<MatchResponse> {

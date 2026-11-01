@@ -22,9 +22,9 @@ import path from "node:path";
 
 import sharp from "sharp";
 
-const CATEGORIES = ["top", "bottom", "dress", "outerwear", "lipstick", "eyeshadow", "blush"];
+const CATEGORIES = ["top", "bottom", "dress", "kurta", "outerwear", "lipstick", "eyeshadow", "blush"];
 const MAKEUP = new Set(["lipstick", "eyeshadow", "blush"]);
-const PREFIX = { top: "top", bottom: "btm", dress: "drs", outerwear: "out", lipstick: "lip", eyeshadow: "eye", blush: "blu" };
+const PREFIX = { top: "top", bottom: "btm", dress: "drs", kurta: "krt", outerwear: "out", lipstick: "lip", eyeshadow: "eye", blush: "blu" };
 const root = process.cwd();
 const dry = process.argv.includes("--dry");
 

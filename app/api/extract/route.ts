@@ -30,6 +30,7 @@ export async function POST(request: Request): Promise<NextResponse> {
     const body: ExtractResponse & { cached: boolean } = {
       items: result.value,
       cached: result.cached,
+      ...(mock ? { mock: true } : {}),
     };
     return NextResponse.json(body);
   } catch (error) {
