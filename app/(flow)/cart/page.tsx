@@ -40,7 +40,7 @@ export default function CartPage() {
     setError(null);
     const nextExcluded = [...new Set([...excluded, productId])];
     try {
-      const result = await matchProducts({ items, userTone, budget, exclude: nextExcluded });
+      const result = await matchProducts({ items, userTone, budget, exclude: nextExcluded, shopFor: state.shopFor });
       update({
         matchResult: result,
         matches: result.matches,

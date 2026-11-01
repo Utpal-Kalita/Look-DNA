@@ -17,6 +17,7 @@ import {
   type MatchRequest,
   type MatchResponse,
   type ProductMatch,
+  type ShopFor,
   type UserTone,
 } from "@/lib/types";
 import { normalizeHex } from "@/lib/undertone";
@@ -224,11 +225,14 @@ function rankCandidates(
   category: LookCategory,
   catalog: CatalogItem[],
   exclude: Set<string>,
+  shopFor?: ShopFor,
 ): Candidate[] {
   return catalog
     .filter(
       (product) =>
-        !exclude.has(product.id) && normalizeCategory(product.category) === category,
+        !exclude.has(product.id) &&
+        normalizeCategory(product.category) === category &&
+        fitsSection(product, shopFor),
     )
     .map((product) => scoreProduct(targetColor, item, product))
     .filter((candidate) => candidate.score >= MIN_SCORE)
@@ -253,6 +257,14 @@ interface Slot {
   choice: number;
 }
 
+/** Products for the chosen section; unisex and untagged products fit both. */
+function fitsSection(product: CatalogItem, shopFor?: ShopFor): boolean {
+  if (!shopFor || !product.gender || product.gender === "unisex") {
+    return true;
+  }
+  return product.gender === shopFor;
+}
+
 export function matchLook(request: MatchRequest, catalog: CatalogItem[]): MatchResponse {
   const exclude = new Set(request.exclude ?? []);
   const seen = new Set<LookCategory>();
@@ -274,6 +286,7 @@ export function matchLook(request: MatchRequest, catalog: CatalogItem[]): MatchR
       category,
       catalog,
       exclude,
+      request.shopFor,
     ).slice(0, CANDIDATES_PER_ITEM);
 
     slots.push({ category, item, target, candidates, choice: candidates.length ? 0 : -1 });

@@ -14,6 +14,7 @@ import type {
   LookItem,
   MatchResponse,
   ProductMatch,
+  ShopFor,
   TryOnResult,
   UserTone,
 } from "@/lib/types";
@@ -42,6 +43,8 @@ export interface FlowState {
   retakeMessage: string | null;
   /** True when the items came from mock mode, not from reading the image. */
   itemsMock: boolean;
+  /** Which section of the catalog to shop. */
+  shopFor: ShopFor;
 }
 
 export const DEFAULT_BUDGET = 3000;
@@ -60,6 +63,7 @@ const INITIAL_STATE: FlowState = {
   excluded: [],
   retakeMessage: null,
   itemsMock: false,
+  shopFor: "women",
 };
 
 /** Clears everything computed from the inspiration image. */

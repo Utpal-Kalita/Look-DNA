@@ -75,3 +75,21 @@ describe("matchLook", () => {
     expect(a.matches.some((m) => m.category === "handbag")).toBe(false);
   });
 });
+
+describe("shop for", () => {
+  const fixture: CatalogItem[] = [
+    { id: "w", name: "Women's knit", brand: "A", category: "top", price: 900, image: "/a.png", color: "#F2EEE3", style: ["knit"], link: "https://example.com/a", gender: "women" },
+    { id: "m", name: "Men's knit", brand: "B", category: "top", price: 900, image: "/b.png", color: "#E8E2D6", style: ["knit"], link: "https://example.com/b", gender: "men" },
+    { id: "u", name: "Unisex tee", brand: "C", category: "top", price: 500, image: "/c.png", color: "#1C1C1C", style: [], link: "https://example.com/c", gender: "unisex" },
+  ];
+  const sweater = [{ category: "top", color: "#F2EEE3", style: ["knit"] }];
+
+  it("only matches the chosen section, plus unisex", () => {
+    const men = matchLook({ items: sweater, userTone: null, budget: 5000, shopFor: "men" }, fixture);
+    expect(men.matches[0].productId).toBe("m");
+    const women = matchLook({ items: sweater, userTone: null, budget: 5000, shopFor: "women" }, fixture);
+    expect(women.matches[0].productId).toBe("w");
+    const menOnlyDark = matchLook({ items: [{ category: "top", color: "#1C1C1C" }], userTone: null, budget: 5000, shopFor: "men" }, fixture);
+    expect(menOnlyDark.matches[0].productId).toBe("u");
+  });
+});

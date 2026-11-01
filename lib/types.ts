@@ -39,6 +39,8 @@ export interface CatalogItem {
   color: string;
   style: string[];
   link: string;
+  /** Who the product is cut for; unisex shows in both sections. */
+  gender?: ShopFor | "unisex";
 }
 
 export type QualityIssue =
@@ -88,6 +90,8 @@ export interface TryOnResult {
   mode: TryOnMode;
 }
 
+export type ShopFor = "women" | "men";
+
 /** Categories the extractor and matcher understand. */
 export const CLOTHING_CATEGORIES = ["top", "bottom", "dress", "kurta", "outerwear"] as const;
 export const MAKEUP_CATEGORIES = ["lipstick", "eyeshadow", "blush"] as const;
@@ -109,6 +113,8 @@ export interface MatchRequest {
   budget: number;
   /** Product ids the user swapped away from; never re-picked. */
   exclude?: string[];
+  /** Which section to shop: only that gender's products (plus unisex) match. */
+  shopFor?: ShopFor;
 }
 
 /** POST /api/match response. `matches` and `total` follow the shared contract. */

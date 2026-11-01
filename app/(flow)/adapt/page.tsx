@@ -40,7 +40,7 @@ export default function AdaptPage() {
         update({ userTone: tone });
       }
       setStatus({ kind: "loading", label: "Adapting shades and finding pieces…" });
-      const result = await matchProducts({ items, userTone: tone, budget, exclude: excluded });
+      const result = await matchProducts({ items, userTone: tone, budget, exclude: excluded, shopFor: state.shopFor });
       update({ matchResult: result, matches: result.matches, total: result.total });
       setStatus({ kind: "ready" });
     } catch (error) {
