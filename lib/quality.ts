@@ -205,7 +205,9 @@ export async function locateFaceCrop(
     return null;
   }
   const scale = sourceWidth / width;
-  const size = Math.max(face.width, face.height) * 2.2 * scale;
+  // BlazeFace boxes the inner face; 1.6x keeps hair and chin while the face
+  // still fills most of the crop, which YouCam skin tone needs.
+  const size = Math.max(face.width, face.height) * 1.6 * scale;
   const centerX = (face.x + face.width / 2) * scale;
   const centerY = (face.y + face.height / 2) * scale;
   const side = Math.round(Math.min(size, sourceWidth, sourceHeight));

@@ -80,8 +80,10 @@ async function faceCrop(image: ImageUpload): Promise<ImageUpload> {
     box = null;
   }
   if (!box) {
+    console.warn("skin-tone: no face found locally, sending the whole photo");
     return image;
   }
+  console.info(`skin-tone: sending a ${box.width}px face crop`);
 
   const bytes = await sharp(image.bytes)
     .extract(box)
