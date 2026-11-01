@@ -155,7 +155,7 @@ export default function AdaptPage() {
                       <div className="min-w-0 flex-1">
                         <p className="truncate text-sm font-medium">{product.name}</p>
                         <p className="text-xs text-muted">
-                          {categoryLabel(match.category)} · {match.reason}
+                          {categoryLabel(match.category)}: {match.reason}
                         </p>
                       </div>
                     </li>

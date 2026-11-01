@@ -24,16 +24,16 @@ export function StepHeader({
         {STEPS.map((name, index) => (
           <span
             key={name}
-            className={`h-1 flex-1 rounded-full ${
+            className={`h-1 flex-1 rounded-none ${
               index < step ? "bg-accent" : "bg-blush"
             }`}
           />
         ))}
       </div>
-      <p className="text-xs font-medium uppercase tracking-wider text-muted">
+      <p className="text-xs font-medium  text-muted">
         Step {step} of {STEPS.length}
       </p>
-      <h1 className="mt-1 text-2xl font-semibold leading-tight">{title}</h1>
+      <h1 className="mt-1 text-4xl leading-none">{title}</h1>
       {subtitle ? <p className="mt-1 text-sm text-muted">{subtitle}</p> : null}
     </header>
   );

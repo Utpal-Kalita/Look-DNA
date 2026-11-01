@@ -12,7 +12,7 @@ export default function InspirationPage() {
 
   return (
     <>
-      <a href="/" className="mb-4 text-sm font-semibold tracking-wide text-accent">Look DNA</a>
+      <a href="/" className="mb-4 text-sm font-semibold text-accent">Look DNA</a>
       <StepHeader
         step={1}
         title="Screenshot any look"

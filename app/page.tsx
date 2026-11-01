@@ -1,21 +1,7 @@
 import type { CSSProperties } from "react";
-import { Bricolage_Grotesque, Source_Serif_4 } from "next/font/google";
 import Link from "next/link";
 
 import "./landing.css";
-
-const display = Bricolage_Grotesque({
-  subsets: ["latin"],
-  axes: ["opsz", "wdth"],
-  variable: "--font-bricolage",
-  display: "swap",
-});
-const body = Source_Serif_4({
-  subsets: ["latin"],
-  axes: ["opsz"],
-  variable: "--font-source-serif",
-  display: "swap",
-});
 
 const STEPS = [
   { title: "Drop a screenshot", body: "Any outfit or makeup look from Instagram, Pinterest or a magazine." },
@@ -84,7 +70,7 @@ function LookSheet() {
 
 export default function LandingPage() {
   return (
-    <div className={`ed ${display.variable} ${body.variable}`}>
+    <div className="ed">
       <div className="container">
         <header className="nav">
           <Link href="/" className="wordmark">
