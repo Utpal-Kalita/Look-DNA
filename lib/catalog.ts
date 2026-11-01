@@ -16,6 +16,7 @@ const catalogItemSchema = z.object({
   color: z.string().regex(/^#[0-9a-fA-F]{6}$/),
   style: z.array(z.string()),
   link: z.string(),
+  gender: z.enum(["women", "men", "unisex"]).default("women"),
 });
 
 let catalogPromise: Promise<CatalogItem[]> | undefined;

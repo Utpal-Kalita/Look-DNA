@@ -12,7 +12,8 @@
       "knit",
       "shirt"
     ],
-    "link": "https://www.styleunion.in/products/betty-round-neck-fashion-tee-with-chevron-pattern-ywft00255"
+    "link": "https://www.styleunion.in/products/betty-round-neck-fashion-tee-with-chevron-pattern-ywft00255",
+    "gender": "women"
   },
   {
     "id": "top-002",
@@ -27,7 +28,8 @@
       "formal",
       "satin"
     ],
-    "link": "https://www.saltattire.com/products/midnight-satin-dressy-formal-satin-tie-up-top-black"
+    "link": "https://www.saltattire.com/products/midnight-satin-dressy-formal-satin-tie-up-top-black",
+    "gender": "women"
   },
   {
     "id": "top-003",
@@ -38,7 +40,8 @@
     "image": "https://cdn.shopify.com/s/files/1/0329/7499/5591/files/Black_GreyCheckedPipingTop2.jpg?v=1720780185&width=800",
     "color": "#1C1C1C",
     "style": [],
-    "link": "https://www.thelabellife.com/products/black-grey-checked-piping-top"
+    "link": "https://www.thelabellife.com/products/black-grey-checked-piping-top",
+    "gender": "women"
   },
   {
     "id": "top-004",
@@ -53,7 +56,8 @@
       "puff-sleeve",
       "slip"
     ],
-    "link": "https://www.saltattire.com/products/lia-balloon-sleeves-top-pink-color"
+    "link": "https://www.saltattire.com/products/lia-balloon-sleeves-top-pink-color",
+    "gender": "women"
   },
   {
     "id": "top-005",
@@ -64,7 +68,8 @@
     "image": "https://cdn.shopify.com/s/files/1/0261/2386/2082/files/KazoSS26_23028.jpg?v=1767173450&width=800",
     "color": "#555051",
     "style": [],
-    "link": "https://www.kazo.com/products/kz01881"
+    "link": "https://www.kazo.com/products/kz01881",
+    "gender": "women"
   },
   {
     "id": "top-006",
@@ -79,7 +84,8 @@
       "satin",
       "slip"
     ],
-    "link": "https://www.saltattire.com/products/odyssey-gathered-v-neck-buttoned-top-pink-color"
+    "link": "https://www.saltattire.com/products/odyssey-gathered-v-neck-buttoned-top-pink-color",
+    "gender": "women"
   },
   {
     "id": "top-007",
@@ -92,7 +98,8 @@
     "style": [
       "knit"
     ],
-    "link": "https://www.thelabellife.com/products/navy-knit-off-shoulder-top"
+    "link": "https://www.thelabellife.com/products/navy-knit-off-shoulder-top",
+    "gender": "women"
   },
   {
     "id": "top-008",
@@ -105,7 +112,8 @@
     "style": [
       "shirt"
     ],
-    "link": "https://www.forevernew.co.in/products/aaliyah-ribbed-polo-t-shirt-camel"
+    "link": "https://www.forevernew.co.in/products/aaliyah-ribbed-polo-t-shirt-camel",
+    "gender": "women"
   },
   {
     "id": "top-009",
@@ -118,7 +126,8 @@
     "style": [
       "shirt"
     ],
-    "link": "https://www.kazo.com/products/kz02001"
+    "link": "https://www.kazo.com/products/kz02001",
+    "gender": "women"
   },
   {
     "id": "top-010",
@@ -134,7 +143,8 @@
       "knit",
       "shirt"
     ],
-    "link": "https://www.styleunion.in/products/side-ruching-all-over-print-cherry-print-tee-ywft00210"
+    "link": "https://www.styleunion.in/products/side-ruching-all-over-print-cherry-print-tee-ywft00210",
+    "gender": "women"
   },
   {
     "id": "top-011",
@@ -148,7 +158,8 @@
       "cotton",
       "knit"
     ],
-    "link": "https://www.thelabellife.com/products/sage-strappy-ribbed-knit-top"
+    "link": "https://www.thelabellife.com/products/sage-strappy-ribbed-knit-top",
+    "gender": "women"
   },
   {
     "id": "top-012",
@@ -159,7 +170,8 @@
     "image": "https://cdn.shopify.com/s/files/1/0261/2386/2082/files/1_cb344207-6627-4da0-8705-9791a44888fc.jpg?v=1777698273&width=800",
     "color": "#1D1F2F",
     "style": [],
-    "link": "https://www.kazo.com/products/kz01993blue"
+    "link": "https://www.kazo.com/products/kz01993blue",
+    "gender": "women"
   },
   {
     "id": "top-013",
@@ -173,7 +185,8 @@
       "oversized",
       "shirt"
     ],
-    "link": "https://www.bonkerscorner.com/products/child-of-god-oversized-t-shirt-1"
+    "link": "https://www.bonkerscorner.com/products/child-of-god-oversized-t-shirt-1",
+    "gender": "women"
   },
   {
     "id": "btm-001",
@@ -184,7 +197,8 @@
     "image": "https://cdn.shopify.com/s/files/1/0707/6331/5283/files/30536802_F1.jpg?v=1788780090&width=800",
     "color": "#806D63",
     "style": [],
-    "link": "https://www.forevernew.co.in/products/lizzie-mid-rise-pant-black"
+    "link": "https://www.forevernew.co.in/products/lizzie-mid-rise-pant-black",
+    "gender": "women"
   },
   {
     "id": "btm-002",
@@ -195,7 +209,8 @@
     "image": "https://cdn.shopify.com/s/files/1/0653/0541/1684/files/HyperBlueLooseFitJoggers_6_df4343cb-0fd1-4953-b793-0d16eb57c969.jpg?v=1784804281&width=800",
     "color": "#3B5FA8",
     "style": [],
-    "link": "https://www.bonkerscorner.com/products/hyper-blue-loose-fit-joggers-1"
+    "link": "https://www.bonkerscorner.com/products/hyper-blue-loose-fit-joggers-1",
+    "gender": "women"
   },
   {
     "id": "btm-003",
@@ -209,7 +224,8 @@
       "flared",
       "straight"
     ],
-    "link": "https://www.thelabellife.com/products/forest-greentraight-fit-trousers"
+    "link": "https://www.thelabellife.com/products/forest-greentraight-fit-trousers",
+    "gender": "women"
   },
   {
     "id": "btm-004",
@@ -220,7 +236,8 @@
     "image": "https://cdn.shopify.com/s/files/1/0261/2386/2082/files/KazoSS264th3738.jpg?v=1772519505&width=800",
     "color": "#151C2E",
     "style": [],
-    "link": "https://www.kazo.com/products/kz01893navy"
+    "link": "https://www.kazo.com/products/kz01893navy",
+    "gender": "women"
   },
   {
     "id": "btm-005",
@@ -231,7 +248,8 @@
     "image": "https://cdn.shopify.com/s/files/1/0653/0541/1684/files/329.png?v=1786016324&width=800",
     "color": "#F2D04A",
     "style": [],
-    "link": "https://www.bonkerscorner.com/products/sunshine-yellow-loose-fit-joggers"
+    "link": "https://www.bonkerscorner.com/products/sunshine-yellow-loose-fit-joggers",
+    "gender": "women"
   },
   {
     "id": "btm-006",
@@ -244,7 +262,8 @@
     "style": [
       "formal"
     ],
-    "link": "https://www.saltattire.com/products/ardor-longline-pencil-skirt-blue-color"
+    "link": "https://www.saltattire.com/products/ardor-longline-pencil-skirt-blue-color",
+    "gender": "women"
   },
   {
     "id": "btm-007",
@@ -259,7 +278,8 @@
       "maxi",
       "printed"
     ],
-    "link": "https://www.styleunion.in/products/esk00076"
+    "link": "https://www.styleunion.in/products/esk00076",
+    "gender": "women"
   },
   {
     "id": "btm-008",
@@ -272,7 +292,8 @@
     "style": [
       "formal"
     ],
-    "link": "https://www.saltattire.com/products/ardor-long-pencil-fit-skirt-tan-brown-color"
+    "link": "https://www.saltattire.com/products/ardor-long-pencil-fit-skirt-tan-brown-color",
+    "gender": "women"
   },
   {
     "id": "btm-009",
@@ -289,7 +310,8 @@
       "straight",
       "wide-leg"
     ],
-    "link": "https://www.thelabellife.com/products/plum-satin-wide-leg-trousers"
+    "link": "https://www.thelabellife.com/products/plum-satin-wide-leg-trousers",
+    "gender": "women"
   },
   {
     "id": "btm-010",
@@ -302,7 +324,8 @@
     "style": [
       "a-line"
     ],
-    "link": "https://www.forevernew.co.in/products/claudia-a-line-girls-skirt-empress-floral"
+    "link": "https://www.forevernew.co.in/products/claudia-a-line-girls-skirt-empress-floral",
+    "gender": "women"
   },
   {
     "id": "btm-011",
@@ -318,7 +341,8 @@
       "midi",
       "straight"
     ],
-    "link": "https://www.styleunion.in/products/straight-fit-solid-full-length-high-rise-skirt-ywsk00036"
+    "link": "https://www.styleunion.in/products/straight-fit-solid-full-length-high-rise-skirt-ywsk00036",
+    "gender": "women"
   },
   {
     "id": "btm-012",
@@ -329,7 +353,8 @@
     "image": "https://cdn.shopify.com/s/files/1/0261/2386/2082/files/KazoSS_2611514.jpg?v=1767172922&width=800",
     "color": "#482122",
     "style": [],
-    "link": "https://www.kazo.com/products/kz01886"
+    "link": "https://www.kazo.com/products/kz01886",
+    "gender": "women"
   },
   {
     "id": "drs-001",
@@ -342,7 +367,8 @@
     "style": [
       "midi"
     ],
-    "link": "https://www.forevernew.co.in/products/maren-flutter-sleeve-midi-dress-choc-myra-floral"
+    "link": "https://www.forevernew.co.in/products/maren-flutter-sleeve-midi-dress-choc-myra-floral",
+    "gender": "women"
   },
   {
     "id": "drs-002",
@@ -359,7 +385,8 @@
       "mini",
       "puff-sleeve"
     ],
-    "link": "https://www.saltattire.com/products/rimini-shift-dress-aqua-color"
+    "link": "https://www.saltattire.com/products/rimini-shift-dress-aqua-color",
+    "gender": "women"
   },
   {
     "id": "drs-003",
@@ -373,7 +400,8 @@
       "mini",
       "satin"
     ],
-    "link": "https://www.thelabellife.com/products/rouge-balloon-sleeve-skater-dress"
+    "link": "https://www.thelabellife.com/products/rouge-balloon-sleeve-skater-dress",
+    "gender": "women"
   },
   {
     "id": "drs-004",
@@ -389,7 +417,8 @@
       "knit",
       "slip"
     ],
-    "link": "https://www.saltattire.com/products/ortega-ruched-bodycon-dress-purple-color"
+    "link": "https://www.saltattire.com/products/ortega-ruched-bodycon-dress-purple-color",
+    "gender": "women"
   },
   {
     "id": "drs-005",
@@ -403,7 +432,8 @@
       "midi",
       "mini"
     ],
-    "link": "https://www.kazo.com/products/kz02166"
+    "link": "https://www.kazo.com/products/kz02166",
+    "gender": "women"
   },
   {
     "id": "drs-006",
@@ -414,7 +444,8 @@
     "image": "https://cdn.shopify.com/s/files/1/0653/0541/1684/files/S5-250.jpg?v=1787227973&width=800",
     "color": "#F2C4C4",
     "style": [],
-    "link": "https://www.bonkerscorner.com/products/blush-ballet-mood-dress"
+    "link": "https://www.bonkerscorner.com/products/blush-ballet-mood-dress",
+    "gender": "women"
   },
   {
     "id": "drs-007",
@@ -428,7 +459,8 @@
       "flared",
       "tiered"
     ],
-    "link": "https://www.styleunion.in/products/flare-fit-embroidered-dress-id00004"
+    "link": "https://www.styleunion.in/products/flare-fit-embroidered-dress-id00004",
+    "gender": "women"
   },
   {
     "id": "drs-008",
@@ -442,7 +474,8 @@
       "midi",
       "mini"
     ],
-    "link": "https://www.kazo.com/products/kz01857"
+    "link": "https://www.kazo.com/products/kz01857",
+    "gender": "women"
   },
   {
     "id": "drs-009",
@@ -455,7 +488,8 @@
     "style": [
       "puff-sleeve"
     ],
-    "link": "https://www.styleunion.in/products/wd00481"
+    "link": "https://www.styleunion.in/products/wd00481",
+    "gender": "women"
   },
   {
     "id": "drs-010",
@@ -470,7 +504,8 @@
       "formal",
       "midi"
     ],
-    "link": "https://www.saltattire.com/products/erica-waist-embellishement-fit-flare-dress-magenta-color"
+    "link": "https://www.saltattire.com/products/erica-waist-embellishement-fit-flare-dress-magenta-color",
+    "gender": "women"
   },
   {
     "id": "drs-011",
@@ -483,7 +518,8 @@
     "style": [
       "mini"
     ],
-    "link": "https://www.kazo.com/products/kz01906"
+    "link": "https://www.kazo.com/products/kz01906",
+    "gender": "women"
   },
   {
     "id": "drs-012",
@@ -497,7 +533,8 @@
       "maxi",
       "satin"
     ],
-    "link": "https://www.thelabellife.com/products/turkish-blue-satin-maxi-n"
+    "link": "https://www.thelabellife.com/products/turkish-blue-satin-maxi-n",
+    "gender": "women"
   },
   {
     "id": "drs-013",
@@ -510,7 +547,8 @@
     "style": [
       "slip"
     ],
-    "link": "https://www.forevernew.co.in/products/ava-slip-teen-dress-sorrento-blue"
+    "link": "https://www.forevernew.co.in/products/ava-slip-teen-dress-sorrento-blue",
+    "gender": "women"
   },
   {
     "id": "drs-014",
@@ -526,7 +564,8 @@
       "satin",
       "straight"
     ],
-    "link": "https://www.thelabellife.com/products/plum-satin-balloon-sleeve-dress"
+    "link": "https://www.thelabellife.com/products/plum-satin-balloon-sleeve-dress",
+    "gender": "women"
   },
   {
     "id": "out-001",
@@ -540,7 +579,8 @@
       "blazer",
       "formal"
     ],
-    "link": "https://www.saltattire.com/products/elara-waist-flap-slim-fit-tweed-blazer-beige-color"
+    "link": "https://www.saltattire.com/products/elara-waist-flap-slim-fit-tweed-blazer-beige-color",
+    "gender": "women"
   },
   {
     "id": "out-002",
@@ -551,7 +591,8 @@
     "image": "https://cdn.shopify.com/s/files/1/0329/7499/5591/products/CobaltButtonDownCardigan_1.jpg?v=1663835369&width=800",
     "color": "#1F4FBF",
     "style": [],
-    "link": "https://www.thelabellife.com/products/cobalt-button-down-cardigan"
+    "link": "https://www.thelabellife.com/products/cobalt-button-down-cardigan",
+    "gender": "women"
   },
   {
     "id": "out-003",
@@ -568,7 +609,8 @@
       "puff-sleeve",
       "ruffle"
     ],
-    "link": "https://www.thelabellife.com/products/cherry-oversized-puffer-jacket"
+    "link": "https://www.thelabellife.com/products/cherry-oversized-puffer-jacket",
+    "gender": "women"
   },
   {
     "id": "out-004",
@@ -581,7 +623,8 @@
     "style": [
       "mini"
     ],
-    "link": "https://www.kazo.com/products/kz02199"
+    "link": "https://www.kazo.com/products/kz02199",
+    "gender": "women"
   },
   {
     "id": "out-005",
@@ -595,7 +638,8 @@
       "blazer",
       "formal"
     ],
-    "link": "https://www.saltattire.com/products/spunky-ruched-sleeve-blazer-sky-blue"
+    "link": "https://www.saltattire.com/products/spunky-ruched-sleeve-blazer-sky-blue",
+    "gender": "women"
   },
   {
     "id": "lip-001",
@@ -606,7 +650,8 @@
     "image": "https://cdn.shopify.com/s/files/1/0595/6691/5779/files/SB-S17_06_B_1e45b77c-7dc3-49be-8232-aa8d2b1dd165.jpg?v=1748634745&width=800",
     "color": "#BC141C",
     "style": [],
-    "link": "https://swissbeauty.in/products/non-transfer-matte-lipstick-bare-sb-s17-15?variant=41887476351171"
+    "link": "https://swissbeauty.in/products/non-transfer-matte-lipstick-bare-sb-s17-15?variant=41887476351171",
+    "gender": "women"
   },
   {
     "id": "lip-002",
@@ -617,7 +662,8 @@
     "image": "https://cdn.shopify.com/s/files/1/0595/6691/5779/files/SB-LP21_06_Admirer_Plum_c85beb28-6507-4152-aabe-2b27b1a4fab3.jpg?v=1763021342&width=800",
     "color": "#73397C",
     "style": [],
-    "link": "https://swissbeauty.in/products/select-high-on-shine-lipstick?variant=48629975580987"
+    "link": "https://swissbeauty.in/products/select-high-on-shine-lipstick?variant=48629975580987",
+    "gender": "women"
   },
   {
     "id": "lip-003",
@@ -630,7 +676,8 @@
     "style": [
       "matte"
     ],
-    "link": "https://in.sugarcosmetics.com/products/ultrastay-transferproof-lipstick-4?variant=45962491723859"
+    "link": "https://in.sugarcosmetics.com/products/ultrastay-transferproof-lipstick-4?variant=45962491723859",
+    "gender": "women"
   },
   {
     "id": "lip-004",
@@ -643,7 +690,8 @@
     "style": [
       "matte"
     ],
-    "link": "https://swissbeauty.in/products/matte-cat-lip-crayon?variant=44590529413435"
+    "link": "https://swissbeauty.in/products/matte-cat-lip-crayon?variant=44590529413435",
+    "gender": "women"
   },
   {
     "id": "lip-005",
@@ -656,7 +704,8 @@
     "style": [
       "matte"
     ],
-    "link": "https://swissbeauty.in/products/matte-lip-palette?variant=41887477596355"
+    "link": "https://swissbeauty.in/products/matte-lip-palette?variant=41887477596355",
+    "gender": "women"
   },
   {
     "id": "lip-006",
@@ -667,7 +716,8 @@
     "image": "https://cdn.shopify.com/s/files/1/0906/2558/files/Glide-Peptide-Serum-Lipstick-17.jpg?v=1787395748&width=800",
     "color": "#C37681",
     "style": [],
-    "link": "https://in.sugarcosmetics.com/products/glide-peptide-serum-lipstick?variant=45845338259539"
+    "link": "https://in.sugarcosmetics.com/products/glide-peptide-serum-lipstick?variant=45845338259539",
+    "gender": "women"
   },
   {
     "id": "lip-007",
@@ -680,7 +730,8 @@
     "style": [
       "matte"
     ],
-    "link": "https://in.sugarcosmetics.com/products/ultrastay-transferproof-lipstick-3?variant=45962485006419"
+    "link": "https://in.sugarcosmetics.com/products/ultrastay-transferproof-lipstick-3?variant=45962485006419",
+    "gender": "women"
   },
   {
     "id": "lip-008",
@@ -691,7 +742,8 @@
     "image": "https://cdn.shopify.com/s/files/1/0595/6691/5779/files/SB-S17_13_B_35624934-a41c-418b-a040-1aadee44074a.jpg?v=1748634746&width=800",
     "color": "#5C0D10",
     "style": [],
-    "link": "https://swissbeauty.in/products/non-transfer-matte-lipstick-bare-sb-s17-15?variant=41887476580547"
+    "link": "https://swissbeauty.in/products/non-transfer-matte-lipstick-bare-sb-s17-15?variant=41887476580547",
+    "gender": "women"
   },
   {
     "id": "lip-009",
@@ -702,7 +754,8 @@
     "image": "https://cdn.shopify.com/s/files/1/0595/6691/5779/files/SB-LP21_17_Plush_Plum_beca3755-6f56-4515-bcad-f5366f381f29.jpg?v=1763021343&width=800",
     "color": "#6D314B",
     "style": [],
-    "link": "https://swissbeauty.in/products/select-high-on-shine-lipstick?variant=50466981249339"
+    "link": "https://swissbeauty.in/products/select-high-on-shine-lipstick?variant=50466981249339",
+    "gender": "women"
   },
   {
     "id": "lip-010",
@@ -713,7 +766,8 @@
     "image": "https://cdn.shopify.com/s/files/1/0906/2558/files/Glide-Peptide-Serum-Lipstick_1e5723be.jpg?v=1789814255&width=800",
     "color": "#AB5846",
     "style": [],
-    "link": "https://in.sugarcosmetics.com/products/glide-peptide-serum-lipstick?variant=42554418004051"
+    "link": "https://in.sugarcosmetics.com/products/glide-peptide-serum-lipstick?variant=42554418004051",
+    "gender": "women"
   },
   {
     "id": "lip-011",
@@ -724,7 +778,8 @@
     "image": "https://cdn.shopify.com/s/files/1/0906/2558/files/Glide-Peptide-Serum-Lipstick-9_bdcd7946.jpg?v=1787395698&width=800",
     "color": "#A4425C",
     "style": [],
-    "link": "https://in.sugarcosmetics.com/products/glide-peptide-serum-lipstick?variant=42554418135123"
+    "link": "https://in.sugarcosmetics.com/products/glide-peptide-serum-lipstick?variant=42554418135123",
+    "gender": "women"
   },
   {
     "id": "lip-012",
@@ -737,7 +792,8 @@
     "style": [
       "matte"
     ],
-    "link": "https://swissbeauty.in/products/non-transfer-matte-lipstick-sb-209?variant=41887440240835"
+    "link": "https://swissbeauty.in/products/non-transfer-matte-lipstick-sb-209?variant=41887440240835",
+    "gender": "women"
   },
   {
     "id": "lip-013",
@@ -750,7 +806,8 @@
     "style": [
       "matte"
     ],
-    "link": "https://in.sugarcosmetics.com/products/ultrastay-transferproof-lipstick-2?variant=45962477764691"
+    "link": "https://in.sugarcosmetics.com/products/ultrastay-transferproof-lipstick-2?variant=45962477764691",
+    "gender": "women"
   },
   {
     "id": "lip-014",
@@ -763,7 +820,8 @@
     "style": [
       "matte"
     ],
-    "link": "https://swissbeauty.in/products/non-transfer-matte-lipstick-sb-209?variant=41887440044227"
+    "link": "https://swissbeauty.in/products/non-transfer-matte-lipstick-sb-209?variant=41887440044227",
+    "gender": "women"
   },
   {
     "id": "lip-015",
@@ -776,7 +834,8 @@
     "style": [
       "matte"
     ],
-    "link": "https://in.sugarcosmetics.com/products/glide-peptide-serum-lipstick-5?variant=46003172442195"
+    "link": "https://in.sugarcosmetics.com/products/glide-peptide-serum-lipstick-5?variant=46003172442195",
+    "gender": "women"
   },
   {
     "id": "eye-001",
@@ -787,7 +846,8 @@
     "image": "https://cdn.shopify.com/s/files/1/0595/6691/5779/files/SB-706_02_7236b1c2-db69-419d-83d3-8c1f3b2d759f.jpg?v=1748634801&width=800",
     "color": "#F87E77",
     "style": [],
-    "link": "https://swissbeauty.in/products/ultimate-eyeshadow-palette-01-sb-706-01?variant=41887479267523"
+    "link": "https://swissbeauty.in/products/ultimate-eyeshadow-palette-01-sb-706-01?variant=41887479267523",
+    "gender": "women"
   },
   {
     "id": "eye-002",
@@ -800,7 +860,8 @@
     "style": [
       "matte"
     ],
-    "link": "https://in.sugarcosmetics.com/products/blend-the-rules-eyeshadow-palette?variant=42411736203347"
+    "link": "https://in.sugarcosmetics.com/products/blend-the-rules-eyeshadow-palette?variant=42411736203347",
+    "gender": "women"
   },
   {
     "id": "eye-003",
@@ -811,7 +872,8 @@
     "image": "https://cdn.shopify.com/s/files/1/0595/6691/5779/files/SB-706_04_f28950a4-cd10-4a07-a9b3-e5eeacb1cafd.jpg?v=1748634801&width=800",
     "color": "#D67F53",
     "style": [],
-    "link": "https://swissbeauty.in/products/ultimate-eyeshadow-palette-01-sb-706-01?variant=41887479333059"
+    "link": "https://swissbeauty.in/products/ultimate-eyeshadow-palette-01-sb-706-01?variant=41887479333059",
+    "gender": "women"
   },
   {
     "id": "eye-004",
@@ -824,7 +886,8 @@
     "style": [
       "matte"
     ],
-    "link": "https://in.sugarcosmetics.com/products/blend-the-rules-eyeshadow-palette?variant=42411736268883"
+    "link": "https://in.sugarcosmetics.com/products/blend-the-rules-eyeshadow-palette?variant=42411736268883",
+    "gender": "women"
   },
   {
     "id": "eye-005",
@@ -835,7 +898,8 @@
     "image": "https://cdn.shopify.com/s/files/1/0595/6691/5779/files/SB-706_05_cb205517-ce5d-49b0-978e-744bef9cb2fb.jpg?v=1748634801&width=800",
     "color": "#D09E73",
     "style": [],
-    "link": "https://swissbeauty.in/products/ultimate-eyeshadow-palette-01-sb-706-01?variant=41887479365827"
+    "link": "https://swissbeauty.in/products/ultimate-eyeshadow-palette-01-sb-706-01?variant=41887479365827",
+    "gender": "women"
   },
   {
     "id": "blu-001",
@@ -846,7 +910,8 @@
     "image": "https://cdn.shopify.com/s/files/1/0595/6691/5779/files/SB838-C1.jpg?v=1766561689&width=800",
     "color": "#DCAB90",
     "style": [],
-    "link": "https://swissbeauty.in/products/cheek-a-boo-face-palette-with-blusher-contour-and-highlighter-palette?variant=44191221383483"
+    "link": "https://swissbeauty.in/products/cheek-a-boo-face-palette-with-blusher-contour-and-highlighter-palette?variant=44191221383483",
+    "gender": "women"
   },
   {
     "id": "blu-002",
@@ -857,7 +922,8 @@
     "image": "https://cdn.shopify.com/s/files/1/0906/2558/files/Cloud-Nine-Niacinamide-Glow-Blush-4_b2b4df9b.jpg?v=1792666794&width=800",
     "color": "#E52F65",
     "style": [],
-    "link": "https://in.sugarcosmetics.com/products/cloud-nine-niacinamide-glow-blush?variant=42411565776979"
+    "link": "https://in.sugarcosmetics.com/products/cloud-nine-niacinamide-glow-blush?variant=42411565776979",
+    "gender": "women"
   },
   {
     "id": "blu-003",
@@ -868,7 +934,8 @@
     "image": "https://cdn.shopify.com/s/files/1/0906/2558/files/Cloud-Nine-Niacinamide-Glow-Blush-5_80adbe22.jpg?v=1792666805&width=800",
     "color": "#6F2637",
     "style": [],
-    "link": "https://in.sugarcosmetics.com/products/cloud-nine-niacinamide-glow-blush?variant=42411567939667"
+    "link": "https://in.sugarcosmetics.com/products/cloud-nine-niacinamide-glow-blush?variant=42411567939667",
+    "gender": "women"
   },
   {
     "id": "blu-004",
@@ -879,7 +946,8 @@
     "image": "https://cdn.shopify.com/s/files/1/0595/6691/5779/files/SB-840_05_Cheek-O-Pink-1.jpg?v=1791968896&width=800",
     "color": "#C3748A",
     "style": [],
-    "link": "https://swissbeauty.in/products/cream-it-up-blusher?variant=45760109543739"
+    "link": "https://swissbeauty.in/products/cream-it-up-blusher?variant=45760109543739",
+    "gender": "women"
   },
   {
     "id": "blu-005",
@@ -890,7 +958,8 @@
     "image": "https://cdn.shopify.com/s/files/1/0595/6691/5779/files/03._Peach_1.jpg?v=1773127553&width=800",
     "color": "#EF7A70",
     "style": [],
-    "link": "https://swissbeauty.in/products/swiss-beauty-softy-blush?variant=51028727791931"
+    "link": "https://swissbeauty.in/products/swiss-beauty-softy-blush?variant=51028727791931",
+    "gender": "women"
   },
   {
     "id": "blu-006",
@@ -901,7 +970,8 @@
     "image": "https://cdn.shopify.com/s/files/1/0906/2558/files/Cloud-Nine-Niacinamide-Glow-Blush-2_54564e6a.jpg?v=1792666771&width=800",
     "color": "#E1433A",
     "style": [],
-    "link": "https://in.sugarcosmetics.com/products/cloud-nine-niacinamide-glow-blush?variant=42411560566867"
+    "link": "https://in.sugarcosmetics.com/products/cloud-nine-niacinamide-glow-blush?variant=42411560566867",
+    "gender": "women"
   },
   {
     "id": "blu-007",
@@ -912,7 +982,8 @@
     "image": "https://cdn.shopify.com/s/files/1/0595/6691/5779/products/SB-881-03a.jpg?v=1748634597&width=800",
     "color": "#C6796B",
     "style": [],
-    "link": "https://swissbeauty.in/products/ultra-blush-palette-swiss-beauty-cosmetics?variant=41887465308355"
+    "link": "https://swissbeauty.in/products/ultra-blush-palette-swiss-beauty-cosmetics?variant=41887465308355",
+    "gender": "women"
   },
   {
     "id": "krt-001",
@@ -928,7 +999,8 @@
       "printed",
       "straight"
     ],
-    "link": "https://www.libas.in/products/gerua-blue-floral-printed-straight-kurta-set-gs1406h"
+    "link": "https://www.libas.in/products/gerua-blue-floral-printed-straight-kurta-set-gs1406h",
+    "gender": "women"
   },
   {
     "id": "krt-002",
@@ -943,7 +1015,8 @@
       "printed",
       "straight"
     ],
-    "link": "https://www.styleunion.in/products/straight-fit-printed-kurta-eest00072"
+    "link": "https://www.styleunion.in/products/straight-fit-printed-kurta-eest00072",
+    "gender": "women"
   },
   {
     "id": "krt-003",
@@ -959,7 +1032,8 @@
       "floral",
       "printed"
     ],
-    "link": "https://www.libas.in/products/libas-mustard-floral-printed-chiffon-anarkali-suit-set-900613"
+    "link": "https://www.libas.in/products/libas-mustard-floral-printed-chiffon-anarkali-suit-set-900613",
+    "gender": "women"
   },
   {
     "id": "krt-004",
@@ -974,7 +1048,8 @@
       "ethnic",
       "straight"
     ],
-    "link": "https://www.styleunion.in/products/straight-fit-embroidered-kurta-mk00266"
+    "link": "https://www.styleunion.in/products/straight-fit-embroidered-kurta-mk00266",
+    "gender": "women"
   },
   {
     "id": "krt-005",
@@ -989,7 +1064,8 @@
       "embroidered",
       "ethnic"
     ],
-    "link": "https://www.styleunion.in/products/eest00542"
+    "link": "https://www.styleunion.in/products/eest00542",
+    "gender": "women"
   },
   {
     "id": "krt-006",
@@ -1003,7 +1079,8 @@
       "ethnic",
       "floral"
     ],
-    "link": "https://www.libas.in/products/libas-olive-green-floral-embellished-chinon-palazzo-suit-set-56023"
+    "link": "https://www.libas.in/products/libas-olive-green-floral-embellished-chinon-palazzo-suit-set-56023",
+    "gender": "women"
   },
   {
     "id": "krt-007",
@@ -1018,7 +1095,8 @@
       "ethnic",
       "straight"
     ],
-    "link": "https://www.styleunion.in/products/regular-fit-embroidered-below-knee-kurta-eest00192"
+    "link": "https://www.styleunion.in/products/regular-fit-embroidered-below-knee-kurta-eest00192",
+    "gender": "women"
   },
   {
     "id": "krt-008",
@@ -1033,7 +1111,8 @@
       "ethnic",
       "floral"
     ],
-    "link": "https://www.libas.in/products/libas-yellow-floral-woven-design-chinon-a-line-suit-set-1200850"
+    "link": "https://www.libas.in/products/libas-yellow-floral-woven-design-chinon-a-line-suit-set-1200850",
+    "gender": "women"
   },
   {
     "id": "krt-009",
@@ -1047,7 +1126,8 @@
       "ethnic",
       "printed"
     ],
-    "link": "https://www.styleunion.in/products/eest00568"
+    "link": "https://www.styleunion.in/products/eest00568",
+    "gender": "women"
   },
   {
     "id": "krt-010",
@@ -1064,7 +1144,8 @@
       "printed",
       "straight"
     ],
-    "link": "https://www.libas.in/products/libas-mauve-floral-printed-sleeveless-cotton-straight-suit-set-93888"
+    "link": "https://www.libas.in/products/libas-mauve-floral-printed-sleeveless-cotton-straight-suit-set-93888",
+    "gender": "women"
   },
   {
     "id": "krt-011",
@@ -1078,7 +1159,8 @@
       "ethnic",
       "straight"
     ],
-    "link": "https://www.styleunion.in/products/straight-fit-embellished-kurta-ft00197"
+    "link": "https://www.styleunion.in/products/straight-fit-embellished-kurta-ft00197",
+    "gender": "women"
   },
   {
     "id": "krt-012",
@@ -1093,7 +1175,8 @@
       "ethnic",
       "floral"
     ],
-    "link": "https://www.libas.in/products/libas-orange-floral-woven-design-chinon-a-line-suit-set-1200840"
+    "link": "https://www.libas.in/products/libas-orange-floral-woven-design-chinon-a-line-suit-set-1200840",
+    "gender": "women"
   },
   {
     "id": "krt-013",
@@ -1107,7 +1190,8 @@
       "ethnic",
       "printed"
     ],
-    "link": "https://www.styleunion.in/products/printed-yoke-long-kurta-eest00336"
+    "link": "https://www.styleunion.in/products/printed-yoke-long-kurta-eest00336",
+    "gender": "women"
   },
   {
     "id": "krt-014",
@@ -1121,6 +1205,426 @@
       "embroidered",
       "ethnic"
     ],
-    "link": "https://www.libas.in/products/libas-grey-yoke-design-embroidered-tissue-palazzo-suit-set-1200843"
+    "link": "https://www.libas.in/products/libas-grey-yoke-design-embroidered-tissue-palazzo-suit-set-1200843",
+    "gender": "women"
+  },
+  {
+    "id": "top-014",
+    "name": "Black Slim Fit Shirt",
+    "brand": "Snitch",
+    "category": "top",
+    "price": 1199,
+    "image": "https://cdn.shopify.com/s/files/1/0420/7073/7058/files/1_64193490-c1ee-4101-a4ec-ed8949562e49.jpg?v=1789874114&width=800",
+    "color": "#1C1C1C",
+    "style": [
+      "slim"
+    ],
+    "link": "https://www.snitch.co.in/products/black-slim-fit-shirt-4sfs0081-04",
+    "gender": "men"
+  },
+  {
+    "id": "top-015",
+    "name": "White Regular Fit Stripes Shirt",
+    "brand": "Snitch",
+    "category": "top",
+    "price": 1199,
+    "image": "https://cdn.shopify.com/s/files/1/0420/7073/7058/files/1_1b8beaf3-6d53-434b-8561-6dbbbdc43efd.jpg?v=1793380326&width=800",
+    "color": "#F5F5F2",
+    "style": [
+      "regular"
+    ],
+    "link": "https://www.snitch.co.in/products/regular-fit-stripes-shirt-4sfs0253-01",
+    "gender": "men"
+  },
+  {
+    "id": "top-016",
+    "name": "Pink Box Fit Cuban Collar Shirt",
+    "brand": "Snitch",
+    "category": "top",
+    "price": 999,
+    "image": "https://cdn.shopify.com/s/files/1/0420/7073/7058/files/1_result_8ba3c67a-ea3c-4b86-9a4a-ff81ff15aafc.jpg?v=1793123016&width=800",
+    "color": "#F2A7BB",
+    "style": [],
+    "link": "https://www.snitch.co.in/products/box-fit-magenta-shirt-4shs006-05",
+    "gender": "men"
+  },
+  {
+    "id": "top-017",
+    "name": "Navy Blue Slim Fit Shirt",
+    "brand": "Snitch",
+    "category": "top",
+    "price": 1199,
+    "image": "https://cdn.shopify.com/s/files/1/0420/7073/7058/files/1_4420c256-af6a-4d8a-a062-6ff919ce38ae.jpg?v=1789643429&width=800",
+    "color": "#1F2A44",
+    "style": [
+      "slim"
+    ],
+    "link": "https://www.snitch.co.in/products/navy-slim-fit-shirt-4sfs0082-05",
+    "gender": "men"
+  },
+  {
+    "id": "top-018",
+    "name": "100% Cotton Regular Fit Green Shirt",
+    "brand": "Snitch",
+    "category": "top",
+    "price": 1399,
+    "image": "https://cdn.shopify.com/s/files/1/0420/7073/7058/files/1_8e3b0785-e9ac-414b-8d74-474b794de94f.png?v=1790769999&width=800",
+    "color": "#3E7A4A",
+    "style": [
+      "regular",
+      "cotton"
+    ],
+    "link": "https://www.snitch.co.in/products/regular-fit-green-shirt-4sfs0058-03",
+    "gender": "men"
+  },
+  {
+    "id": "top-019",
+    "name": "Blue Slim Fit Shirt",
+    "brand": "Snitch",
+    "category": "top",
+    "price": 1199,
+    "image": "https://cdn.shopify.com/s/files/1/0420/7073/7058/files/1_b151d110-f22c-49c5-a4cf-1eb18ecf5ed4.jpg?v=1789874109&width=800",
+    "color": "#3B5FA8",
+    "style": [
+      "slim"
+    ],
+    "link": "https://www.snitch.co.in/products/blue-slim-fit-shirt-4sfs0081-02",
+    "gender": "men"
+  },
+  {
+    "id": "top-020",
+    "name": "Navy Technical Stitchless Polo T-Shirt",
+    "brand": "Snitch",
+    "category": "top",
+    "price": 1399,
+    "image": "https://cdn.shopify.com/s/files/1/0420/7073/7058/files/4mst2343-02-m-16_1.jpg?v=1790334413&width=800",
+    "color": "#1F2A44",
+    "style": [
+      "polo"
+    ],
+    "link": "https://www.snitch.co.in/products/navy-technical-stitchless-polo-t-shirt-4mst2343-02",
+    "gender": "men"
+  },
+  {
+    "id": "top-021",
+    "name": "Beige Technical Stitchless Polo T-Shirt",
+    "brand": "Snitch",
+    "category": "top",
+    "price": 1399,
+    "image": "https://cdn.shopify.com/s/files/1/0420/7073/7058/files/4mst2343-06-m-21_d57eff75-510b-4779-87d5-c7d4d567882b.jpg?v=1790334006&width=800",
+    "color": "#D9C7A8",
+    "style": [
+      "polo"
+    ],
+    "link": "https://www.snitch.co.in/products/beige-technical-stitchless-polo-t-shirt-4mst2343-06",
+    "gender": "men"
+  },
+  {
+    "id": "top-022",
+    "name": "White Technical Stitchless Polo T-Shirt",
+    "brand": "Snitch",
+    "category": "top",
+    "price": 1399,
+    "image": "https://cdn.shopify.com/s/files/1/0420/7073/7058/files/4mst2343-11-m-29_e6110112-631c-4f7c-b872-9e7a04a8ab79.jpg?v=1790334089&width=800",
+    "color": "#F5F5F2",
+    "style": [
+      "polo"
+    ],
+    "link": "https://www.snitch.co.in/products/white-technical-stitchless-polo-t-shirt-4mst2343-11",
+    "gender": "men"
+  },
+  {
+    "id": "top-023",
+    "name": "Light Blue Technical Stitchless Polo T-Shirt",
+    "brand": "Snitch",
+    "category": "top",
+    "price": 1399,
+    "image": "https://cdn.shopify.com/s/files/1/0420/7073/7058/files/Frame427319R271_d16cbc14-12e3-4db4-9484-736578517921.jpg?v=1790334580&width=800",
+    "color": "#A9C6E8",
+    "style": [
+      "polo"
+    ],
+    "link": "https://www.snitch.co.in/products/light-blue-technical-stitchless-polo-t-shirt-4mst2343-10",
+    "gender": "men"
+  },
+  {
+    "id": "out-006",
+    "name": "Dark Green Double Pocket Overshirt",
+    "brand": "Snitch",
+    "category": "outerwear",
+    "price": 1599,
+    "image": "https://cdn.shopify.com/s/files/1/0420/7073/7058/files/4mos1067-04..jpg?v=1791825673&width=800",
+    "color": "#3E7A4A",
+    "style": [
+      "overshirt"
+    ],
+    "link": "https://www.snitch.co.in/products/textured-customized-fit-overshirt-4mos1067-04",
+    "gender": "men"
+  },
+  {
+    "id": "out-007",
+    "name": "Off White Checks Overshirt",
+    "brand": "Snitch",
+    "category": "outerwear",
+    "price": 1299,
+    "image": "https://cdn.shopify.com/s/files/1/0420/7073/7058/files/1_cf580acc-d6b2-43d8-b62e-6c2d97cde914.jpg?v=1791463417&width=800",
+    "color": "#F2EEE3",
+    "style": [
+      "overshirt"
+    ],
+    "link": "https://www.snitch.co.in/products/checks-oversized-overshirt-4mos1068-02",
+    "gender": "men"
+  },
+  {
+    "id": "out-008",
+    "name": "Sky Blue Windcheater Hooded Jacket",
+    "brand": "Snitch",
+    "category": "outerwear",
+    "price": 2199,
+    "image": "https://cdn.shopify.com/s/files/1/0420/7073/7058/files/1_1ee475d6-5029-4852-869a-606fb35bb810.jpg?v=1789643377&width=800",
+    "color": "#9CC3E6",
+    "style": [],
+    "link": "https://www.snitch.co.in/products/regular-fit-hooded-zipper-jacket-4jk0041-02",
+    "gender": "men"
+  },
+  {
+    "id": "out-009",
+    "name": "Snap Button Regular Fit Brown Jacket",
+    "brand": "Snitch",
+    "category": "outerwear",
+    "price": 3299,
+    "image": "https://cdn.shopify.com/s/files/1/0420/7073/7058/files/1_6c0f599b-ef11-4aca-bc0f-7b3688341e17.jpg?v=1791886379&width=800",
+    "color": "#6B4A35",
+    "style": [
+      "regular"
+    ],
+    "link": "https://www.snitch.co.in/products/regular-fit-brown-jacket-4jk020-01",
+    "gender": "men"
+  },
+  {
+    "id": "out-010",
+    "name": "Navy 100% Cotton Zipper Jacket",
+    "brand": "Snitch",
+    "category": "outerwear",
+    "price": 2399,
+    "image": "https://cdn.shopify.com/s/files/1/0420/7073/7058/files/4jk007-03_1.jpg?v=1779725201&width=800",
+    "color": "#1F2A44",
+    "style": [
+      "cotton"
+    ],
+    "link": "https://www.snitch.co.in/products/regular-fit-washed-zipper-100-cotton-jacket-4jk007-03",
+    "gender": "men"
+  },
+  {
+    "id": "btm-013",
+    "name": "Black Straight Fit Jeans",
+    "brand": "Snitch",
+    "category": "bottom",
+    "price": 1999,
+    "image": "https://cdn.shopify.com/s/files/1/0420/7073/7058/files/1_cca74301-5d5c-4e58-9a96-d2a3fa24e724.jpg?v=1790858393&width=800",
+    "color": "#1C1C1C",
+    "style": [
+      "straight"
+    ],
+    "link": "https://www.snitch.co.in/products/straight-fit-denim-jeans-4je054-03",
+    "gender": "men"
+  },
+  {
+    "id": "btm-014",
+    "name": "Straight Fit White Plus Size Jeans",
+    "brand": "Snitch",
+    "category": "bottom",
+    "price": 2299,
+    "image": "https://cdn.shopify.com/s/files/1/0420/7073/7058/files/1_264b02b1-71b7-47e3-be48-4bed2ff46396.jpg?v=1790790897&width=800",
+    "color": "#F5F5F2",
+    "style": [
+      "straight"
+    ],
+    "link": "https://www.snitch.co.in/products/straight-fit-denim-jeans-4bje009-01",
+    "gender": "men"
+  },
+  {
+    "id": "btm-015",
+    "name": "Black Baggy Jeans",
+    "brand": "Snitch",
+    "category": "bottom",
+    "price": 2099,
+    "image": "https://cdn.shopify.com/s/files/1/0420/7073/7058/files/1_78702145-19b8-4b90-9dbc-948c22fe23d5.jpg?v=1791463395&width=800",
+    "color": "#1C1C1C",
+    "style": [
+      "baggy"
+    ],
+    "link": "https://www.snitch.co.in/products/denim-baggy-jeans-4je138-04",
+    "gender": "men"
+  },
+  {
+    "id": "btm-016",
+    "name": "Green Baggy Stretch Chinos",
+    "brand": "Snitch",
+    "category": "bottom",
+    "price": 1499,
+    "image": "https://cdn.shopify.com/s/files/1/0420/7073/7058/files/1_2ff12f25-389d-40c8-b722-5702dffb8f4d.jpg?v=1774867604&width=800",
+    "color": "#3E7A4A",
+    "style": [
+      "baggy",
+      "chinos"
+    ],
+    "link": "https://www.snitch.co.in/products/baggy-washed-stretch-chinos-4ch005-04",
+    "gender": "men"
+  },
+  {
+    "id": "btm-017",
+    "name": "Olive Relaxed Fit Drawstring Trousers",
+    "brand": "Snitch",
+    "category": "bottom",
+    "price": 1499,
+    "image": "https://cdn.shopify.com/s/files/1/0420/7073/7058/files/1_6644b650-b0e5-48c7-b9e9-2cd8fb31f61f.jpg?v=1790592803&width=800",
+    "color": "#6B6B3A",
+    "style": [
+      "relaxed"
+    ],
+    "link": "https://www.snitch.co.in/products/olive-textured-trousers-4tr0001-01",
+    "gender": "men"
+  },
+  {
+    "id": "btm-018",
+    "name": "Beige Relaxed Fit Drawstring Trousers",
+    "brand": "Snitch",
+    "category": "bottom",
+    "price": 1499,
+    "image": "https://cdn.shopify.com/s/files/1/0420/7073/7058/files/1_068e9e3b-180b-4a02-abbe-66c82c91a03f.jpg?v=1790592806&width=800",
+    "color": "#D9C7A8",
+    "style": [
+      "relaxed"
+    ],
+    "link": "https://www.snitch.co.in/products/beige-textured-trousers-4tr0001-02",
+    "gender": "men"
+  },
+  {
+    "id": "top-024",
+    "name": "Alpha™ Shirt - Cool Graphic Printed Black Shirt - Soft 100% Cotton",
+    "brand": "Style Union",
+    "category": "top",
+    "price": 599,
+    "image": "https://cdn.shopify.com/s/files/1/0623/4754/2777/files/EXPS00005BLACK_1.jpg?v=1740665077&width=800",
+    "color": "#1C1C1C",
+    "style": [
+      "cotton",
+      "printed",
+      "graphic"
+    ],
+    "link": "https://www.styleunion.in/products/regular-fit-printed-shirt-exps00005",
+    "gender": "men"
+  },
+  {
+    "id": "top-025",
+    "name": "Black Ember Stripe Rugby Polo",
+    "brand": "Bonkers Corner",
+    "category": "top",
+    "price": 1399,
+    "image": "https://cdn.shopify.com/s/files/1/0653/0541/1684/files/BlackEmberStripeRugbyPolo_2.jpg?v=1784714195&width=800",
+    "color": "#1C1C1C",
+    "style": [
+      "polo"
+    ],
+    "link": "https://www.bonkerscorner.com/products/black-ember-stripe-rugby-polo",
+    "gender": "men"
+  },
+  {
+    "id": "top-026",
+    "name": "Navy Club Stripe Polo",
+    "brand": "Bonkers Corner",
+    "category": "top",
+    "price": 1099,
+    "image": "https://cdn.shopify.com/s/files/1/0653/0541/1684/files/NavyClubStripePolo_7.jpg?v=1782900242&width=800",
+    "color": "#1F2A44",
+    "style": [
+      "polo"
+    ],
+    "link": "https://www.bonkerscorner.com/products/navy-club-stripe-polo",
+    "gender": "men"
+  },
+  {
+    "id": "btm-019",
+    "name": "Hyper Blue Loose Fit Joggers",
+    "brand": "Bonkers Corner",
+    "category": "bottom",
+    "price": 1299,
+    "image": "https://cdn.shopify.com/s/files/1/0653/0541/1684/files/HyperBlueLooseFitJoggers_3.jpg?v=1784803400&width=800",
+    "color": "#3B5FA8",
+    "style": [],
+    "link": "https://www.bonkerscorner.com/products/hyper-blue-loose-fit-joggers",
+    "gender": "men"
+  },
+  {
+    "id": "btm-020",
+    "name": "Hustle The Untammed Black Joggers",
+    "brand": "Bonkers Corner",
+    "category": "bottom",
+    "price": 1599,
+    "image": "https://cdn.shopify.com/s/files/1/0653/0541/1684/files/TheUntammedBlackJoggers_3.jpg?v=1789389353&width=800",
+    "color": "#1C1C1C",
+    "style": [],
+    "link": "https://www.bonkerscorner.com/products/the-untammed-black-joggers-1",
+    "gender": "men"
+  },
+  {
+    "id": "top-027",
+    "name": "Knitted Plus Size Essential Sweater",
+    "brand": "Snitch",
+    "category": "top",
+    "price": 1999,
+    "image": "https://cdn.shopify.com/s/files/1/0420/7073/7058/files/2_e2c9e33b-49fc-4108-b47e-eaeb9d63a6c5.jpg?v=1788850709&width=800",
+    "color": "#C9E08D",
+    "style": [
+      "knit"
+    ],
+    "link": "https://www.snitch.co.in/products/regular-fit-lime-green-sweater-4bsw0004-01",
+    "gender": "men"
+  },
+  {
+    "id": "top-028",
+    "name": "Regular Fit Textured Crew Neck Sweater",
+    "brand": "Snitch",
+    "category": "top",
+    "price": 1699,
+    "image": "https://cdn.shopify.com/s/files/1/0420/7073/7058/files/1_00508b7a-9e23-4a59-899a-6062c1786606.jpg?v=1791886408&width=800",
+    "color": "#C1B7B2",
+    "style": [
+      "knit",
+      "regular"
+    ],
+    "link": "https://www.snitch.co.in/products/textured-regular-fit-sweater-4sw0011-02",
+    "gender": "men"
+  },
+  {
+    "id": "top-029",
+    "name": "Cable Knit Regular Fit Sweater",
+    "brand": "Snitch",
+    "category": "top",
+    "price": 1699,
+    "image": "https://cdn.shopify.com/s/files/1/0420/7073/7058/files/1_ca3f035b-04c9-4a48-a94f-bfb227499308.jpg?v=1790592783&width=800",
+    "color": "#1E3A76",
+    "style": [
+      "knit",
+      "regular"
+    ],
+    "link": "https://www.snitch.co.in/products/cable-knit-regular-fit-sweater-4sw0046-02",
+    "gender": "men"
+  },
+  {
+    "id": "top-030",
+    "name": "Textured Regular Fit Sweater",
+    "brand": "Snitch",
+    "category": "top",
+    "price": 1699,
+    "image": "https://cdn.shopify.com/s/files/1/0420/7073/7058/files/1_3a8311f9-bcf0-45e3-9121-891032b675b0.jpg?v=1789643502&width=800",
+    "color": "#8D999A",
+    "style": [
+      "knit",
+      "regular"
+    ],
+    "link": "https://www.snitch.co.in/products/textured-regular-fit-sweater-4sw0046-01",
+    "gender": "men"
   }
 ]

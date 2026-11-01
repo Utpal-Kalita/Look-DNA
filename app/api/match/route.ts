@@ -28,6 +28,7 @@ const requestSchema = z.object({
     .nullable(),
   budget: z.number().int().min(100).max(1_000_000),
   exclude: z.array(z.string().max(40)).max(200).optional(),
+  shopFor: z.enum(["women", "men"]).optional(),
 });
 
 export async function POST(request: Request): Promise<NextResponse> {

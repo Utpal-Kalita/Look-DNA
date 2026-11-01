@@ -74,6 +74,7 @@ for (const [index, row] of rows.entries()) {
     color: color.toUpperCase(),
     style: (row.style || "").split("|").map((tag) => tag.trim().toLowerCase()).filter(Boolean),
     link: row.link.trim(),
+    gender: ["men", "women", "unisex"].includes((row.gender || "").trim()) ? row.gender.trim() : "women",
   });
 }
 

@@ -10,6 +10,7 @@ import { CLEAR_MATCHES, useFlow } from "@/app/components/FlowProvider";
 import { cropDataUrl, dataUrlToBlob } from "@/app/components/image-utils";
 import { RetakeBanner } from "@/app/components/RetakeBanner";
 import { StepHeader } from "@/app/components/StepHeader";
+import type { ShopFor } from "@/lib/types";
 
 type Status =
   | { kind: "idle" }
@@ -23,6 +24,7 @@ export default function SelfiePage() {
   const { state, update } = useFlow();
   const [selfie, setSelfie] = useState<string | null>(state.selfie);
   const [budget, setBudget] = useState<number>(state.budget);
+  const [shopFor, setShopFor] = useState<ShopFor>(state.shopFor);
   const [status, setStatus] = useState<Status>(
     state.retakeMessage ? { kind: "retake", message: state.retakeMessage } : { kind: "idle" },
   );
@@ -75,7 +77,8 @@ export default function SelfiePage() {
       // A new selfie invalidates results that were computed from the old one.
       ...(selfieChanged ? { userTone: null, tryOn: null, tryOnFor: null } : {}),
       // Adapted shades depend on the tone, and matches on the budget.
-      ...(selfieChanged || budget !== state.budget ? CLEAR_MATCHES : {}),
+      shopFor,
+      ...(selfieChanged || budget !== state.budget || shopFor !== state.shopFor ? CLEAR_MATCHES : {}),
     });
     router.push("/dna");
   }
@@ -108,6 +111,26 @@ export default function SelfiePage() {
           <RetakeBanner tone="error" message={status.message} />
         </div>
       ) : null}
+
+      <fieldset className="mt-6">
+        <legend className="text-sm font-medium">Shop for</legend>
+        <div className="mt-2 grid grid-cols-2 gap-2" role="radiogroup">
+          {(["women", "men"] as const).map((option) => (
+            <button
+              key={option}
+              type="button"
+              role="radio"
+              aria-checked={shopFor === option}
+              onClick={() => setShopFor(option)}
+              className={`border py-3 text-sm font-medium ${
+                shopFor === option ? "border-accent bg-accent text-white" : "border-blush bg-white"
+              }`}
+            >
+              {option === "women" ? "Women" : "Men"}
+            </button>
+          ))}
+        </div>
+      </fieldset>
 
       <div className="mt-6">
         <BudgetInput value={budget} onChange={setBudget} />
