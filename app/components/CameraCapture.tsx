@@ -104,13 +104,13 @@ export function CameraCapture({
           <img src={value} alt="Your selfie" className="h-full w-full object-cover" />
         ) : (
           <div className="flex h-full flex-col items-center justify-center gap-2 p-6 text-center text-sm text-muted">
-            <p>Face the camera in soft, even light.</p>
-            <p>No sunglasses, one face only.</p>
+            <p>Stand back so you fit from head to at least your hips.</p>
+            <p>Face the camera in soft, even light, no sunglasses. Prop your phone up or ask a friend.</p>
           </div>
         )}
         {cameraOn ? (
           <div
-            className="pointer-events-none absolute inset-[15%_20%] rounded-[50%] border-2 border-white/70"
+            className="pointer-events-none absolute inset-[5%_22%_0_22%] border-2 border-b-0 border-white/70"
             aria-hidden
           />
         ) : null}

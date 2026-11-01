@@ -49,7 +49,8 @@ export type QualityIssue =
   | "too_blurry"
   | "too_small"
   | "face_too_small"
-  | "face_not_centered";
+  | "face_not_centered"
+  | "too_close";
 
 export interface QualityResult {
   pass: boolean;

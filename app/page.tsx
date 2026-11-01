@@ -5,7 +5,7 @@ import "./landing.css";
 
 const STEPS = [
   { title: "Drop a screenshot", body: "Any outfit or makeup look from Instagram, Pinterest or a magazine." },
-  { title: "Add a selfie and budget", body: "A quick check makes sure the photo is bright, sharp and shows one face." },
+  { title: "Add a photo and budget", body: "You from head to hips, face visible. A quick check makes sure it’s bright and sharp." },
   { title: "Read the Look DNA", body: "Each garment and shade in the look, with its colour and style." },
   { title: "Adapt it to you", body: "Your skin tone is read, and each makeup shade is tuned to your undertone, with a reason." },
   { title: "See it on you", body: "Virtual try-on puts the matched outfit and your adapted lip shade on your selfie." },

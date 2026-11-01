@@ -77,8 +77,8 @@ export default function SelfiePage() {
     <>
       <StepHeader
         step={2}
-        title="Now, a selfie"
-        subtitle="We use it to read your skin tone and show the look on you."
+        title="Now, a photo of you"
+        subtitle="Head to hips, facing the camera. Your face gives us your skin tone; your body lets us dress you."
       />
 
       <CameraCapture value={selfie} onCapture={onCapture} disabled={checking} />
