@@ -191,3 +191,15 @@ describe("isSelfieProblem", () => {
     expect(isSelfieProblem("Insufficient units")).toBe(false);
   });
 });
+
+describe("head tilt correction", () => {
+  it("levels part of the measured tilt and reads YouCam's direction", async () => {
+    const { levelRotation, tiltRetryRotation } = await import("@/lib/face-crop");
+    expect(levelRotation(15.6)).toBeCloseTo(-9.36, 1);
+    expect(levelRotation(-30)).toBe(10);
+    expect(levelRotation(1)).toBe(0);
+    expect(tiltRetryRotation("The head is tilted too far to the right for accurate analysis. Slightly tilt head to the left and try again.")).toBe(-7);
+    expect(tiltRetryRotation("The head is tilted too far to the left.")).toBe(7);
+    expect(tiltRetryRotation("The face in the input image is too small.")).toBeNull();
+  });
+});

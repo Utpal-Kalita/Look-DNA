@@ -19,6 +19,8 @@ export interface FaceBox {
   y: number;
   width: number;
   height: number;
+  /** Eye centres (image left, image right), when the detector gives them. */
+  eyes?: [[number, number], [number, number]];
 }
 
 type FaceDetector = (
@@ -198,7 +200,12 @@ async function detectFacesInPhoto(
       }
       const found = await detectFaces(crop, side, side);
       if (found.length > 0) {
-        return found.map((box) => ({ ...box, x: box.x + left, y: box.y + top }));
+        return found.map((box) => ({
+          ...box,
+          x: box.x + left,
+          y: box.y + top,
+          eyes: box.eyes?.map(([ex, ey]) => [ex + left, ey + top]) as FaceBox["eyes"],
+        }));
       }
     }
   }
@@ -212,7 +219,7 @@ async function detectFacesInPhoto(
 export async function locateFaceCrop(
   bytes: Buffer,
   detectFaces: FaceDetector = detectFaceBoxes,
-): Promise<{ left: number; top: number; width: number; height: number } | null> {
+): Promise<{ left: number; top: number; width: number; height: number; roll: number } | null> {
   const { rgb, width, height, sourceWidth, sourceHeight } = await prepareImage(bytes);
   const faces = await detectFacesInPhoto(rgb, width, height, detectFaces);
   const face = faces[0];
@@ -228,7 +235,16 @@ export async function locateFaceCrop(
   const side = Math.round(Math.min(size, sourceWidth, sourceHeight));
   const left = Math.round(Math.min(Math.max(centerX - side / 2, 0), sourceWidth - side));
   const top = Math.round(Math.min(Math.max(centerY - side / 2, 0), sourceHeight - side));
-  return { left, top, width: side, height: side };
+  return { left, top, width: side, height: side, roll: headRoll(face) };
+}
+
+/** Head tilt in degrees from the eye line; positive means the image-right eye is lower. */
+export function headRoll(face: FaceBox): number {
+  if (!face.eyes) {
+    return 0;
+  }
+  const [[x1, y1], [x2, y2]] = face.eyes;
+  return (Math.atan2(y2 - y1, x2 - x1) * 180) / Math.PI;
 }
 
 /** Issues an auto crop around the person can fix. */
@@ -425,7 +441,13 @@ async function detectFaceBoxes(
     return faces.map((face) => {
       const [x1, y1] = face.topLeft as [number, number];
       const [x2, y2] = face.bottomRight as [number, number];
-      return { x: x1, y: y1, width: x2 - x1, height: y2 - y1 };
+      const marks = face.landmarks as [number, number][] | undefined;
+      // BlazeFace landmarks: the first two are the eyes.
+      const eyes =
+        marks && marks.length >= 2
+          ? ([marks[0], marks[1]].sort((a, b) => a[0] - b[0]) as [[number, number], [number, number]])
+          : undefined;
+      return { x: x1, y: y1, width: x2 - x1, height: y2 - y1, eyes };
     });
   } finally {
     input.dispose();
