@@ -38,6 +38,8 @@ export interface FlowState {
   matchResult: MatchResponse | null;
   /** Product ids the user swapped away from in the cart. */
   excluded: string[];
+  /** Why a later step asked for a new selfie, shown on the selfie screen. */
+  retakeMessage: string | null;
 }
 
 export const DEFAULT_BUDGET = 3000;
@@ -54,6 +56,7 @@ const INITIAL_STATE: FlowState = {
   tryOnFor: null,
   matchResult: null,
   excluded: [],
+  retakeMessage: null,
 };
 
 /** Clears everything computed from the inspiration image. */
@@ -73,6 +76,7 @@ export const CLEAR_MATCHES: Partial<FlowState> = {
   total: 0,
   matchResult: null,
   excluded: [],
+  retakeMessage: null,
 };
 
 const STORAGE_KEY = "look-dna:flow:v1";

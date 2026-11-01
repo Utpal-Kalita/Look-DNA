@@ -68,10 +68,7 @@ export default function TryOnPage() {
         message:
           apiError?.message ??
           "The try-on could not be created. Please try again.",
-        retakeSelfie:
-          apiError?.code === "FACE_NOT_FOUND" ||
-          apiError?.code === "IMAGE_TOO_SMALL" ||
-          apiError?.code === "INVALID_IMAGE",
+        retakeSelfie: ["FACE_NOT_FOUND", "SELFIE_RETAKE", "IMAGE_TOO_SMALL", "INVALID_IMAGE"].includes(apiError?.code ?? ""),
       });
     } finally {
       inFlight.current = null;
@@ -146,6 +143,9 @@ export default function TryOnPage() {
             </button>
             <Link
               href={status.retakeSelfie ? "/selfie" : "/cart"}
+              onClick={() => {
+                if (status.retakeSelfie) update({ retakeMessage: status.message, userTone: null });
+              }}
               className="rounded-xl border border-blush bg-white py-3 text-center text-sm font-medium"
             >
               {status.retakeSelfie ? "Retake selfie" : "Skip to cart"}
