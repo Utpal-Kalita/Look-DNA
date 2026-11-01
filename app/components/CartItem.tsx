@@ -35,6 +35,9 @@ export function CartItem({
           {categoryLabel(match.category)}, {product.brand}
         </p>
         <p className="truncate text-sm font-medium">{product.name}</p>
+        {product.source === "live" ? (
+          <p className="text-[11px] text-muted">Live from {product.brand}, current price</p>
+        ) : null}
         <p className="text-sm font-semibold">{formatInr(product.price)}</p>
         <div className="mt-1">
           <MatchScore score={match.score} />

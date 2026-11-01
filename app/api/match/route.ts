@@ -4,10 +4,12 @@ import { z } from "zod";
 import { loadCatalog } from "@/lib/catalog";
 import { AppError } from "@/lib/errors";
 import { routeErrorResponse } from "@/lib/http";
+import { liveSearchEnabled, searchLiveProducts } from "@/lib/live-search";
 import { matchLook } from "@/lib/matching";
 import { enforceRateLimit } from "@/lib/rate-limit";
 
 export const runtime = "nodejs";
+export const maxDuration = 30;
 
 const hex = z.string().regex(/^#[0-9a-fA-F]{6}$/);
 
@@ -52,7 +54,12 @@ export async function POST(request: Request): Promise<NextResponse> {
     }
 
     const catalog = await loadCatalog();
-    return NextResponse.json(matchLook(parsed.data, catalog));
+    // Live store search widens the pool beyond the curated catalog; any
+    // store that fails or is slow is skipped, so matching never waits long.
+    const live = liveSearchEnabled()
+      ? await searchLiveProducts(parsed.data.items, parsed.data.shopFor ?? "women").catch(() => [])
+      : [];
+    return NextResponse.json(matchLook(parsed.data, [...catalog, ...live]));
   } catch (error) {
     return routeErrorResponse(error);
   }

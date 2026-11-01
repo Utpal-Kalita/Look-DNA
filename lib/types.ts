@@ -13,6 +13,8 @@ export interface UserTone {
 }
 
 export interface ProductMatch {
+  /** Product image, set for live-search products so try-on can use them. */
+  image?: string;
   category: string;
   productId: string;
   adaptedColor: string;
@@ -41,6 +43,8 @@ export interface CatalogItem {
   link: string;
   /** Who the product is cut for; unisex shows in both sections. */
   gender?: ShopFor | "unisex";
+  /** "live" when found by live store search rather than the curated catalog. */
+  source?: "live";
 }
 
 export type QualityIssue =
