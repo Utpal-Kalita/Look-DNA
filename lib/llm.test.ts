@@ -72,11 +72,22 @@ describe("extractLookItems with Gemini", () => {
     expect(items).toHaveLength(1);
     expect(generateContent).toHaveBeenCalledTimes(2);
     expect(generateContent.mock.calls[1][0].config.thinkingConfig).toBeUndefined();
+    expect(generateContent.mock.calls[1][0].model).toBe("gemini-flash-lite-latest");
   });
 
   it("returns a friendly 422 when the image is blocked", async () => {
     generateContent.mockResolvedValue({ text: undefined, promptFeedback: { blockReason: "SAFETY" } });
     await expect(extractLookItems(image)).rejects.toMatchObject({ status: 422, code: "EXTRACTION_REFUSED" });
+  });
+
+  it("falls back to the lite model when the main one is overloaded", async () => {
+    const overloaded = Object.assign(new Error("high demand"), { status: 503 });
+    generateContent
+      .mockRejectedValueOnce(overloaded)
+      .mockResolvedValueOnce(reply([{ category: "top", color: "#C8A2C8", style: [], finish: "none" }]));
+    const items = await extractLookItems(image);
+    expect(items).toHaveLength(1);
+    expect(generateContent.mock.calls.map((c) => c[0].model)).toEqual(["gemini-flash-latest", "gemini-flash-lite-latest"]);
   });
 
   it("uses GEMINI_MODEL when set", async () => {

@@ -13,6 +13,8 @@ import { normalizeHex } from "@/lib/undertone";
 const CLAUDE_MODEL = "claude-opus-5-5";
 /** Override with GEMINI_MODEL, e.g. a pinned version instead of the alias. */
 const DEFAULT_GEMINI_MODEL = "gemini-flash-latest";
+/** Used when the main model is overloaded (503) or slow. Override with GEMINI_FALLBACK_MODEL. */
+const DEFAULT_GEMINI_FALLBACK_MODEL = "gemini-flash-lite-latest";
 
 const extractionSchema = z.object({
   items: z.array(
@@ -69,12 +71,21 @@ export async function extractLookItems(image: ImageUpload): Promise<LookItem[]> 
     );
   }
 
-  // One retry, per the PRD, for transient or unparseable responses.
+  // Gemini: main model, then the lighter fallback (Google returns 503 "high
+  // demand" at peaks), then the main model once more without thinking hints.
+  const geminiPlan = [
+    { model: process.env.GEMINI_MODEL || DEFAULT_GEMINI_MODEL, lowThinking: true },
+    { model: process.env.GEMINI_FALLBACK_MODEL || DEFAULT_GEMINI_FALLBACK_MODEL, lowThinking: false },
+    { model: process.env.GEMINI_MODEL || DEFAULT_GEMINI_MODEL, lowThinking: false },
+  ];
+  // Claude keeps the PRD's single retry.
+  const attempts = provider === "gemini" ? geminiPlan.length : 2;
+
   let lastError: unknown;
-  for (let attempt = 0; attempt < 2; attempt += 1) {
+  for (let attempt = 0; attempt < attempts; attempt += 1) {
     try {
       return provider === "gemini"
-        ? await requestGemini(image, attempt === 0)
+        ? await requestGemini(image, geminiPlan[attempt].model, geminiPlan[attempt].lowThinking)
         : await requestClaude(image);
     } catch (error) {
       lastError = error;
@@ -109,13 +120,12 @@ function isRetryable(error: unknown): boolean {
 }
 
 /** Each Gemini attempt must finish well inside the 60 s function limit. */
-const GEMINI_ATTEMPT_TIMEOUT_MS = 25_000;
+const GEMINI_ATTEMPT_TIMEOUT_MS = 17_000;
 
-async function requestGemini(image: ImageUpload, lowThinking: boolean): Promise<LookItem[]> {
+async function requestGemini(image: ImageUpload, model: string, lowThinking: boolean): Promise<LookItem[]> {
   geminiClient ??= new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
   const { $schema: _ignored, ...jsonSchema } = z.toJSONSchema(extractionSchema) as Record<string, unknown>;
 
-  const model = process.env.GEMINI_MODEL || DEFAULT_GEMINI_MODEL;
   const started = Date.now();
   const response = await geminiClient.models.generateContent({
     model,
