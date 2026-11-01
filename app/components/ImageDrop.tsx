@@ -74,9 +74,6 @@ export function ImageDrop({
           <img src={value} alt="Your inspiration" className="h-full w-full object-cover" />
         ) : (
           <span className="flex flex-col items-center gap-2 p-6 text-center text-sm text-muted">
-            <span className="text-4xl" aria-hidden>
-              ✨
-            </span>
             <span className="font-medium text-ink">
               {busy ? "Reading image…" : "Tap to upload a look you love"}
             </span>

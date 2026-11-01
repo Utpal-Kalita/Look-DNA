@@ -26,13 +26,17 @@ describe("adaptShade", () => {
 });
 
 describe("matchLook", () => {
-  it("picks the lilac knit top as the best top", () => {
-    const result = matchLook({ items: look, userTone: null, budget: 100000 }, products);
-    const top = result.matches.find((m) => m.category === "top");
-    expect(top?.productId).toBe("top-001");
-    expect(top?.score).toBeGreaterThan(0.9);
-    expect(top?.score).toBeLessThan(1);
-    expect(result.products[top!.productId].name).toContain("Lilac");
+  it("picks the closest top by colour and style, and never scores 100%", () => {
+    const fixture: CatalogItem[] = [
+      { id: "t-lilac", name: "Lilac knit", brand: "A", category: "top", price: 900, image: "/a.png", color: "#C8A2C8", style: ["oversized", "knit"], link: "https://example.com/a" },
+      { id: "t-black", name: "Black tee", brand: "B", category: "top", price: 500, image: "/b.png", color: "#1C1C1C", style: ["fitted"], link: "https://example.com/b" },
+    ];
+    const result = matchLook({ items: [look[0]], userTone: null, budget: 100000 }, fixture);
+    const top = result.matches[0];
+    expect(top.productId).toBe("t-lilac");
+    expect(top.score).toBeGreaterThan(0.9);
+    expect(top.score).toBeLessThan(1);
+    expect(result.products["t-lilac"].name).toBe("Lilac knit");
   });
 
   it("stays under budget for every budget from 500 to 10000", () => {

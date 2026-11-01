@@ -10,7 +10,7 @@ export function BudgetBar({ total, budget }: { total: number; budget: number }) 
         <span className="text-xl font-semibold">{formatInr(total)}</span>
       </div>
       <div
-        className="mt-2 h-2 overflow-hidden rounded-full bg-blush"
+        className="mt-2 h-2 overflow-hidden rounded-none bg-blush"
         role="meter"
         aria-label="Budget used"
         aria-valuemin={0}
@@ -18,7 +18,7 @@ export function BudgetBar({ total, budget }: { total: number; budget: number }) 
         aria-valuenow={total}
       >
         <div
-          className={`h-full rounded-full ${over ? "bg-red-600" : "bg-accent"}`}
+          className={`h-full rounded-none ${over ? "bg-red-600" : "bg-accent"}`}
           style={{ width: `${ratio * 100}%` }}
         />
       </div>

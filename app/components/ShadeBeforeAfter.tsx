@@ -18,7 +18,7 @@ export function ShadeBeforeAfter({
 }) {
   return (
     <li className="rounded-2xl bg-white p-4 shadow-sm">
-      <p className="text-xs font-medium uppercase tracking-wider text-muted">{categoryLabel(category)}</p>
+      <p className="text-xs font-medium  text-muted">{categoryLabel(category)}</p>
       <div className="mt-2 flex items-center gap-3">
         <div className="flex flex-col items-center gap-1">
           <Swatch color={original} size="lg" label={`Original shade ${original}`} />

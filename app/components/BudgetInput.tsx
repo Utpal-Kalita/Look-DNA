@@ -54,7 +54,7 @@ export function BudgetInput({
             type="button"
             onClick={() => onChange(preset)}
             aria-pressed={value === preset}
-            className={`rounded-full border px-3 py-1.5 text-sm ${
+            className={`rounded-none border px-3 py-1.5 text-sm ${
               value === preset
                 ? "border-accent bg-accent text-white"
                 : "border-blush bg-white"

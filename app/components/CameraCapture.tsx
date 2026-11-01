@@ -104,9 +104,6 @@ export function CameraCapture({
           <img src={value} alt="Your selfie" className="h-full w-full object-cover" />
         ) : (
           <div className="flex h-full flex-col items-center justify-center gap-2 p-6 text-center text-sm text-muted">
-            <span className="text-4xl" aria-hidden>
-              🤳
-            </span>
             <p>Face the camera in soft, even light.</p>
             <p>No sunglasses, one face only.</p>
           </div>

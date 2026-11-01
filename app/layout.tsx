@@ -1,9 +1,23 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
+import { Bricolage_Grotesque, Source_Serif_4 } from "next/font/google";
 
 import { FlowProvider } from "@/app/components/FlowProvider";
 
 import "./globals.css";
+
+const display = Bricolage_Grotesque({
+  subsets: ["latin"],
+  axes: ["opsz", "wdth"],
+  variable: "--font-bricolage",
+  display: "swap",
+});
+const body = Source_Serif_4({
+  subsets: ["latin"],
+  axes: ["opsz"],
+  variable: "--font-source-serif",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Look DNA",
@@ -14,17 +28,15 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#faf6f2",
+  themeColor: "#f6f4ef",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${display.variable} ${body.variable}`}>
       <body className="min-h-dvh">
         <FlowProvider>
-          <main className="mx-auto flex min-h-dvh w-full max-w-md flex-col px-4 pb-8 pt-6">
-            {children}
-          </main>
+          {children}
         </FlowProvider>
       </body>
     </html>

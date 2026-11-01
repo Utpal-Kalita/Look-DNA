@@ -1,22 +1,103 @@
+/* Hallmark · shape: kept · genre: editorial · theme: Editorial (deal 1/3, seed fashion-beauty-shopping-tool-3d00·4db2df42·2026-11-01·r0) · redesign: restyle · scope: app
+ * hero: kept · nav: kept · footer: kept · imagery: the product · signature: kept
+ * axes: light/display-condensed/chromatic-green · posture: restrained · contrast: pass · fold: pass · v2.0.0 */
+/* Hallmark · pre-emit critique: P4 H3 E4 S3 R4 V4 · weakest: H, the six screens keep their phone layout; only the system changes */
 @import "tailwindcss";
 
+/* Editorial system for the six app screens. The utility names (ink, muted,
+   cream, blush, accent) are kept so no screen's markup or logic changes. */
 @theme {
-  --color-ink: #2b1d1a;
-  --color-muted: #7a6560;
-  --color-cream: #faf6f2;
-  --color-blush: #f3e4dc;
-  --color-accent: #a8473f;
-  --color-accent-dark: #8a3832;
+  --color-ink: oklch(16% 0.012 280);
+  --color-muted: oklch(48% 0.010 75);
+  --color-cream: oklch(97% 0.007 86);
+  --color-blush: oklch(91% 0.012 84);
+  --color-white: oklch(94% 0.010 86);
+  --color-accent: oklch(16% 0.012 280);
+  --color-accent-dark: oklch(29% 0.011 280);
+  --color-rule: oklch(85% 0.009 85);
+  --color-rule-2: oklch(64% 0.010 80);
+  --color-signal: oklch(49% 0.130 152);
+  --color-focus: oklch(52% 0.135 152);
+
+  --font-display: var(--font-bricolage), ui-sans-serif, sans-serif;
+  --font-body: var(--font-source-serif), ui-serif, Georgia, serif;
+
+  --radius-xs: 0;
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
+  --radius-2xl: 0;
+  --radius-3xl: 0;
+  --shadow-sm: none;
+  --shadow: none;
+  --shadow-md: none;
+  --shadow-lg: none;
+  --inset-shadow-sm: none;
 }
 
 html,
 body {
+  overflow-x: clip;
   background: var(--color-cream);
   color: var(--color-ink);
 }
 
 body {
-  font-family:
-    ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: var(--font-body);
+  font-optical-sizing: auto;
   -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-variation-settings: "wdth" 75, "opsz" 96;
+  letter-spacing: -0.012em;
+  overflow-wrap: break-word;
+  min-width: 0;
+}
+
+/* Controls, labels, prices and captions use the label face. */
+button,
+input,
+select,
+label,
+legend,
+a,
+figcaption,
+.label {
+  font-family: var(--font-display);
+  font-variation-settings: "opsz" 12;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--color-signal) 22%, transparent);
+}
+
+/* Wells read as paper steps under a hairline, never raised cards. */
+.bg-white {
+  border-top: 1px solid var(--color-rule-2);
+}
+
+button:active,
+a:active {
+  filter: brightness(0.92);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
