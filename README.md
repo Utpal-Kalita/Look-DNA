@@ -4,7 +4,7 @@ Look DNA turns a fashion or beauty inspiration image into a complete, purchasabl
 
 The project is being built for the **YouCam API Skin AI & eCommerce VTO Hackathon**, in the **eCommerce VTO** track.
 
-> **Project status:** Planning and scaffolding. The repository currently contains the product requirements and implementation guidelines; the application source has not been added yet.
+> **Project status:** In progress. Done: quality, skin-tone and try-on API routes, the app shell (layout, Tailwind, flow context), and screens 2 (`/selfie`) and 5 (`/tryon`). Still to build: `/api/extract`, `/api/match`, `data/catalog.json`, and screens 1, 3, 4 and 6.
 
 ## Product Flow
 
