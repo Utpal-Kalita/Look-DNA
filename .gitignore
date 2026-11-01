@@ -1,0 +1,20 @@
+# dependencies
+/node_modules
+
+# Next.js
+/.next
+/out
+
+# tests
+/coverage
+
+# local environment variables
+.env*
+!.env.example
+
+# logs and OS files
+*.log
+.DS_Store
+
+# TypeScript
+*.tsbuildinfo
