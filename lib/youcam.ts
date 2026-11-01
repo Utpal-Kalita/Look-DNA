@@ -223,7 +223,11 @@ async function pollTask<T>(endpoint: string, taskId: string): Promise<T> {
     }
 
     if (task.task_status === "error") {
-      const detail = task.error_message ?? task.error ?? "unknown provider error";
+      const detail = String(task.error_message ?? task.error ?? "unknown provider error");
+      if (isSelfieProblem(detail)) {
+        // The photo itself needs retaking (pose, light, blur, face); pass on YouCam's tip.
+        throw new AppError(detail, 422, "SELFIE_RETAKE");
+      }
       throw new AppError(
         `YouCam could not process the image: ${detail}`,
         422,
@@ -334,4 +338,9 @@ function readPositiveInteger(value: string | undefined, fallback: number): numbe
 
 function sleep(milliseconds: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, milliseconds));
+}
+
+/** YouCam task errors that a new selfie fixes, as opposed to service faults. */
+export function isSelfieProblem(detail: string): boolean {
+  return /\b(face|faces|head|tilt|tilted|angle|frontal|pose|eyes?|lighting|too dark|too bright|blurr?y|occlu)/i.test(detail);
 }

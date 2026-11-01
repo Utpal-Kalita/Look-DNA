@@ -48,7 +48,7 @@ export default function AdaptPage() {
       setStatus({
         kind: "error",
         message: apiError?.message ?? "Something went wrong. Please try again.",
-        retakeSelfie: apiError?.code === "FACE_NOT_FOUND" || apiError?.code === "IMAGE_TOO_SMALL",
+        retakeSelfie: ["FACE_NOT_FOUND", "SELFIE_RETAKE", "IMAGE_TOO_SMALL", "INVALID_IMAGE"].includes(apiError?.code ?? ""),
       });
     } finally {
       running.current = false;
@@ -105,10 +105,17 @@ export default function AdaptPage() {
 
       {status.kind === "error" ? (
         <div className="space-y-3">
-          <RetakeBanner tone="error" message={status.message} />
+          <RetakeBanner tone={status.retakeSelfie ? "warning" : "error"} message={status.message} />
           <button
             type="button"
-            onClick={() => (status.retakeSelfie ? router.push("/selfie") : void run())}
+            onClick={() => {
+              if (status.retakeSelfie) {
+                update({ retakeMessage: status.message, userTone: null });
+                router.push("/selfie");
+              } else {
+                void run();
+              }
+            }}
             className="w-full rounded-xl bg-accent py-3 text-sm font-semibold text-white"
           >
             {status.retakeSelfie ? "Retake selfie" : "Try again"}

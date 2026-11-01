@@ -22,7 +22,9 @@ export default function SelfiePage() {
   const { state, update } = useFlow();
   const [selfie, setSelfie] = useState<string | null>(state.selfie);
   const [budget, setBudget] = useState<number>(state.budget);
-  const [status, setStatus] = useState<Status>({ kind: "idle" });
+  const [status, setStatus] = useState<Status>(
+    state.retakeMessage ? { kind: "retake", message: state.retakeMessage } : { kind: "idle" },
+  );
 
   const checking = status.kind === "checking";
   const canContinue = Boolean(selfie) && isValidBudget(budget) && !checking;
@@ -62,6 +64,7 @@ export default function SelfiePage() {
     update({
       selfie,
       budget,
+      retakeMessage: null,
       // A new selfie invalidates results that were computed from the old one.
       ...(selfieChanged ? { userTone: null, tryOn: null, tryOnFor: null } : {}),
       // Adapted shades depend on the tone, and matches on the budget.

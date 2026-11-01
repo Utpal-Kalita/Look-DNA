@@ -180,3 +180,14 @@ function jsonResponse(value: unknown): Response {
     headers: { "Content-Type": "application/json" },
   });
 }
+
+describe("isSelfieProblem", () => {
+  it("treats pose, lighting and face errors as a retake", async () => {
+    const { isSelfieProblem } = await import("@/lib/youcam");
+    expect(isSelfieProblem("The face is tilted too far downward for accurate analysis. Slightly tilt head upwards and try again.")).toBe(true);
+    expect(isSelfieProblem("No face was detected in the source image.")).toBe(true);
+    expect(isSelfieProblem("Lighting is too dark")).toBe(true);
+    expect(isSelfieProblem("Internal server error")).toBe(false);
+    expect(isSelfieProblem("Insufficient units")).toBe(false);
+  });
+});
