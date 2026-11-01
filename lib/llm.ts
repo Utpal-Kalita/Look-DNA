@@ -44,26 +44,47 @@ At most one item per category. If the image shows no fashion or makeup, return a
 let claudeClient: Anthropic | undefined;
 let geminiClient: GoogleGenAI | undefined;
 
-type Provider = "gemini" | "claude";
+/** Override with GROQ_MODEL. A Groq vision model with JSON mode (console.groq.com/docs/vision). */
+const DEFAULT_GROQ_MODEL = "qwen/qwen3.8-27b";
+const GROQ_URL = "https://api.groq.com/openai/v1/chat/completions";
+const GROQ_ATTEMPT_TIMEOUT_MS = 20_000;
+/** Stop starting new attempts after this, so the route ends inside the 60 s limit. */
+const EXTRACTION_DEADLINE_MS = 40_000;
+
+interface Attempt {
+  provider: "groq" | "gemini" | "claude";
+  run: () => Promise<LookItem[]>;
+}
 
 export function mockLlmEnabled(): boolean {
   return process.env.MOCK_LLM === "1";
 }
 
-/** Gemini when GEMINI_API_KEY is set, otherwise Claude when ANTHROPIC_API_KEY is set. */
-function selectProvider(): Provider | null {
+/**
+ * Every configured provider, in order: Groq, then Gemini, then Claude. A quota
+ * or outage at one provider falls through to the next.
+ */
+function plan(image: ImageUpload): Attempt[] {
+  const attempts: Attempt[] = [];
+  if (process.env.GROQ_API_KEY) {
+    const model = process.env.GROQ_MODEL || DEFAULT_GROQ_MODEL;
+    attempts.push({ provider: "groq", run: () => requestGroq(image, model) });
+    attempts.push({ provider: "groq", run: () => requestGroq(image, model) });
+  }
   if (process.env.GEMINI_API_KEY) {
-    return "gemini";
+    // Main model, then the lighter fallback (Google returns 503 "high demand" at peaks).
+    attempts.push({ provider: "gemini", run: () => requestGemini(image, process.env.GEMINI_MODEL || DEFAULT_GEMINI_MODEL, true) });
+    attempts.push({ provider: "gemini", run: () => requestGemini(image, process.env.GEMINI_FALLBACK_MODEL || DEFAULT_GEMINI_FALLBACK_MODEL, false) });
   }
   if (process.env.ANTHROPIC_API_KEY) {
-    return "claude";
+    attempts.push({ provider: "claude", run: () => requestClaude(image) });
   }
-  return null;
+  return attempts;
 }
 
 export async function extractLookItems(image: ImageUpload): Promise<LookItem[]> {
-  const provider = selectProvider();
-  if (!provider) {
+  const attempts = plan(image);
+  if (attempts.length === 0) {
     throw new AppError(
       "Look extraction is not configured on the server.",
       503,
@@ -71,35 +92,31 @@ export async function extractLookItems(image: ImageUpload): Promise<LookItem[]> 
     );
   }
 
-  // Gemini: main model, then the lighter fallback (Google returns 503 "high
-  // demand" at peaks), then the main model once more without thinking hints.
-  const geminiPlan = [
-    { model: process.env.GEMINI_MODEL || DEFAULT_GEMINI_MODEL, lowThinking: true },
-    { model: process.env.GEMINI_FALLBACK_MODEL || DEFAULT_GEMINI_FALLBACK_MODEL, lowThinking: false },
-    { model: process.env.GEMINI_MODEL || DEFAULT_GEMINI_MODEL, lowThinking: false },
-  ];
-  // Claude keeps the PRD's single retry.
-  const attempts = provider === "gemini" ? geminiPlan.length : 2;
-
+  const started = Date.now();
   let lastError: unknown;
-  for (let attempt = 0; attempt < attempts; attempt += 1) {
+  for (const [index, attempt] of attempts.entries()) {
+    if (index > 0 && Date.now() - started > EXTRACTION_DEADLINE_MS) {
+      break;
+    }
     try {
-      return provider === "gemini"
-        ? await requestGemini(image, geminiPlan[attempt].model, geminiPlan[attempt].lowThinking)
-        : await requestClaude(image);
+      return await attempt.run();
     } catch (error) {
       lastError = error;
-      console.warn(`extraction attempt ${attempt + 1} (${provider}) failed:`, error instanceof Error ? error.message : error);
+      console.warn(`extraction attempt ${index + 1} (${attempt.provider}) failed:`, error instanceof Error ? error.message : error);
       if (error instanceof AppError && error.status < 500) {
         throw error;
       }
-      if (!isRetryable(error)) {
-        break;
+      const next = attempts[index + 1];
+      // A non-retryable error (bad key, bad request) skips to the next provider.
+      if (!isRetryable(error) && next?.provider === attempt.provider) {
+        const other = attempts.findIndex((a, i) => i > index && a.provider !== attempt.provider);
+        if (other === -1) break;
+        attempts.splice(index + 1, other - index - 1);
       }
     }
   }
 
-  console.error(`Look extraction failed (${provider})`, lastError);
+  console.error("Look extraction failed", lastError);
   throw new AppError(
     "We could not read the look from this image. Please try again or use another image.",
     502,
@@ -107,12 +124,70 @@ export async function extractLookItems(image: ImageUpload): Promise<LookItem[]> 
   );
 }
 
+class GroqError extends Error {
+  constructor(message: string, readonly status: number) {
+    super(message);
+  }
+}
+
+/** Groq's OpenAI-compatible chat completions, JSON mode, image as a data URL. */
+async function requestGroq(image: ImageUpload, model: string): Promise<LookItem[]> {
+  const jpeg = await shrinkForModel(image.bytes);
+  const started = Date.now();
+  const response = await fetch(GROQ_URL, {
+    method: "POST",
+    headers: {
+      authorization: `Bearer ${process.env.GROQ_API_KEY}`,
+      "content-type": "application/json",
+    },
+    signal: AbortSignal.timeout(GROQ_ATTEMPT_TIMEOUT_MS),
+    body: JSON.stringify({
+      model,
+      temperature: 0.2,
+      response_format: { type: "json_object" },
+      messages: [
+        { role: "system", content: `${SYSTEM_PROMPT}\n\n${JSON_INSTRUCTIONS}` },
+        {
+          role: "user",
+          content: [
+            { type: "text", text: "Extract the Look DNA from this inspiration image. Reply with JSON only." },
+            { type: "image_url", image_url: { url: `data:image/jpeg;base64,${jpeg.toString("base64")}` } },
+          ],
+        },
+      ],
+    }),
+  });
+
+  const payload = (await response.json().catch(() => null)) as
+    | { choices?: { message?: { content?: string } }[]; error?: { message?: string } }
+    | null;
+  if (!response.ok) {
+    throw new GroqError(payload?.error?.message ?? `Groq returned ${response.status}`, response.status);
+  }
+  const text = payload?.choices?.[0]?.message?.content;
+  if (!text) {
+    throw new Error("Groq returned no content.");
+  }
+  console.info(`groq ${model} answered in ${Date.now() - started} ms`);
+  // Throws on malformed JSON or schema mismatch, which moves on to the next attempt.
+  const parsed = extractionSchema.parse(JSON.parse(stripFences(text)));
+  return cleanItems(parsed.items);
+}
+
+/** JSON mode needs the shape spelled out in the prompt. */
+const JSON_INSTRUCTIONS = `Reply with a JSON object of exactly this shape and nothing else:
+{"items": [{"category": "top" | "bottom" | "dress" | "outerwear" | "lipstick" | "eyeshadow" | "blush", "color": "#RRGGBB", "style": ["tag", ...], "finish": "matte" | "satin" | "gloss" | "shimmer" | "none"}]}`;
+
+function stripFences(text: string): string {
+  return text.replace(/^\s*```(?:json)?\s*/i, "").replace(/\s*```\s*$/, "").trim();
+}
+
 /** Client errors (bad key, bad request) will not succeed on retry; 429 and 5xx might. */
 function isRetryable(error: unknown): boolean {
   const status =
     error instanceof Anthropic.APIError
       ? error.status
-      : error instanceof GeminiApiError
+      : error instanceof GeminiApiError || error instanceof GroqError
         ? error.status
         : undefined;
   // 400 is retried once because the retry drops thinkingConfig, which a model may reject.
