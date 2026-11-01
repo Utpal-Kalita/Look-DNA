@@ -49,8 +49,8 @@ const COLOR_WORDS: [string, string][] = [
 ];
 
 const CATEGORY_NOUN: Record<string, { women: string; men: string; pattern: RegExp }> = {
-  top: { women: "top", men: "shirt", pattern: /\b(top|shirt|tee|t-shirt|polo|sweater|blouse|cardigan|sweatshirt|tank|cami)\b/i },
-  bottom: { women: "trousers", men: "trousers", pattern: /\b(pants?|trousers?|jeans|skirt|joggers|chinos|shorts|palazzos?|cargos?)\b/i },
+  top: { women: "top", men: "shirt", pattern: /\b(top|shirt|tee|t-shirt|polo|sweater|blouse|cardigan|sweatshirt|tank|cami|vest)\b/i },
+  bottom: { women: "trousers", men: "trousers", pattern: /\b(pants?|trousers?|jeans?|denims?|skirt|joggers|chinos|shorts|palazzos?|cargos?)\b/i },
   dress: { women: "dress", men: "dress", pattern: /\bdress\b/i },
   kurta: { women: "kurta", men: "kurta", pattern: /\b(kurta|kurti|suit|anarkali)\b/i },
   outerwear: { women: "jacket", men: "jacket", pattern: /\b(jacket|blazer|coat|overshirt|bomber|shacket|windcheater)\b/i },
@@ -91,9 +91,17 @@ export async function searchLiveProducts(items: LookItem[], shopFor: Section = "
 export function buildQuery(item: LookItem, category: LookCategory, shopFor: Section): string {
   const color = nearestColorWord(item.color);
   const styles = (item.style ?? []).map((s) => s.toLowerCase());
-  const noun = styles.find((s) => NOUN_STYLES.includes(s)) ?? CATEGORY_NOUN[category][shopFor];
-  const describer = styles.find((s) => !NOUN_STYLES.includes(s) && /^[a-z-]+$/.test(s));
-  return [color, describer, noun].filter(Boolean).join(" ").replace(/-/g, " ");
+  const noun =
+    styles.find((s) => NOUN_STYLES.includes(s)) ??
+    (category === "bottom" && styles.includes("denim") ? "jeans" : null) ??
+    (category === "top" && styles.some((s) => ["sleeveless", "tank"].includes(s)) ? "tank top" : null) ??
+    CATEGORY_NOUN[category][shopFor];
+  const describer = styles.find(
+    (s) => !NOUN_STYLES.includes(s) && !["denim", "sleeveless", "tank"].includes(s) && /^[a-z-]+$/.test(s),
+  );
+  // Denim colours are washes, so a colour word ("grey") narrows a jeans search badly.
+  const colorWord = noun === "jeans" && !["black", "white", "off white"].includes(color) ? null : color;
+  return [colorWord, describer, noun].filter(Boolean).join(" ").replace(/-/g, " ");
 }
 
 export function nearestColorWord(hex: string): string {
@@ -107,6 +115,16 @@ export function nearestColorWord(hex: string): string {
     }
   }
   return best[0];
+}
+
+/** Jeans titles rarely name a colour; read the wash instead. */
+export function denimWash(title: string): string | null {
+  if (!/\b(jeans?|denims?)\b/i.test(title)) {
+    return null;
+  }
+  if (/\b(light|ice|bleach(ed)?|acid)\b/i.test(title)) return "#9DB4D3";
+  if (/\b(dark|indigo|rinse|raw)\b/i.test(title)) return "#2E3A6E";
+  return "#5B7DB1";
 }
 
 /** The product's colour from a colour word in its title, or null. */
@@ -173,7 +191,7 @@ export function toCatalogItem(store: Store, product: SuggestProduct, category: L
   if (shopFor === "men" && /\bwomen'?s?\b/i.test(title)) return null;
   if (shopFor === "women" && /\bmen'?s?\b/i.test(title) && !/\bwomen\b/i.test(title)) return null;
 
-  const color = colorFromTitle(title);
+  const color = colorFromTitle(title) ?? denimWash(title);
   const image = product.image.startsWith("//") ? `https:${product.image}` : product.image;
   if (!color || !isTryOnImage(image)) {
     return null;
@@ -195,7 +213,7 @@ export function toCatalogItem(store: Store, product: SuggestProduct, category: L
   };
 }
 
-const TITLE_STYLES = ["oversized", "relaxed", "regular", "slim", "fitted", "boxy", "cropped", "straight", "wide-leg", "wide leg", "baggy", "tapered", "high-waist", "high rise", "mini", "midi", "maxi", "a-line", "flared", "wrap", "slip", "bodycon", "tiered", "ruffle", "pleated", "knit", "knitted", "denim", "satin", "linen", "cotton", "leather", "corduroy", "floral", "striped", "stripes", "checked", "checks", "printed", "embroidered", "graphic", "polo", "overshirt", "cargo", "chinos", "joggers", "crew neck", "v-neck", "anarkali", "straight-kurta"];
+const TITLE_STYLES = ["sleeveless", "tank", "halter", "off shoulder", "oversized", "relaxed", "regular", "slim", "fitted", "boxy", "cropped", "straight", "wide-leg", "wide leg", "baggy", "tapered", "high-waist", "high rise", "mini", "midi", "maxi", "a-line", "flared", "wrap", "slip", "bodycon", "tiered", "ruffle", "pleated", "knit", "knitted", "denim", "satin", "linen", "cotton", "leather", "corduroy", "floral", "striped", "stripes", "checked", "checks", "printed", "embroidered", "graphic", "polo", "overshirt", "cargo", "chinos", "joggers", "crew neck", "v-neck", "anarkali", "straight-kurta"];
 
 export function styleFromTitle(title: string): string[] {
   const text = title.toLowerCase();

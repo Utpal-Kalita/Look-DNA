@@ -36,7 +36,7 @@ Return each visible element of the look that someone could buy:
 - Makeup: lipstick, eyeshadow, blush. Only include makeup that is clearly visible.
 
 For each element give its dominant colour as a hex code sampled from the image (not a generic colour name), and style tags.
-For clothing, use tags such as: oversized, fitted, cropped, relaxed, wide-leg, straight, high-waist, mini, midi, flowy, slip, wrap, bodycon, tailored, pleated, tiered, ruffle, puff-sleeve, knit, denim, satin, linen, leather, fleece, cotton, floral, striped, polka-dot, casual, formal, party, minimal, vintage, streetwear, feminine, classic, summer, ethnic, straight-kurta, overshirt, polo, chinos, cargo, bomber, varsity, crew-neck, slim, boxy, tapered, baggy, corduroy, checked, graphic, a-line, printed, embroidered, block-print, festive, silk, chanderi.
+For clothing, use tags such as: skirt (for any skirt), sleeveless (tanks, camis), denim (jeans), oversized, fitted, cropped, relaxed, wide-leg, straight, high-waist, mini, midi, flowy, slip, wrap, bodycon, tailored, pleated, tiered, ruffle, puff-sleeve, knit, denim, satin, linen, leather, fleece, cotton, floral, striped, polka-dot, casual, formal, party, minimal, vintage, streetwear, feminine, classic, summer, ethnic, straight-kurta, overshirt, polo, chinos, cargo, bomber, varsity, crew-neck, slim, boxy, tapered, baggy, corduroy, checked, graphic, a-line, printed, embroidered, block-print, festive, silk, chanderi.
 For makeup, the style list may be empty; set finish to matte, satin, gloss or shimmer. For clothing set finish to "none".
 
 At most one item per category. If the image shows no fashion or makeup, return an empty items list. Describe only the look, never the person's body or skin.`;

@@ -52,3 +52,10 @@ describe("live store search", () => {
     await expect(searchLiveProducts([{ category: "dress", color: "#B22234" }], "women")).resolves.toEqual([]);
   });
 });
+
+describe("search nouns", () => {
+  it("asks for jeans and tank tops when the look says so", () => {
+    expect(buildQuery({ category: "bottom", color: "#5A6B7A", style: ["denim", "high-waist", "straight"] }, "bottom", "women")).toMatch(/ jeans$/);
+    expect(buildQuery({ category: "top", color: "#F8F8F8", style: ["cropped", "fitted", "sleeveless"] }, "top", "women")).toBe("white cropped tank top");
+  });
+});
