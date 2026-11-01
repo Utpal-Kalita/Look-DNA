@@ -7,7 +7,7 @@ import { isValidBudget, BudgetInput } from "@/app/components/BudgetInput";
 import { CameraCapture } from "@/app/components/CameraCapture";
 import { ApiError, checkSelfieQuality } from "@/app/components/client-api";
 import { CLEAR_MATCHES, useFlow } from "@/app/components/FlowProvider";
-import { dataUrlToBlob } from "@/app/components/image-utils";
+import { cropDataUrl, dataUrlToBlob } from "@/app/components/image-utils";
 import { RetakeBanner } from "@/app/components/RetakeBanner";
 import { StepHeader } from "@/app/components/StepHeader";
 
@@ -15,6 +15,7 @@ type Status =
   | { kind: "idle" }
   | { kind: "checking" }
   | { kind: "retake"; message: string }
+  | { kind: "cropped"; message: string }
   | { kind: "error"; message: string };
 
 export default function SelfiePage() {
@@ -46,6 +47,12 @@ export default function SelfiePage() {
       const result = await checkSelfieQuality(await dataUrlToBlob(selfie));
       if (!result.pass) {
         setStatus({ kind: "retake", message: result.message });
+        return;
+      }
+      if (result.crop) {
+        // Auto crop: show the framed photo first; the next Continue uses it.
+        setSelfie(await cropDataUrl(selfie, result.crop));
+        setStatus({ kind: "cropped", message: result.message });
         return;
       }
     } catch (error) {
@@ -86,6 +93,14 @@ export default function SelfiePage() {
       {status.kind === "retake" ? (
         <div className="mt-4">
           <RetakeBanner message={status.message} />
+        </div>
+      ) : null}
+      {status.kind === "cropped" ? (
+        <div className="mt-4">
+          <RetakeBanner
+            title="Auto cropped"
+            message={`${status.message} Tap Continue to use it, or retake if you prefer.`}
+          />
         </div>
       ) : null}
       {status.kind === "error" ? (

@@ -78,3 +78,24 @@ function loadImage(src: string): Promise<HTMLImageElement> {
     image.src = src;
   });
 }
+
+/** Crops a data URL to a box given as fractions of its width and height. */
+export async function cropDataUrl(
+  dataUrl: string,
+  box: { x: number; y: number; width: number; height: number },
+): Promise<string> {
+  const image = await loadImage(dataUrl);
+  const sx = Math.round(box.x * image.naturalWidth);
+  const sy = Math.round(box.y * image.naturalHeight);
+  const sw = Math.round(box.width * image.naturalWidth);
+  const sh = Math.round(box.height * image.naturalHeight);
+  const canvas = document.createElement("canvas");
+  canvas.width = sw;
+  canvas.height = sh;
+  const context = canvas.getContext("2d");
+  if (!context) {
+    throw new Error("Canvas is not supported in this browser.");
+  }
+  context.drawImage(image, sx, sy, sw, sh, 0, 0, sw, sh);
+  return canvas.toDataURL("image/jpeg", JPEG_QUALITY);
+}
