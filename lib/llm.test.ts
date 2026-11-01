@@ -143,3 +143,13 @@ describe("extractLookItems with Groq", () => {
     expect(generateContent).toHaveBeenCalledTimes(1);
   });
 });
+
+describe("retryAfterMs", () => {
+  it("reads Groq's wait hint", async () => {
+    const { retryAfterMs } = await import("@/lib/llm");
+    expect(retryAfterMs("Please try again in 925.714285ms. Need more tokens?", null)).toBe(926);
+    expect(retryAfterMs("Please try again in 1.345714285s. Need more", null)).toBe(1346);
+    expect(retryAfterMs("rate limited", "2")).toBe(2000);
+    expect(retryAfterMs("rate limited", null)).toBeNull();
+  });
+});
