@@ -220,7 +220,7 @@ MOCK_YOUCAM=1   # YouCam routes return data/mocks/*.json
 MOCK_LLM=1      # /api/extract returns data/mocks/extract.json
 ```
 
-For live extraction set `GEMINI_API_KEY` (server-side only). `/api/extract` sends the inspiration image to Gemini (`gemini-flash-latest` by default, override with `GEMINI_MODEL`) with a strict JSON schema, validates the reply and retries once. If only `ANTHROPIC_API_KEY` is set, Claude is used instead.
+For live extraction set `GROQ_API_KEY`, `GEMINI_API_KEY` or `ANTHROPIC_API_KEY` (server-side only). Every provider with a key is tried in order (Groq `qwen/qwen3.8-27b` by default, then Gemini with a lighter fallback model, then Claude), so a quota limit or outage at one falls through to the next. Each reply is validated against a strict schema, and the whole route stays inside Vercel's 60 s limit.
 
 ### How matching works (`lib/matching.ts`)
 

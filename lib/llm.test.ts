@@ -32,6 +32,7 @@ describe("extractLookItems with Gemini", () => {
   beforeEach(async () => {
     image.bytes = await sharp({ create: { width: 1600, height: 1200, channels: 3, background: "#c8a2c8" } }).jpeg().toBuffer();
     vi.stubEnv("GEMINI_API_KEY", "test-key");
+    vi.stubEnv("GROQ_API_KEY", "");
     vi.stubEnv("ANTHROPIC_API_KEY", "");
     generateContent.mockReset();
   });
@@ -100,5 +101,45 @@ describe("extractLookItems with Gemini", () => {
   it("reports not configured when no key is set", async () => {
     vi.stubEnv("GEMINI_API_KEY", "");
     await expect(extractLookItems(image)).rejects.toMatchObject({ status: 503, code: "LLM_NOT_CONFIGURED" });
+  });
+});
+
+describe("extractLookItems with Groq", () => {
+  const groqReply = (items: unknown) =>
+    new Response(JSON.stringify({ choices: [{ message: { content: JSON.stringify({ items }) } }] }), { status: 200 });
+
+  beforeEach(async () => {
+    image.bytes = await sharp({ create: { width: 800, height: 800, channels: 3, background: "#c8a2c8" } }).jpeg().toBuffer();
+    vi.stubEnv("GROQ_API_KEY", "groq-test");
+    vi.stubEnv("GEMINI_API_KEY", "");
+    vi.stubEnv("ANTHROPIC_API_KEY", "");
+    generateContent.mockReset();
+  });
+  afterEach(() => vi.unstubAllEnvs());
+
+  it("sends the image in JSON mode to the default vision model", async () => {
+    const fetchMock = vi.spyOn(globalThis, "fetch").mockResolvedValue(
+      groqReply([{ category: "dress", color: "#b22234", style: ["Midi"], finish: "none" }]),
+    );
+    const items = await extractLookItems(image);
+    expect(items).toEqual([{ category: "dress", color: "#B22234", style: ["midi"] }]);
+    const [url, init] = fetchMock.mock.calls[0];
+    expect(url).toBe("https://api.groq.com/openai/v1/chat/completions");
+    const body = JSON.parse(String((init as RequestInit).body));
+    expect(body.model).toBe("qwen/qwen3.8-27b");
+    expect(body.response_format).toEqual({ type: "json_object" });
+    expect(body.messages[1].content[1].image_url.url).toMatch(/^data:image\/jpeg;base64,/);
+    expect((init as RequestInit).headers).toMatchObject({ authorization: "Bearer groq-test" });
+  });
+
+  it("falls through to Gemini when Groq is rate limited", async () => {
+    vi.stubEnv("GEMINI_API_KEY", "gemini-test");
+    vi.spyOn(globalThis, "fetch").mockResolvedValue(
+      new Response(JSON.stringify({ error: { message: "rate limited" } }), { status: 429 }),
+    );
+    generateContent.mockResolvedValue(reply([{ category: "top", color: "#C8A2C8", style: [], finish: "none" }]));
+    const items = await extractLookItems(image);
+    expect(items).toHaveLength(1);
+    expect(generateContent).toHaveBeenCalledTimes(1);
   });
 });
