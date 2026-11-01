@@ -8,6 +8,12 @@ import {
 } from "@/app/components/image-utils";
 
 /**
+ * Keep enough detail to auto crop a small, distant subject. Matches the
+ * server's 1920 px limit and stays about 1 MB, well under Vercel's 4.5 MB body.
+ */
+const PHOTO_MAX_DIMENSION = 1920;
+
+/**
  * Selfie picker: live front camera when available, file upload otherwise.
  * Emits a downscaled JPEG data URL.
  */
@@ -65,7 +71,7 @@ export function CameraCapture({
       return;
     }
     try {
-      onCapture(videoFrameToJpegDataUrl(video, true));
+      onCapture(videoFrameToJpegDataUrl(video, true, PHOTO_MAX_DIMENSION));
       stopCamera();
     } catch {
       setError("Could not capture the photo. Try again or upload one.");
@@ -83,7 +89,7 @@ export function CameraCapture({
     }
     try {
       stopCamera();
-      onCapture(await fileToJpegDataUrl(file));
+      onCapture(await fileToJpegDataUrl(file, PHOTO_MAX_DIMENSION));
     } catch {
       setError("We could not read that image. Try a JPEG or PNG.");
     }

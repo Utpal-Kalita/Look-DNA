@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 import { createCacheKey, getOrComputeCached } from "@/lib/cache";
 import { routeErrorResponse } from "@/lib/http";
 import { readImageUpload } from "@/lib/image";
-import { analyzeImageQuality } from "@/lib/quality";
+import { analyzeWithAutoCrop } from "@/lib/quality";
 import { enforceRateLimit } from "@/lib/rate-limit";
 
 export const runtime = "nodejs";
@@ -17,11 +17,11 @@ export async function POST(request: Request): Promise<NextResponse> {
     const image = await readImageUpload(request, "selfie", {
       minDimension: 320,
     });
-    const cacheKey = createCacheKey("quality", image.hash);
+    const cacheKey = createCacheKey("quality-v2", image.hash);
     const result = await getOrComputeCached(
       cacheKey,
       QUALITY_CACHE_TTL_SECONDS,
-      () => analyzeImageQuality(image.bytes),
+      () => analyzeWithAutoCrop(image.bytes),
     );
 
     return NextResponse.json({ ...result.value, cached: result.cached });

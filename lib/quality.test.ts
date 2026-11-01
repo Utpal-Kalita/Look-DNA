@@ -1,7 +1,7 @@
 import sharp from "sharp";
 import { describe, expect, it } from "vitest";
 
-import { analyzeImageQuality, type FaceBox } from "@/lib/quality";
+import { analyzeImageQuality, analyzeWithAutoCrop, type FaceBox } from "@/lib/quality";
 
 const centeredFace = async (
   _pixels: Uint8Array,
@@ -102,5 +102,31 @@ describe("head-to-hips photos", () => {
     expect(calls).toBe(2);
     expect(result.metrics.faceCount).toBe(1);
     expect(result.issue).not.toBe("no_face");
+  });
+});
+
+describe("auto crop", () => {
+  // Landscape photo: a small face; after cropping to portrait, a head-to-hips face.
+  const sceneDetector = async (_p: Uint8Array, width: number, height: number): Promise<FaceBox[]> =>
+    width > height
+      ? [{ x: width * 0.47, y: height * 0.1, width: width * 0.06, height: height * 0.09 }]
+      : [{ x: width * 0.4, y: height * 0.1, width: width * 0.2, height: height * 0.12 }];
+
+  it("frames a small, landscape subject head to hips at 3:4", async () => {
+    const image = await checkerboard(1600, 1000, "#555555", "#dddddd");
+    const result = await analyzeWithAutoCrop(image, sceneDetector);
+    expect(result.pass).toBe(true);
+    expect(result.crop).toBeDefined();
+    const crop = result.crop!;
+    expect((crop.width * 1600) / (crop.height * 1000)).toBeCloseTo(0.75, 1);
+    expect(crop.x).toBeGreaterThanOrEqual(0);
+    expect(crop.x + crop.width).toBeLessThanOrEqual(1.0001);
+  });
+
+  it("leaves a well-framed photo alone", async () => {
+    const image = await checkerboard(400, 400, "#555555", "#dddddd");
+    const result = await analyzeWithAutoCrop(image, centeredFace);
+    expect(result.pass).toBe(true);
+    expect(result.crop).toBeUndefined();
   });
 });

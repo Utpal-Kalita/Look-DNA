@@ -1,7 +1,7 @@
 import sharp from "sharp";
 
 import { AppError } from "@/lib/errors";
-import type { QualityResult } from "@/lib/types";
+import type { CropBox, QualityResult } from "@/lib/types";
 
 const MIN_BRIGHTNESS = 55;
 const MAX_BRIGHTNESS = 220;
@@ -179,15 +179,30 @@ async function detectFacesInPhoto(
     return faces;
   }
 
-  const side = Math.round(Math.min(width, height * 0.5));
-  const left = Math.round((width - side) / 2);
-  const crop = new Uint8Array(side * side * 3);
-  for (let row = 0; row < side; row += 1) {
-    const from = (row * width + left) * 3;
-    crop.set(rgb.subarray(from, from + side * 3), row * side * 3);
+  // Slide a square across the upper part of the photo, where a standing
+  // person's head is, overlapping by half; take the first window with a face.
+  const side = Math.round(Math.min(width, height * 0.55));
+  const tops = [0, Math.round(Math.min(height * 0.2, height - side))].filter((v, i, a) => a.indexOf(v) === i);
+  const lefts: number[] = [];
+  for (let left = Math.round((width - side) / 2); left >= 0; left -= Math.round(side / 2)) lefts.push(left);
+  for (let left = Math.round((width - side) / 2) + Math.round(side / 2); left <= width - side; left += Math.round(side / 2)) lefts.push(left);
+  if (!lefts.includes(0)) lefts.push(0);
+  if (!lefts.includes(width - side)) lefts.push(width - side);
+
+  for (const top of tops) {
+    for (const left of lefts) {
+      const crop = new Uint8Array(side * side * 3);
+      for (let row = 0; row < side; row += 1) {
+        const from = ((top + row) * width + left) * 3;
+        crop.set(rgb.subarray(from, from + side * 3), row * side * 3);
+      }
+      const found = await detectFaces(crop, side, side);
+      if (found.length > 0) {
+        return found.map((box) => ({ ...box, x: box.x + left, y: box.y + top }));
+      }
+    }
   }
-  const cropped = await detectFaces(crop, side, side);
-  return cropped.map((box) => ({ ...box, x: box.x + left }));
+  return [];
 }
 
 /**
@@ -214,6 +229,83 @@ export async function locateFaceCrop(
   const left = Math.round(Math.min(Math.max(centerX - side / 2, 0), sourceWidth - side));
   const top = Math.round(Math.min(Math.max(centerY - side / 2, 0), sourceHeight - side));
   return { left, top, width: side, height: side };
+}
+
+/** Issues an auto crop around the person can fix. */
+const CROPPABLE = new Set(["face_too_small", "face_not_centered"]);
+
+/**
+ * The quality check, plus auto crop: when the person is small, off-centre or
+ * the photo is landscape, frame them head to hips at 3:4 and check the crop.
+ */
+export async function analyzeWithAutoCrop(
+  bytes: Buffer,
+  detectFaces: FaceDetector = detectFaceBoxes,
+): Promise<QualityResult> {
+  const original = await analyzeImageQuality(bytes, detectFaces);
+  const landscape = original.metrics.width > original.metrics.height * 1.05;
+  const worthTrying = (!original.pass && CROPPABLE.has(original.issue ?? "")) || (original.pass && landscape);
+  if (!worthTrying) {
+    return original;
+  }
+
+  const crop = await headToHipsCrop(bytes, detectFaces);
+  if (!crop) {
+    return original;
+  }
+
+  const { sourceWidth, sourceHeight } = crop;
+  const box = {
+    left: Math.round(crop.box.x * sourceWidth),
+    top: Math.round(crop.box.y * sourceHeight),
+    width: Math.round(crop.box.width * sourceWidth),
+    height: Math.round(crop.box.height * sourceHeight),
+  };
+  const croppedBytes = await sharp(bytes).rotate().extract(box).jpeg({ quality: 92 }).toBuffer();
+  const cropped = await analyzeImageQuality(croppedBytes, detectFaces);
+  if (!cropped.pass) {
+    return original;
+  }
+  return { ...cropped, message: "We cropped your photo to frame you from head to hips.", crop: crop.box };
+}
+
+/** A 3:4 frame from just above the head to about the hips, from the face box. */
+export async function headToHipsCrop(
+  bytes: Buffer,
+  detectFaces: FaceDetector = detectFaceBoxes,
+): Promise<{ box: CropBox; sourceWidth: number; sourceHeight: number } | null> {
+  const { rgb, width, height, sourceWidth, sourceHeight } = await prepareImage(bytes);
+  const face = (await detectFacesInPhoto(rgb, width, height, detectFaces))[0];
+  if (!face) {
+    return null;
+  }
+
+  // BlazeFace boxes the inner face; the hips sit about six of those boxes below it.
+  const top = Math.max(0, face.y - face.height * 0.9);
+  const bottom = Math.min(height, face.y + face.height * 7);
+  let cropHeight = bottom - top;
+  let cropWidth = cropHeight * 0.75;
+  if (cropWidth > width) {
+    cropWidth = width;
+    cropHeight = Math.min(cropHeight, cropWidth / 0.75);
+  }
+  const centerX = face.x + face.width / 2;
+  const left = Math.min(Math.max(centerX - cropWidth / 2, 0), width - cropWidth);
+
+  // Not worth it when the crop keeps almost the whole photo.
+  if ((cropWidth * cropHeight) / (width * height) > 0.85) {
+    return null;
+  }
+  return {
+    box: {
+      x: left / width,
+      y: top / height,
+      width: cropWidth / width,
+      height: cropHeight / height,
+    },
+    sourceWidth,
+    sourceHeight,
+  };
 }
 
 export function calculateBrightness(rgb: Uint8Array): number {

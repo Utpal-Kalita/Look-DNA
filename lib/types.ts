@@ -52,8 +52,18 @@ export type QualityIssue =
   | "face_not_centered"
   | "too_close";
 
+/** A crop as fractions (0-1) of the uploaded photo's width and height. */
+export interface CropBox {
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+}
+
 export interface QualityResult {
   pass: boolean;
+  /** When set, the photo passed only after this auto crop; apply it before later steps. */
+  crop?: CropBox;
   issue?: QualityIssue;
   message: string;
   metrics: {
