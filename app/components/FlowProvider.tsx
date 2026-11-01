@@ -40,6 +40,8 @@ export interface FlowState {
   excluded: string[];
   /** Why a later step asked for a new selfie, shown on the selfie screen. */
   retakeMessage: string | null;
+  /** True when the items came from mock mode, not from reading the image. */
+  itemsMock: boolean;
 }
 
 export const DEFAULT_BUDGET = 3000;
@@ -57,6 +59,7 @@ const INITIAL_STATE: FlowState = {
   matchResult: null,
   excluded: [],
   retakeMessage: null,
+  itemsMock: false,
 };
 
 /** Clears everything computed from the inspiration image. */

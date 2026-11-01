@@ -913,5 +913,214 @@
     "color": "#C6796B",
     "style": [],
     "link": "https://swissbeauty.in/products/ultra-blush-palette-swiss-beauty-cosmetics?variant=41887465308355"
+  },
+  {
+    "id": "krt-001",
+    "name": "Gerua Blue Floral Printed Straight Kurta Set",
+    "brand": "Libas",
+    "category": "kurta",
+    "price": 659,
+    "image": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/blue-floral-printed-cotton-blend-straight-kurta-set-gs1406_6782151e-2c8c-46e7-8b9c-881c0bf9d19d.jpg?v=1792839299&width=800",
+    "color": "#3B5FA8",
+    "style": [
+      "ethnic",
+      "floral",
+      "printed",
+      "straight"
+    ],
+    "link": "https://www.libas.in/products/gerua-blue-floral-printed-straight-kurta-set-gs1406h"
+  },
+  {
+    "id": "krt-002",
+    "name": "Straight Fit Printed Kurta",
+    "brand": "Style Union",
+    "category": "kurta",
+    "price": 499,
+    "image": "https://cdn.shopify.com/s/files/1/0623/4754/2777/files/EEST00072GOLDENYELLOW_1.jpg?v=1740668575&width=800",
+    "color": "#E5D9C0",
+    "style": [
+      "ethnic",
+      "printed",
+      "straight"
+    ],
+    "link": "https://www.styleunion.in/products/straight-fit-printed-kurta-eest00072"
+  },
+  {
+    "id": "krt-003",
+    "name": "Libas Mustard Floral Printed Chiffon Anarkali Suit Set",
+    "brand": "Libas",
+    "category": "kurta",
+    "price": 1899,
+    "image": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/Libas-Mustard-Floral-Printed-Chiffon-Anarkali-Suit-Set-900613_df661774-9455-4767-9307-5b7e4ef7abd3.jpg?v=1792838524&width=800",
+    "color": "#D4A017",
+    "style": [
+      "anarkali",
+      "ethnic",
+      "floral",
+      "printed"
+    ],
+    "link": "https://www.libas.in/products/libas-mustard-floral-printed-chiffon-anarkali-suit-set-900613"
+  },
+  {
+    "id": "krt-004",
+    "name": "Straight Fit Embroidered Kurta",
+    "brand": "Style Union",
+    "category": "kurta",
+    "price": 499,
+    "image": "https://cdn.shopify.com/s/files/1/0623/4754/2777/products/MK00266BROWN_1_6cc569bb-a97e-42a3-b719-acd6b45b98c6.jpg?v=1747920733&width=800",
+    "color": "#382421",
+    "style": [
+      "embroidered",
+      "ethnic",
+      "straight"
+    ],
+    "link": "https://www.styleunion.in/products/straight-fit-embroidered-kurta-mk00266"
+  },
+  {
+    "id": "krt-005",
+    "name": "Cotton Embroidered Long Kurta",
+    "brand": "Style Union",
+    "category": "kurta",
+    "price": 499,
+    "image": "https://cdn.shopify.com/s/files/1/0623/4754/2777/files/EEST00542RIORED_1.webp?v=1791982857&width=800",
+    "color": "#B7687B",
+    "style": [
+      "cotton",
+      "embroidered",
+      "ethnic"
+    ],
+    "link": "https://www.styleunion.in/products/eest00542"
+  },
+  {
+    "id": "krt-006",
+    "name": "Libas Olive Green Floral Embellished Chinon Palazzo Suit Set",
+    "brand": "Libas",
+    "category": "kurta",
+    "price": 2219,
+    "image": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/Libas-Olive-Green-Floral-Embellished-Chinon-Palazzo-Suit-Set-56023_9dab99a7-794f-4b29-8cd2-3f74c0dfdce7.jpg?v=1792838487&width=800",
+    "color": "#3E7A4A",
+    "style": [
+      "ethnic",
+      "floral"
+    ],
+    "link": "https://www.libas.in/products/libas-olive-green-floral-embellished-chinon-palazzo-suit-set-56023"
+  },
+  {
+    "id": "krt-007",
+    "name": "Embroidered Straight Kurta",
+    "brand": "Style Union",
+    "category": "kurta",
+    "price": 549,
+    "image": "https://cdn.shopify.com/s/files/1/0623/4754/2777/files/EEST00192GREENGAGE_1_8d9ecca1-a562-46e5-ac47-72c234bcd89a.jpg?v=1741591315&width=800",
+    "color": "#95AA8F",
+    "style": [
+      "embroidered",
+      "ethnic",
+      "straight"
+    ],
+    "link": "https://www.styleunion.in/products/regular-fit-embroidered-below-knee-kurta-eest00192"
+  },
+  {
+    "id": "krt-008",
+    "name": "Libas Yellow Floral Woven Design Chinon A-Line Suit Set",
+    "brand": "Libas",
+    "category": "kurta",
+    "price": 2619,
+    "image": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/Libas-Yellow-Floral-Woven-Design-Chinon-A-Line-Suit-Set-1200850_74ce91c0-1e94-4ed9-912b-f42e82292a36.jpg?v=1792838592&width=800",
+    "color": "#F2D04A",
+    "style": [
+      "a-line",
+      "ethnic",
+      "floral"
+    ],
+    "link": "https://www.libas.in/products/libas-yellow-floral-woven-design-chinon-a-line-suit-set-1200850"
+  },
+  {
+    "id": "krt-009",
+    "name": "Printed V Notch With Half Placket Kurta",
+    "brand": "Style Union",
+    "category": "kurta",
+    "price": 599,
+    "image": "https://cdn.shopify.com/s/files/1/0623/4754/2777/files/EEST00568MYKONOSBLUESOLID_1.webp?v=1791982871&width=800",
+    "color": "#6D737B",
+    "style": [
+      "ethnic",
+      "printed"
+    ],
+    "link": "https://www.styleunion.in/products/eest00568"
+  },
+  {
+    "id": "krt-010",
+    "name": "Libas Mauve Floral Printed Sleeveless Cotton Straight Suit Set",
+    "brand": "Libas",
+    "category": "kurta",
+    "price": 1359,
+    "image": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/Libas-Mauve-Floral-Printed-Sleeveless-Cotton-Straight-Suit-Set-93888_c151db34-60a1-494b-ae09-c0974306caf7.jpg?v=1792838507&width=800",
+    "color": "#B784A7",
+    "style": [
+      "cotton",
+      "ethnic",
+      "floral",
+      "printed",
+      "straight"
+    ],
+    "link": "https://www.libas.in/products/libas-mauve-floral-printed-sleeveless-cotton-straight-suit-set-93888"
+  },
+  {
+    "id": "krt-011",
+    "name": "Straight Fit Embellished Kurta",
+    "brand": "Style Union",
+    "category": "kurta",
+    "price": 769,
+    "image": "https://cdn.shopify.com/s/files/1/0623/4754/2777/products/FT00197DARKGREEN_1_f8f14e63-f2f0-4e83-8e6c-bea10260754b.jpg?v=1740685760&width=800",
+    "color": "#584B3D",
+    "style": [
+      "ethnic",
+      "straight"
+    ],
+    "link": "https://www.styleunion.in/products/straight-fit-embellished-kurta-ft00197"
+  },
+  {
+    "id": "krt-012",
+    "name": "Libas Orange Floral Woven Design Chinon A-Line Suit Set",
+    "brand": "Libas",
+    "category": "kurta",
+    "price": 2619,
+    "image": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/Libas-Orange-Floral-Woven-Design-Chinon-A-Line-Suit-Set-1200840_5bc43a4d-2e35-4de1-a661-6618fcb3b95d.jpg?v=1792838581&width=800",
+    "color": "#E8833A",
+    "style": [
+      "a-line",
+      "ethnic",
+      "floral"
+    ],
+    "link": "https://www.libas.in/products/libas-orange-floral-woven-design-chinon-a-line-suit-set-1200840"
+  },
+  {
+    "id": "krt-013",
+    "name": "Printed Yoke Long Kurta",
+    "brand": "Style Union",
+    "category": "kurta",
+    "price": 299,
+    "image": "https://cdn.shopify.com/s/files/1/0623/4754/2777/files/EEST00336LIGHTBROWN_1.jpg?v=1766337238&width=800",
+    "color": "#D0B2A8",
+    "style": [
+      "ethnic",
+      "printed"
+    ],
+    "link": "https://www.styleunion.in/products/printed-yoke-long-kurta-eest00336"
+  },
+  {
+    "id": "krt-014",
+    "name": "Libas Grey Yoke Design Embroidered Tissue Palazzo Suit Set",
+    "brand": "Libas",
+    "category": "kurta",
+    "price": 2619,
+    "image": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/Libas-Grey-Yoke-Design-Embroidered-Tissue-Palazzo-Suit-Set-1200843_6f8e7e8a-03fd-4d08-b825-d0a969d47cd7.jpg?v=1792838584&width=800",
+    "color": "#8C8C8C",
+    "style": [
+      "embroidered",
+      "ethnic"
+    ],
+    "link": "https://www.libas.in/products/libas-grey-yoke-design-embroidered-tissue-palazzo-suit-set-1200843"
   }
 ]

@@ -294,6 +294,10 @@ function garmentCategory(category: string): GarmentCategory | null {
   if (["bottom", "pants", "trousers", "skirt"].includes(normalized)) {
     return "lower_body";
   }
+  // A kurta (or kurta set) is tried on as the upper-body garment.
+  if (["kurta", "kurti"].includes(normalized)) {
+    return "upper_body";
+  }
   if (normalized === "dress") {
     return "full_body";
   }

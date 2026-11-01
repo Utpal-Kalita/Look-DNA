@@ -22,7 +22,7 @@ import {
 import { normalizeHex } from "@/lib/undertone";
 
 /** Candidates scoring below this are not shown as matches at all. */
-export const MIN_SCORE = 0.35;
+export const MIN_SCORE = 0.5;
 /** How many ranked candidates per item the budget logic may swap between. */
 const CANDIDATES_PER_ITEM = 5;
 const COLOR_WEIGHT = 0.75;
@@ -38,6 +38,7 @@ const DROP_ORDER: LookCategory[] = [
   "bottom",
   "lipstick",
   "top",
+  "kurta",
   "dress",
 ];
 
@@ -56,6 +57,13 @@ const CATEGORY_ALIASES: Record<string, LookCategory> = {
   skirt: "bottom",
   shorts: "bottom",
   dress: "dress",
+  kurta: "kurta",
+  kurti: "kurta",
+  kurtaset: "kurta",
+  "kurta-set": "kurta",
+  salwar: "kurta",
+  suit: "kurta",
+  anarkali: "kurta",
   gown: "dress",
   outerwear: "outerwear",
   jacket: "outerwear",

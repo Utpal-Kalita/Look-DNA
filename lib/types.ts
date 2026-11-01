@@ -78,7 +78,7 @@ export interface TryOnResult {
 }
 
 /** Categories the extractor and matcher understand. */
-export const CLOTHING_CATEGORIES = ["top", "bottom", "dress", "outerwear"] as const;
+export const CLOTHING_CATEGORIES = ["top", "bottom", "dress", "kurta", "outerwear"] as const;
 export const MAKEUP_CATEGORIES = ["lipstick", "eyeshadow", "blush"] as const;
 export type ClothingCategory = (typeof CLOTHING_CATEGORIES)[number];
 export type MakeupCategory = (typeof MAKEUP_CATEGORIES)[number];
@@ -87,6 +87,8 @@ export type LookCategory = ClothingCategory | MakeupCategory;
 /** POST /api/extract response. */
 export interface ExtractResponse {
   items: LookItem[];
+  /** True when MOCK_LLM returned saved sample items instead of reading the image. */
+  mock?: boolean;
 }
 
 /** POST /api/match request body. */

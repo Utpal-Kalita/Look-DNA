@@ -2,6 +2,7 @@ const CATEGORY_LABELS: Record<string, string> = {
   top: "Top",
   bottom: "Bottom",
   dress: "Dress",
+  kurta: "Kurta",
   outerwear: "Outerwear",
   lipstick: "Lip",
   eyeshadow: "Eyes",
