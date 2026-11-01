@@ -14,6 +14,11 @@ export function ToneBadge({ tone }: { tone: UserTone }) {
       <div>
         <p className="font-semibold capitalize">{tone.undertone} undertone</p>
         <p className="text-sm text-muted">{UNDERTONE_COPY[tone.undertone]}</p>
+        {tone.estimated ? (
+          <p className="mt-1 text-xs text-muted">
+            Estimated from your photo. For the most accurate reading, face the camera with your chin level.
+          </p>
+        ) : null}
       </div>
     </div>
   );

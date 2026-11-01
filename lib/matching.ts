@@ -210,7 +210,7 @@ export function scoreProduct(
   const wanted = new Set(
     [...(item.style ?? []), ...(item.finish ? [item.finish] : [])].map(normalizeTag),
   );
-  const have = new Set(product.style.map(normalizeTag));
+  const have = new Set([...product.style.map(normalizeTag), ...tagsFromName(product.name)]);
   const sharedTags = [...wanted].filter((tag) => have.has(tag));
   const styleScore = wanted.size === 0 ? 0.5 : sharedTags.length / wanted.size;
   // Capped below 1: a catalog product is never identical to the inspiration.
@@ -232,7 +232,8 @@ function rankCandidates(
       (product) =>
         !exclude.has(product.id) &&
         normalizeCategory(product.category) === category &&
-        fitsSection(product, shopFor),
+        fitsSection(product, shopFor) &&
+        sameBottomShape(item, product),
     )
     .map((product) => scoreProduct(targetColor, item, product))
     .filter((candidate) => candidate.score >= MIN_SCORE)
@@ -255,6 +256,16 @@ interface Slot {
   candidates: Candidate[];
   /** Index into candidates, or -1 when dropped. */
   choice: number;
+}
+
+/** A skirt only matches a skirt; trousers and jeans only match trousers and jeans. */
+function sameBottomShape(item: LookItem, product: CatalogItem): boolean {
+  if (normalizeCategory(product.category) !== "bottom") {
+    return true;
+  }
+  const wantsSkirt = (item.style ?? []).some((s) => /skirt/i.test(s));
+  const isSkirt = /\bskirt\b/i.test(product.name) || product.style.some((s) => /skirt/i.test(s));
+  return wantsSkirt === isSkirt;
 }
 
 /** Products for the chosen section; unisex and untagged products fit both. */
@@ -373,6 +384,31 @@ function clothingReason(sharedTags: string[], budgetSwap: boolean): string {
       ? `Same ${sharedTags.slice(0, 2).join(", ")} feel as your inspiration`
       : "The closest colour to your inspiration";
   return budgetSwap ? `${base}, picked to fit your budget` : base;
+}
+
+/** Style words a product name implies ("Black Jeans" is denim, "Knitted" is knit). */
+const NAME_TAGS: [RegExp, string][] = [
+  [/\bjeans?\b|\bdenim\b/i, "denim"],
+  [/\bknit(ted)?\b|\bsweater\b|\bcardigan\b/i, "knit"],
+  [/\btank\b|\bsleeveless\b|\bcami\b|\bhalter\b|\bstrappy\b/i, "sleeveless"],
+  [/\bcrop(ped)?\b/i, "cropped"],
+  [/\bwide[- ]leg\b/i, "wide-leg"],
+  [/\bstraight\b/i, "straight"],
+  [/\bhigh[- ](rise|waist)\b/i, "high-waist"],
+  [/\boversized\b/i, "oversized"],
+  [/\bfitted\b|\bslim\b|\bbodycon\b/i, "fitted"],
+  [/\bsatin\b/i, "satin"],
+  [/\blinen\b/i, "linen"],
+  [/\bfloral\b/i, "floral"],
+  [/\bstripe[sd]?\b/i, "striped"],
+  [/\bmidi\b/i, "midi"],
+  [/\bmaxi\b/i, "maxi"],
+  [/\bmini\b/i, "mini"],
+  [/\bskirt\b/i, "skirt"],
+];
+
+function tagsFromName(name: string): string[] {
+  return NAME_TAGS.filter(([pattern]) => pattern.test(name)).map(([, tag]) => tag);
 }
 
 function normalizeTag(tag: string): string {

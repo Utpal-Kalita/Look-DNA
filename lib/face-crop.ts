@@ -95,3 +95,45 @@ export function tiltRetryRotation(message: string): number | null {
   }
   return match[1].toLowerCase() === "right" ? -7 : 7;
 }
+
+/** YouCam errors about head pose only; the face itself is usable. */
+export function isPoseProblem(message: string): boolean {
+  return /\b(tilted|turned|facing forward|not facing|upward|downward|angle|pose|profile)\b/i.test(message);
+}
+
+/**
+ * A local skin tone estimate from the levelled face crop, used when YouCam
+ * declines only because of head pose. Takes skin-coloured pixels (YCbCr rule)
+ * from the cheeks, nose and forehead area and returns their median colour.
+ */
+export async function estimateSkinTone(faceBytes: Buffer): Promise<string | null> {
+  const { data, info } = await sharp(faceBytes)
+    .resize(160, 160, { fit: "fill" })
+    .removeAlpha()
+    .raw()
+    .toBuffer({ resolveWithObject: true });
+  const reds: number[] = [];
+  const greens: number[] = [];
+  const blues: number[] = [];
+  for (let y = Math.round(info.height * 0.25); y < info.height * 0.72; y += 1) {
+    for (let x = Math.round(info.width * 0.28); x < info.width * 0.72; x += 1) {
+      const i = (y * info.width + x) * 3;
+      const r = data[i];
+      const g = data[i + 1];
+      const b = data[i + 2];
+      const cb = 128 - 0.168736 * r - 0.331264 * g + 0.5 * b;
+      const cr = 128 + 0.5 * r - 0.418688 * g - 0.081312 * b;
+      const luma = 0.299 * r + 0.587 * g + 0.114 * b;
+      if (cr >= 133 && cr <= 180 && cb >= 77 && cb <= 130 && luma > 40 && luma < 240) {
+        reds.push(r);
+        greens.push(g);
+        blues.push(b);
+      }
+    }
+  }
+  if (reds.length < 200) {
+    return null;
+  }
+  const median = (values: number[]) => values.sort((a, b) => a - b)[Math.floor(values.length / 2)];
+  return `#${[median(reds), median(greens), median(blues)].map((v) => v.toString(16).padStart(2, "0")).join("").toUpperCase()}`;
+}

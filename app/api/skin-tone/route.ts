@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 import { createCacheKey, getOrComputeCached } from "@/lib/cache";
 import { AppError } from "@/lib/errors";
 import { routeErrorResponse } from "@/lib/http";
-import { faceCrop, tiltRetryRotation } from "@/lib/face-crop";
+import { estimateSkinTone, faceCrop, isPoseProblem, tiltRetryRotation } from "@/lib/face-crop";
 import { readImageUpload } from "@/lib/image";
 import { getMockSkinTone, mockYouCamEnabled } from "@/lib/mocks";
 import { enforceRateLimit } from "@/lib/rate-limit";
@@ -27,9 +27,22 @@ export async function POST(request: Request): Promise<NextResponse> {
       cacheKey,
       SKIN_TONE_CACHE_TTL_SECONDS,
       async () => {
-        const analysis = mockYouCamEnabled()
-          ? getMockSkinTone()
-          : await analyzeLevelled(image);
+        let analysis: Awaited<ReturnType<typeof analyzeLevelled>>;
+        try {
+          analysis = mockYouCamEnabled() ? getMockSkinTone() : await analyzeLevelled(image);
+        } catch (error) {
+          // YouCam is strict about head pose (chin down, head turned). The face
+          // is still usable, so estimate the tone locally rather than block.
+          if (!(error instanceof AppError) || error.code !== "SELFIE_RETAKE" || !isPoseProblem(error.message)) {
+            throw error;
+          }
+          const hex = await estimateSkinTone((await faceCrop(image)).bytes);
+          if (!hex) {
+            throw error;
+          }
+          console.info(`skin-tone: YouCam declined the pose ("${error.message}"); estimated ${hex} locally`);
+          return { hex, undertone: deriveUndertone(hex), estimated: true };
+        }
 
         if (analysis.face_quality?.has_face === false) {
           throw new AppError(

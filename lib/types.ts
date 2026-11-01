@@ -10,6 +10,8 @@ export interface LookItem {
 export interface UserTone {
   hex: string;
   undertone: Undertone;
+  /** True when estimated from the photo because YouCam declined the head pose. */
+  estimated?: boolean;
 }
 
 export interface ProductMatch {
