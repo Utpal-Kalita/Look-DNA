@@ -220,7 +220,7 @@ MOCK_YOUCAM=1   # YouCam routes return data/mocks/*.json
 MOCK_LLM=1      # /api/extract returns data/mocks/extract.json
 ```
 
-For live extraction set `ANTHROPIC_API_KEY` (server-side only). `/api/extract` sends the inspiration image to Claude with a strict JSON schema and retries once.
+For live extraction set `GEMINI_API_KEY` (server-side only). `/api/extract` sends the inspiration image to Gemini (`gemini-flash-latest` by default, override with `GEMINI_MODEL`) with a strict JSON schema, validates the reply and retries once. If only `ANTHROPIC_API_KEY` is set, Claude is used instead.
 
 ### How matching works (`lib/matching.ts`)
 
@@ -232,7 +232,7 @@ For live extraction set `ANTHROPIC_API_KEY` (server-side only). `/api/extract` s
 ### Setup
 
 1. `npm install`
-2. Copy `.env.example` to `.env.local` and set `YOUCAM_API_KEY` and `ANTHROPIC_API_KEY`. Remove `MOCK_YOUCAM` and `MOCK_LLM` for live calls.
+2. Copy `.env.example` to `.env.local` and set `YOUCAM_API_KEY` and `GEMINI_API_KEY`. Remove `MOCK_YOUCAM` and `MOCK_LLM` for live calls.
 3. Optional: set `UPSTASH_REDIS_REST_URL` and `UPSTASH_REDIS_REST_TOKEN` so the cache survives serverless cold starts (recommended for the demo).
 4. `npm run dev`, then open http://localhost:3000 on a phone-sized window.
 

@@ -1,5 +1,6 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { betaZodOutputFormat } from "@anthropic-ai/sdk/helpers/beta/zod";
+import { ApiError as GeminiApiError, GoogleGenAI } from "@google/genai";
 import * as z from "zod/v4";
 
 import { AppError } from "@/lib/errors";
@@ -8,7 +9,9 @@ import { isMakeup, normalizeCategory } from "@/lib/matching";
 import type { LookItem } from "@/lib/types";
 import { normalizeHex } from "@/lib/undertone";
 
-const MODEL = "claude-opus-5-5";
+const CLAUDE_MODEL = "claude-opus-5-5";
+/** Override with GEMINI_MODEL, e.g. a pinned version instead of the alias. */
+const DEFAULT_GEMINI_MODEL = "gemini-flash-latest";
 
 const extractionSchema = z.object({
   items: z.array(
@@ -35,39 +38,55 @@ For makeup, the style list may be empty; set finish to matte, satin, gloss or sh
 
 At most one item per category. If the image shows no fashion or makeup, return an empty items list. Describe only the look, never the person's body or skin.`;
 
-let client: Anthropic | undefined;
+let claudeClient: Anthropic | undefined;
+let geminiClient: GoogleGenAI | undefined;
+
+type Provider = "gemini" | "claude";
 
 export function mockLlmEnabled(): boolean {
   return process.env.MOCK_LLM === "1";
 }
 
+/** Gemini when GEMINI_API_KEY is set, otherwise Claude when ANTHROPIC_API_KEY is set. */
+function selectProvider(): Provider | null {
+  if (process.env.GEMINI_API_KEY) {
+    return "gemini";
+  }
+  if (process.env.ANTHROPIC_API_KEY) {
+    return "claude";
+  }
+  return null;
+}
+
 export async function extractLookItems(image: ImageUpload): Promise<LookItem[]> {
-  if (!process.env.ANTHROPIC_API_KEY) {
+  const provider = selectProvider();
+  if (!provider) {
     throw new AppError(
       "Look extraction is not configured on the server.",
       503,
       "LLM_NOT_CONFIGURED",
     );
   }
-  client ??= new Anthropic();
 
   // One retry, per the PRD, for transient or unparseable responses.
   let lastError: unknown;
   for (let attempt = 0; attempt < 2; attempt += 1) {
     try {
-      return await requestExtraction(client, image);
+      return provider === "gemini"
+        ? await requestGemini(image)
+        : await requestClaude(image);
     } catch (error) {
       lastError = error;
       if (error instanceof AppError && error.status < 500) {
         throw error;
       }
-      if (error instanceof Anthropic.APIError && error.status !== undefined && error.status < 500 && error.status !== 429) {
+      if (!isRetryable(error)) {
         break;
       }
     }
   }
 
-  console.error("Look extraction failed", lastError);
+  console.error(`Look extraction failed (${provider})`, lastError);
   throw new AppError(
     "We could not read the look from this image. Please try again or use another image.",
     502,
@@ -75,9 +94,61 @@ export async function extractLookItems(image: ImageUpload): Promise<LookItem[]> 
   );
 }
 
-async function requestExtraction(client: Anthropic, image: ImageUpload): Promise<LookItem[]> {
-  const response = await client.beta.messages.parse({
-    model: MODEL,
+/** Client errors (bad key, bad request) will not succeed on retry; 429 and 5xx might. */
+function isRetryable(error: unknown): boolean {
+  const status =
+    error instanceof Anthropic.APIError
+      ? error.status
+      : error instanceof GeminiApiError
+        ? error.status
+        : undefined;
+  return status === undefined || status === 429 || status >= 500;
+}
+
+async function requestGemini(image: ImageUpload): Promise<LookItem[]> {
+  geminiClient ??= new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+  const { $schema: _ignored, ...jsonSchema } = z.toJSONSchema(extractionSchema) as Record<string, unknown>;
+
+  const response = await geminiClient.models.generateContent({
+    model: process.env.GEMINI_MODEL || DEFAULT_GEMINI_MODEL,
+    contents: [
+      {
+        role: "user",
+        parts: [
+          { inlineData: { mimeType: image.contentType, data: image.bytes.toString("base64") } },
+          { text: "Extract the Look DNA from this inspiration image." },
+        ],
+      },
+    ],
+    config: {
+      systemInstruction: SYSTEM_PROMPT,
+      responseMimeType: "application/json",
+      responseJsonSchema: jsonSchema,
+    },
+  });
+
+  const finishReason = response.candidates?.[0]?.finishReason;
+  if (response.promptFeedback?.blockReason || finishReason === "SAFETY" || finishReason === "PROHIBITED_CONTENT") {
+    throw new AppError(
+      "This image could not be analysed. Try a different inspiration image.",
+      422,
+      "EXTRACTION_REFUSED",
+    );
+  }
+
+  const text = response.text;
+  if (!text) {
+    throw new Error(`Gemini returned no text (finishReason: ${finishReason}).`);
+  }
+  // Throws on malformed JSON or schema mismatch, which triggers the retry.
+  const parsed = extractionSchema.parse(JSON.parse(text));
+  return cleanItems(parsed.items);
+}
+
+async function requestClaude(image: ImageUpload): Promise<LookItem[]> {
+  claudeClient ??= new Anthropic();
+  const response = await claudeClient.beta.messages.parse({
+    model: CLAUDE_MODEL,
     max_tokens: 4000,
     betas: ["server-side-fallback-2026-07-01"],
     fallbacks: "default",

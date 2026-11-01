@@ -14,7 +14,7 @@ Shoppers save looks from Instagram and Pinterest every day, then struggle to rec
 ### What it does
 Upload a screenshot of any outfit or makeup look, take a selfie, and set a budget. Look DNA:
 
-1. **Reads the look.** A vision model breaks the image into its "Look DNA": each garment and makeup element with its colour and style.
+1. **Reads the look.** Google Gemini breaks the image into its "Look DNA": each garment and makeup element with its colour and style.
 2. **Adapts it to you.** YouCam Skin Tone Analysis reads your skin tone. Each makeup shade is shifted warmer or cooler to suit your undertone, with a one-line reason, for example "A warmer red suits your warm undertone".
 3. **Fits your budget.** Every element is matched to a real product by colour and style. If the look goes over budget, the most expensive piece is swapped for the next best cheaper match until the total fits.
 4. **Shows it on you.** YouCam Clothes Virtual Try-On puts the matched garment on your selfie, then YouCam Makeup Virtual Try-On applies your adapted lip shade on top. A toggle compares it with the original inspiration.
@@ -24,7 +24,7 @@ Upload a screenshot of any outfit or makeup look, take a selfie, and set a budge
 - Next.js (App Router) + React + TypeScript + Tailwind, deployed on Vercel. Mobile-first, six screens, no accounts or database.
 - **YouCam APIs:** Skin Tone Analysis, Clothes Virtual Try-On and Makeup Virtual Try-On, called server-side with the async task flow and cached by image hash so a photo never spends units twice.
 - **Quality gate:** before any paid API call, the selfie is checked locally for brightness, blur and exactly one visible face, with a specific retake message.
-- **Claude vision** extracts the look as strict, schema-validated JSON.
+- **Google Gemini** (vision) extracts the look as strict, schema-validated JSON.
 - **Matching and budget logic are plain deterministic code**, not an LLM: colour distance in Lab space plus style-tag overlap, undertone rules for shade adaptation, and a greedy swap loop for the budget.
 
 ### Challenges we ran into
@@ -47,7 +47,7 @@ Eye and cheek try-on, live product search across retailers, and saving looks to 
 - **Inclusion:** inspiration images rarely match the shopper's skin tone. Look DNA adapts the look to the person instead of the other way round.
 
 ### Built with
-nextjs, react, typescript, tailwindcss, vercel, youcam-api, claude, sharp, tensorflow.js
+nextjs, react, typescript, tailwindcss, vercel, youcam-api, gemini, sharp, tensorflow.js
 
 ## Video script (target 1:45, max 3:00)
 
@@ -58,7 +58,7 @@ No copyrighted music, no third-party brand logos. Record on a phone or a phone-s
 | 0:00–0:12 | Scrolling a saved-looks folder | "We all save looks we love. Recreating them is the hard part: the pieces are expensive, and the shades were picked for someone else's skin." |
 | 0:12–0:20 | App home screen | "Look DNA turns any screenshot into a look made for you, on your budget, and shows it on you before you buy." |
 | 0:20–0:35 | Upload inspiration, then selfie. Show one retake message with a dark photo first | "Upload any look, then a selfie. A quick quality check catches dark or blurry photos before we spend a single API call." |
-| 0:35–0:50 | Set budget ₹3,000, Look DNA card | "Set your budget. Claude reads the look: lilac oversized knit, wide-leg denim, a rosy matte lip." |
+| 0:35–0:50 | Set budget ₹3,000, Look DNA card | "Set your budget. Gemini reads the look: lilac oversized knit, wide-leg denim, a rosy matte lip." |
 | 0:50–1:10 | Adapted-to-you screen | "YouCam Skin Tone Analysis reads my skin tone: warm undertone. So the lip shifts to a warmer red, and every shade tells you why." |
 | 1:10–1:30 | Try-on loading, result, compare toggle | "Then YouCam Clothes Virtual Try-On dresses me in the matched top, and YouCam Makeup Virtual Try-On applies the adapted lip on top. Here it is next to the original." |
 | 1:30–1:42 | Cart, budget bar, tap Swap | "Every piece is a real product, similar not identical, with a match score. The total stays under budget, and I can swap anything." |
@@ -78,7 +78,7 @@ Take at phone width (390 × 844) from the live app:
 ## Checklist
 
 - [ ] Real catalog in `data/catalog.csv`, imported with `npm run catalog:import`
-- [ ] Deployed on Vercel with `YOUCAM_API_KEY`, `ANTHROPIC_API_KEY` (and ideally Upstash) set, mock flags unset
+- [ ] Deployed on Vercel with `YOUCAM_API_KEY`, `GEMINI_API_KEY` (and ideally Upstash) set, mock flags unset
 - [ ] 10-image test run, results pasted into the README
 - [ ] Repo public with a license, **or** private and shared with contact_event@PerfectCorp.com
 - [ ] README: setup steps, YouCam APIs used, architecture, test results

@@ -96,7 +96,7 @@ const date = new Date().toISOString().slice(0, 10);
 
 const md = `## 10-image test results (${date})
 
-Budget ₹${BUDGET.toLocaleString("en-IN")}, ${runs.length} inspiration images, live YouCam and Claude APIs${SKIP_TRYON ? " (try-on skipped)" : ""}.
+Budget ₹${BUDGET.toLocaleString("en-IN")}, ${runs.length} inspiration images, live YouCam and Gemini APIs${SKIP_TRYON ? " (try-on skipped)" : ""}.
 
 | Metric | Target | Result |
 | --- | --- | --- |
