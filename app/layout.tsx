@@ -22,9 +22,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en">
       <body className="min-h-dvh">
         <FlowProvider>
-          <main className="mx-auto flex min-h-dvh w-full max-w-md flex-col px-4 pb-8 pt-6">
-            {children}
-          </main>
+          {children}
         </FlowProvider>
       </body>
     </html>

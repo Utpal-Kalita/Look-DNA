@@ -28,7 +28,7 @@ export default function CartPage() {
       <>
         <StepHeader step={6} title="Your cart" />
         <RetakeBanner tone="error" message="There is nothing in your cart yet. Build a look first." />
-        <Link href="/" className="mt-4 block rounded-xl bg-accent py-4 text-center font-semibold text-white">
+        <Link href="/start" className="mt-4 block rounded-xl bg-accent py-4 text-center font-semibold text-white">
           Start a look
         </Link>
       </>
@@ -101,7 +101,7 @@ export default function CartPage() {
           type="button"
           onClick={() => {
             reset();
-            router.push("/");
+            router.push("/start");
           }}
           className="mt-2 w-full py-2 text-sm text-muted"
         >

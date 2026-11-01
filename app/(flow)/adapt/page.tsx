@@ -79,7 +79,7 @@ export default function AdaptPage() {
           message={!items.length ? "We need your inspiration look first." : "We need your selfie first."}
         />
         <Link
-          href={!items.length ? "/" : "/selfie"}
+          href={!items.length ? "/start" : "/selfie"}
           className="mt-4 block rounded-xl bg-accent py-4 text-center font-semibold text-white"
         >
           {!items.length ? "Upload inspiration" : "Add a selfie"}

@@ -64,7 +64,7 @@ export default function DnaPage() {
       <>
         <StepHeader step={3} title="Your Look DNA" />
         <RetakeBanner tone="error" message="Start by uploading an inspiration image." />
-        <Link href="/" className="mt-4 block rounded-xl bg-accent py-4 text-center font-semibold text-white">
+        <Link href="/start" className="mt-4 block rounded-xl bg-accent py-4 text-center font-semibold text-white">
           Upload inspiration
         </Link>
       </>
@@ -114,7 +114,7 @@ export default function DnaPage() {
         >
           Adapt it to me
         </button>
-        <button type="button" onClick={() => router.push(empty ? "/" : "/selfie")} className="mt-2 w-full py-2 text-sm text-muted">
+        <button type="button" onClick={() => router.push(empty ? "/start" : "/selfie")} className="mt-2 w-full py-2 text-sm text-muted">
           {empty ? "Use another image" : "Back"}
         </button>
       </div>

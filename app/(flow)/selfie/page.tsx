@@ -111,7 +111,7 @@ export default function SelfiePage() {
         </button>
         <button
           type="button"
-          onClick={() => router.push("/")}
+          onClick={() => router.push("/start")}
           className="mt-2 w-full py-2 text-sm text-muted"
         >
           Back
