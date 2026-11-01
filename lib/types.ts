@@ -76,3 +76,39 @@ export interface TryOnResult {
   makeupImage?: string;
   mode: TryOnMode;
 }
+
+/** Categories the extractor and matcher understand. */
+export const CLOTHING_CATEGORIES = ["top", "bottom", "dress", "outerwear"] as const;
+export const MAKEUP_CATEGORIES = ["lipstick", "eyeshadow", "blush"] as const;
+export type ClothingCategory = (typeof CLOTHING_CATEGORIES)[number];
+export type MakeupCategory = (typeof MAKEUP_CATEGORIES)[number];
+export type LookCategory = ClothingCategory | MakeupCategory;
+
+/** POST /api/extract response. */
+export interface ExtractResponse {
+  items: LookItem[];
+}
+
+/** POST /api/match request body. */
+export interface MatchRequest {
+  items: LookItem[];
+  userTone: UserTone | null;
+  budget: number;
+  /** Product ids the user swapped away from; never re-picked. */
+  exclude?: string[];
+}
+
+/** POST /api/match response. `matches` and `total` follow the shared contract. */
+export interface MatchResponse {
+  matches: ProductMatch[];
+  total: number;
+  withinBudget: boolean;
+  /** For makeup: the shade we aimed for after undertone adaptation. */
+  targets: Record<string, { original: string; adapted: string; reason: string }>;
+  /** Categories with no in-budget match, so the UI can say so. */
+  unmatched: string[];
+  /** Catalog details for every product in `matches`. */
+  products: Record<string, CatalogItem>;
+  /** Whether a further swap exists for each matched category. */
+  canSwap: Record<string, boolean>;
+}

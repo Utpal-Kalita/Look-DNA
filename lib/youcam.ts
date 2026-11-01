@@ -298,9 +298,13 @@ function sourceBody(
   prefix: "src" | "ref",
   reference: YouCamFileReference,
 ): Record<string, string> {
-  return reference.fileId
-    ? { [`${prefix}_file_id`]: reference.fileId }
-    : { [`${prefix}_file_url`]: reference.url };
+  if (reference.fileId) {
+    return { [`${prefix}_file_id`]: reference.fileId };
+  }
+  if (reference.url) {
+    return { [`${prefix}_file_url`]: reference.url };
+  }
+  throw new AppError("A YouCam image reference is missing.", 500, "YOUCAM_REFERENCE_MISSING");
 }
 
 function requireResultUrl(result: ImageResult, operation: string): string {

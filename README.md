@@ -4,7 +4,7 @@ Look DNA turns a fashion or beauty inspiration image into a complete, purchasabl
 
 The project is being built for the **YouCam API Skin AI & eCommerce VTO Hackathon**, in the **eCommerce VTO** track.
 
-> **Project status:** Planning and scaffolding. The repository currently contains the product requirements and implementation guidelines; the application source has not been added yet.
+> **Project status:** Full six-screen flow and all five API routes are built and run end to end in mock mode. The catalog (`data/catalog.json`, 72 items) is a **demo catalog** with house-brand names, generated flat product images in `public/catalog/`, and Google Shopping search links. Replace it with real products and clean front-facing garment photos before the demo.
 
 ## Product Flow
 
@@ -197,8 +197,18 @@ npm run dev
 Create `.env.local` for server-side API configuration. Never expose YouCam or LLM credentials through client-side environment variables. To run against saved YouCam responses:
 
 ```dotenv
-MOCK_YOUCAM=1
+MOCK_YOUCAM=1   # YouCam routes return data/mocks/*.json
+MOCK_LLM=1      # /api/extract returns data/mocks/extract.json
 ```
+
+For live extraction set `ANTHROPIC_API_KEY` (server-side only). `/api/extract` sends the inspiration image to Claude with a strict JSON schema and retries once.
+
+### How matching works (`lib/matching.ts`)
+
+- **Adaptation (F4):** makeup shades are nudged in LCh colour space toward coral/orange-red for warm undertones or blue-red/berry for cool ones (max 18° hue shift), and deepened for deeper skin tones. Each shade gets a one-line reason.
+- **Matching (F5):** score = 0.75 × colour closeness (CIE76 ΔE) + 0.25 × style/finish tag overlap, capped at 98%. Top 5 candidates per item.
+- **Budget (F6):** start with the best match per item; while over budget, swap the priciest piece for its next cheaper candidate; if nothing cheaper exists, drop the least essential piece (blush, eyes, outerwear first).
+- **Swap:** the cart re-calls `/api/match` with the swapped product excluded.
 
 Before pushing changes, run:
 
