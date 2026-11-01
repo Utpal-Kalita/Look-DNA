@@ -336,6 +336,7 @@ export function matchLook(request: MatchRequest, catalog: CatalogItem[]): MatchR
     products[product.id] = product;
     canSwap[slot.category] = slot.candidates.length > 1;
     matches.push({
+      ...(product.source === "live" ? { image: product.image } : {}),
       category: slot.category,
       productId: product.id,
       adaptedColor: normalizeHex(product.color),

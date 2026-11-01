@@ -3,6 +3,7 @@ import { z } from "zod";
 
 import { createCacheKey, getOrComputeCached } from "@/lib/cache";
 import { findCatalogItem } from "@/lib/catalog";
+import { isTryOnImage } from "@/lib/live-search";
 import { AppError } from "@/lib/errors";
 import { routeErrorResponse } from "@/lib/http";
 import {
@@ -30,6 +31,7 @@ const TRY_ON_CACHE_TTL_SECONDS = 90 * 60;
 const MAX_IMAGE_BYTES = 10 * 1024 * 1024;
 
 const matchSchema = z.object({
+  image: z.string().url().max(600).optional(),
   category: z.string().min(1),
   productId: z.string().min(1),
   adaptedColor: z.string().regex(/^#[0-9a-fA-F]{6}$/),
@@ -74,7 +76,9 @@ async function createTryOn(
   const resolved = await Promise.all(
     matches.map(async (match) => ({
       match,
-      product: await findCatalogItem(match.productId),
+      product: match.productId.startsWith("live-")
+        ? liveProduct(match)
+        : await findCatalogItem(match.productId),
     })),
   );
   const clothing = resolved.find(({ product }) =>
@@ -315,4 +319,12 @@ function isLipstick(category: string): boolean {
   return ["lip", "lips", "lipstick", "lip_color"].includes(
     category.toLowerCase(),
   );
+}
+
+/** A live-search product, from the match itself; only Shopify CDN images. */
+function liveProduct(match: ProductMatch) {
+  if (!match.image || !isTryOnImage(match.image.split("?")[0])) {
+    throw new AppError("This product's image cannot be used for try-on.", 422, "GARMENT_IMAGE_INVALID");
+  }
+  return { id: match.productId, category: match.category, image: match.image };
 }
