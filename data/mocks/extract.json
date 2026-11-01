@@ -1,0 +1,8 @@
+{
+  "items": [
+    { "category": "top", "color": "#C8A2C8", "style": ["oversized", "knit", "casual"] },
+    { "category": "bottom", "color": "#4A6FA5", "style": ["wide-leg", "denim"] },
+    { "category": "lipstick", "color": "#B5485D", "style": [], "finish": "matte" },
+    { "category": "blush", "color": "#D9828A", "style": [], "finish": "satin" }
+  ]
+}

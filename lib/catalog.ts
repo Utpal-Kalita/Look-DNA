@@ -35,7 +35,7 @@ export async function findCatalogItem(id: string): Promise<CatalogItem> {
   return product;
 }
 
-async function loadCatalog(): Promise<CatalogItem[]> {
+export async function loadCatalog(): Promise<CatalogItem[]> {
   catalogPromise ??= readCatalog();
   return catalogPromise;
 }

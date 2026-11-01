@@ -12,6 +12,7 @@ import {
 
 import type {
   LookItem,
+  MatchResponse,
   ProductMatch,
   TryOnResult,
   UserTone,
@@ -33,6 +34,10 @@ export interface FlowState {
   tryOn: TryOnResult | null;
   /** Key of the selfie + matches the try-on was rendered for. */
   tryOnFor: string | null;
+  /** Full /api/match response (product details, adapted targets, swaps). */
+  matchResult: MatchResponse | null;
+  /** Product ids the user swapped away from in the cart. */
+  excluded: string[];
 }
 
 export const DEFAULT_BUDGET = 3000;
@@ -47,6 +52,27 @@ const INITIAL_STATE: FlowState = {
   total: 0,
   tryOn: null,
   tryOnFor: null,
+  matchResult: null,
+  excluded: [],
+};
+
+/** Clears everything computed from the inspiration image. */
+export const CLEAR_LOOK: Partial<FlowState> = {
+  items: [],
+  matches: [],
+  total: 0,
+  matchResult: null,
+  excluded: [],
+  tryOn: null,
+  tryOnFor: null,
+};
+
+/** Clears everything computed from matching (keeps extracted items). */
+export const CLEAR_MATCHES: Partial<FlowState> = {
+  matches: [],
+  total: 0,
+  matchResult: null,
+  excluded: [],
 };
 
 const STORAGE_KEY = "look-dna:flow:v1";

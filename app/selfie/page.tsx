@@ -6,7 +6,7 @@ import { useState } from "react";
 import { isValidBudget, BudgetInput } from "@/app/components/BudgetInput";
 import { CameraCapture } from "@/app/components/CameraCapture";
 import { ApiError, checkSelfieQuality } from "@/app/components/client-api";
-import { useFlow } from "@/app/components/FlowProvider";
+import { CLEAR_MATCHES, useFlow } from "@/app/components/FlowProvider";
 import { dataUrlToBlob } from "@/app/components/image-utils";
 import { RetakeBanner } from "@/app/components/RetakeBanner";
 import { StepHeader } from "@/app/components/StepHeader";
@@ -64,6 +64,8 @@ export default function SelfiePage() {
       budget,
       // A new selfie invalidates results that were computed from the old one.
       ...(selfieChanged ? { userTone: null, tryOn: null, tryOnFor: null } : {}),
+      // Adapted shades depend on the tone, and matches on the budget.
+      ...(selfieChanged || budget !== state.budget ? CLEAR_MATCHES : {}),
     });
     router.push("/dna");
   }

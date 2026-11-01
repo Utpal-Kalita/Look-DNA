@@ -1,4 +1,8 @@
 import type {
+  ExtractResponse,
+  LookItem,
+  MatchRequest,
+  MatchResponse,
   ProductMatch,
   QualityResult,
   TryOnResult,
@@ -17,10 +21,17 @@ export class ApiError extends Error {
   }
 }
 
-async function postForm<T>(url: string, body: FormData): Promise<T> {
+async function postForm<T>(url: string, body: FormData | object): Promise<T> {
   let response: Response;
   try {
-    response = await fetch(url, { method: "POST", body });
+    response =
+      body instanceof FormData
+        ? await fetch(url, { method: "POST", body })
+        : await fetch(url, {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify(body),
+          });
   } catch {
     throw new ApiError(
       "We could not reach the server. Check your connection and try again.",
@@ -65,4 +76,15 @@ export function runTryOn(
   body.append("selfie", selfie, "selfie.jpg");
   body.append("matches", JSON.stringify(matches));
   return postForm<TryOnResult>("/api/tryon", body);
+}
+
+export async function extractLook(inspiration: Blob): Promise<LookItem[]> {
+  const body = new FormData();
+  body.append("inspiration", inspiration, "inspiration.jpg");
+  const result = await postForm<ExtractResponse>("/api/extract", body);
+  return result.items;
+}
+
+export function matchProducts(request: MatchRequest): Promise<MatchResponse> {
+  return postForm<MatchResponse>("/api/match", request);
 }

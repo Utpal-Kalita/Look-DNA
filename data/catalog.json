@@ -1,0 +1,1022 @@
+[
+  {
+    "id": "top-001",
+    "name": "Lilac Oversized Knit Sweater",
+    "brand": "Look DNA Studio",
+    "category": "top",
+    "price": 1299,
+    "image": "/catalog/top-001.png",
+    "color": "#C8A2C8",
+    "style": [
+      "oversized",
+      "knit",
+      "casual"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Lilac%20Oversized%20Knit%20Sweater"
+  },
+  {
+    "id": "top-002",
+    "name": "Ivory Ribbed Knit Top",
+    "brand": "Look DNA Studio",
+    "category": "top",
+    "price": 799,
+    "image": "/catalog/top-002.png",
+    "color": "#F2EBDD",
+    "style": [
+      "fitted",
+      "knit",
+      "minimal"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Ivory%20Ribbed%20Knit%20Top"
+  },
+  {
+    "id": "top-003",
+    "name": "Black Fitted Crop Top",
+    "brand": "Look DNA Studio",
+    "category": "top",
+    "price": 599,
+    "image": "/catalog/top-003.png",
+    "color": "#1E1E1E",
+    "style": [
+      "fitted",
+      "cropped",
+      "party"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Black%20Fitted%20Crop%20Top"
+  },
+  {
+    "id": "top-004",
+    "name": "White Cotton Shirt",
+    "brand": "Look DNA Studio",
+    "category": "top",
+    "price": 999,
+    "image": "/catalog/top-004.png",
+    "color": "#FAFAFA",
+    "style": [
+      "relaxed",
+      "shirt",
+      "formal"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=White%20Cotton%20Shirt"
+  },
+  {
+    "id": "top-005",
+    "name": "Sky Blue Linen Shirt",
+    "brand": "Look DNA Studio",
+    "category": "top",
+    "price": 1199,
+    "image": "/catalog/top-005.png",
+    "color": "#9CC3E6",
+    "style": [
+      "relaxed",
+      "linen",
+      "summer"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Sky%20Blue%20Linen%20Shirt"
+  },
+  {
+    "id": "top-006",
+    "name": "Rust Satin Blouse",
+    "brand": "Look DNA Studio",
+    "category": "top",
+    "price": 1399,
+    "image": "/catalog/top-006.png",
+    "color": "#B7472A",
+    "style": [
+      "flowy",
+      "satin",
+      "party"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Rust%20Satin%20Blouse"
+  },
+  {
+    "id": "top-007",
+    "name": "Sage Green Oversized Tee",
+    "brand": "Look DNA Studio",
+    "category": "top",
+    "price": 499,
+    "image": "/catalog/top-007.png",
+    "color": "#9CAF88",
+    "style": [
+      "oversized",
+      "cotton",
+      "casual"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Sage%20Green%20Oversized%20Tee"
+  },
+  {
+    "id": "top-008",
+    "name": "Mustard Knit Cardigan Top",
+    "brand": "Look DNA Studio",
+    "category": "top",
+    "price": 1099,
+    "image": "/catalog/top-008.png",
+    "color": "#D4A017",
+    "style": [
+      "relaxed",
+      "knit",
+      "vintage"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Mustard%20Knit%20Cardigan%20Top"
+  },
+  {
+    "id": "top-009",
+    "name": "Blush Pink Puff Sleeve Top",
+    "brand": "Look DNA Studio",
+    "category": "top",
+    "price": 899,
+    "image": "/catalog/top-009.png",
+    "color": "#F4C2C2",
+    "style": [
+      "fitted",
+      "puff-sleeve",
+      "feminine"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Blush%20Pink%20Puff%20Sleeve%20Top"
+  },
+  {
+    "id": "top-010",
+    "name": "Navy Striped Breton Top",
+    "brand": "Look DNA Studio",
+    "category": "top",
+    "price": 849,
+    "image": "/catalog/top-010.png",
+    "color": "#1F2A44",
+    "style": [
+      "relaxed",
+      "striped",
+      "classic"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Navy%20Striped%20Breton%20Top"
+  },
+  {
+    "id": "top-011",
+    "name": "Emerald Satin Cami",
+    "brand": "Look DNA Studio",
+    "category": "top",
+    "price": 749,
+    "image": "/catalog/top-011.png",
+    "color": "#1B7F5B",
+    "style": [
+      "fitted",
+      "satin",
+      "party"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Emerald%20Satin%20Cami"
+  },
+  {
+    "id": "top-012",
+    "name": "Charcoal Oversized Hoodie",
+    "brand": "Look DNA Studio",
+    "category": "top",
+    "price": 1499,
+    "image": "/catalog/top-012.png",
+    "color": "#3C3C3C",
+    "style": [
+      "oversized",
+      "fleece",
+      "streetwear"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Charcoal%20Oversized%20Hoodie"
+  },
+  {
+    "id": "top-013",
+    "name": "Lavender Cropped Cardigan",
+    "brand": "Look DNA Studio",
+    "category": "top",
+    "price": 999,
+    "image": "/catalog/top-013.png",
+    "color": "#B9A6D9",
+    "style": [
+      "cropped",
+      "knit",
+      "feminine"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Lavender%20Cropped%20Cardigan"
+  },
+  {
+    "id": "top-014",
+    "name": "Terracotta Linen Top",
+    "brand": "Look DNA Studio",
+    "category": "top",
+    "price": 899,
+    "image": "/catalog/top-014.png",
+    "color": "#C46A4A",
+    "style": [
+      "relaxed",
+      "linen",
+      "summer"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Terracotta%20Linen%20Top"
+  },
+  {
+    "id": "btm-001",
+    "name": "Blue Wide-Leg Jeans",
+    "brand": "Look DNA Studio",
+    "category": "bottom",
+    "price": 1499,
+    "image": "/catalog/btm-001.png",
+    "color": "#4A6FA5",
+    "style": [
+      "wide-leg",
+      "denim",
+      "casual"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Blue%20Wide-Leg%20Jeans"
+  },
+  {
+    "id": "btm-002",
+    "name": "Black Straight Trousers",
+    "brand": "Look DNA Studio",
+    "category": "bottom",
+    "price": 1299,
+    "image": "/catalog/btm-002.png",
+    "color": "#1C1C1C",
+    "style": [
+      "straight",
+      "tailored",
+      "formal"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Black%20Straight%20Trousers"
+  },
+  {
+    "id": "btm-003",
+    "name": "Beige Pleated Trousers",
+    "brand": "Look DNA Studio",
+    "category": "bottom",
+    "price": 1199,
+    "image": "/catalog/btm-003.png",
+    "color": "#D8C3A5",
+    "style": [
+      "wide-leg",
+      "pleated",
+      "minimal"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Beige%20Pleated%20Trousers"
+  },
+  {
+    "id": "btm-004",
+    "name": "White Wide-Leg Pants",
+    "brand": "Look DNA Studio",
+    "category": "bottom",
+    "price": 1099,
+    "image": "/catalog/btm-004.png",
+    "color": "#F5F5F0",
+    "style": [
+      "wide-leg",
+      "linen",
+      "summer"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=White%20Wide-Leg%20Pants"
+  },
+  {
+    "id": "btm-005",
+    "name": "Olive Cargo Pants",
+    "brand": "Look DNA Studio",
+    "category": "bottom",
+    "price": 1399,
+    "image": "/catalog/btm-005.png",
+    "color": "#6B6B3A",
+    "style": [
+      "relaxed",
+      "cargo",
+      "streetwear"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Olive%20Cargo%20Pants"
+  },
+  {
+    "id": "btm-006",
+    "name": "Light Wash Mom Jeans",
+    "brand": "Look DNA Studio",
+    "category": "bottom",
+    "price": 1299,
+    "image": "/catalog/btm-006.png",
+    "color": "#9DB4D3",
+    "style": [
+      "high-waist",
+      "denim",
+      "vintage"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Light%20Wash%20Mom%20Jeans"
+  },
+  {
+    "id": "btm-007",
+    "name": "Black Pleated Midi Skirt",
+    "brand": "Look DNA Studio",
+    "category": "bottom",
+    "price": 999,
+    "image": "/catalog/btm-007.png",
+    "color": "#202020",
+    "style": [
+      "pleated",
+      "midi",
+      "classic"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Black%20Pleated%20Midi%20Skirt"
+  },
+  {
+    "id": "btm-008",
+    "name": "Denim Mini Skirt",
+    "brand": "Look DNA Studio",
+    "category": "bottom",
+    "price": 799,
+    "image": "/catalog/btm-008.png",
+    "color": "#5B7DB1",
+    "style": [
+      "mini",
+      "denim",
+      "casual"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Denim%20Mini%20Skirt"
+  },
+  {
+    "id": "btm-009",
+    "name": "Camel Satin Slip Skirt",
+    "brand": "Look DNA Studio",
+    "category": "bottom",
+    "price": 1099,
+    "image": "/catalog/btm-009.png",
+    "color": "#C19A6B",
+    "style": [
+      "midi",
+      "satin",
+      "party"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Camel%20Satin%20Slip%20Skirt"
+  },
+  {
+    "id": "btm-010",
+    "name": "Grey Jogger Pants",
+    "brand": "Look DNA Studio",
+    "category": "bottom",
+    "price": 699,
+    "image": "/catalog/btm-010.png",
+    "color": "#8A8A8A",
+    "style": [
+      "relaxed",
+      "fleece",
+      "streetwear"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Grey%20Jogger%20Pants"
+  },
+  {
+    "id": "drs-001",
+    "name": "Red Satin Slip Dress",
+    "brand": "Look DNA Studio",
+    "category": "dress",
+    "price": 1999,
+    "image": "/catalog/drs-001.png",
+    "color": "#B22234",
+    "style": [
+      "slip",
+      "satin",
+      "party"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Red%20Satin%20Slip%20Dress"
+  },
+  {
+    "id": "drs-002",
+    "name": "Black Little Bodycon Dress",
+    "brand": "Look DNA Studio",
+    "category": "dress",
+    "price": 1599,
+    "image": "/catalog/drs-002.png",
+    "color": "#151515",
+    "style": [
+      "bodycon",
+      "mini",
+      "party"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Black%20Little%20Bodycon%20Dress"
+  },
+  {
+    "id": "drs-003",
+    "name": "Floral Yellow Sundress",
+    "brand": "Look DNA Studio",
+    "category": "dress",
+    "price": 1399,
+    "image": "/catalog/drs-003.png",
+    "color": "#F2C94C",
+    "style": [
+      "flowy",
+      "floral",
+      "summer"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Floral%20Yellow%20Sundress"
+  },
+  {
+    "id": "drs-004",
+    "name": "Lilac Tiered Midi Dress",
+    "brand": "Look DNA Studio",
+    "category": "dress",
+    "price": 1799,
+    "image": "/catalog/drs-004.png",
+    "color": "#C8A2C8",
+    "style": [
+      "flowy",
+      "tiered",
+      "feminine"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Lilac%20Tiered%20Midi%20Dress"
+  },
+  {
+    "id": "drs-005",
+    "name": "Emerald Wrap Dress",
+    "brand": "Look DNA Studio",
+    "category": "dress",
+    "price": 2199,
+    "image": "/catalog/drs-005.png",
+    "color": "#0F6B4F",
+    "style": [
+      "wrap",
+      "midi",
+      "formal"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Emerald%20Wrap%20Dress"
+  },
+  {
+    "id": "drs-006",
+    "name": "White Linen Shirt Dress",
+    "brand": "Look DNA Studio",
+    "category": "dress",
+    "price": 1499,
+    "image": "/catalog/drs-006.png",
+    "color": "#F7F5EF",
+    "style": [
+      "relaxed",
+      "linen",
+      "minimal"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=White%20Linen%20Shirt%20Dress"
+  },
+  {
+    "id": "drs-007",
+    "name": "Navy Polka Dot Dress",
+    "brand": "Look DNA Studio",
+    "category": "dress",
+    "price": 1299,
+    "image": "/catalog/drs-007.png",
+    "color": "#1D2B4F",
+    "style": [
+      "flowy",
+      "polka-dot",
+      "vintage"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Navy%20Polka%20Dot%20Dress"
+  },
+  {
+    "id": "drs-008",
+    "name": "Blush Pink Ruffle Dress",
+    "brand": "Look DNA Studio",
+    "category": "dress",
+    "price": 1699,
+    "image": "/catalog/drs-008.png",
+    "color": "#F2B5B5",
+    "style": [
+      "ruffle",
+      "mini",
+      "feminine"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Blush%20Pink%20Ruffle%20Dress"
+  },
+  {
+    "id": "drs-009",
+    "name": "Olive Knit Sweater Dress",
+    "brand": "Look DNA Studio",
+    "category": "dress",
+    "price": 1599,
+    "image": "/catalog/drs-009.png",
+    "color": "#707A4A",
+    "style": [
+      "fitted",
+      "knit",
+      "casual"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Olive%20Knit%20Sweater%20Dress"
+  },
+  {
+    "id": "drs-010",
+    "name": "Cobalt Blue Shift Dress",
+    "brand": "Look DNA Studio",
+    "category": "dress",
+    "price": 1399,
+    "image": "/catalog/drs-010.png",
+    "color": "#1F4FBF",
+    "style": [
+      "shift",
+      "mini",
+      "formal"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Cobalt%20Blue%20Shift%20Dress"
+  },
+  {
+    "id": "drs-011",
+    "name": "Mauve Satin Midi Dress",
+    "brand": "Look DNA Studio",
+    "category": "dress",
+    "price": 1899,
+    "image": "/catalog/drs-011.png",
+    "color": "#B784A7",
+    "style": [
+      "slip",
+      "satin",
+      "party"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Mauve%20Satin%20Midi%20Dress"
+  },
+  {
+    "id": "drs-012",
+    "name": "Mustard Shirt Dress",
+    "brand": "Look DNA Studio",
+    "category": "dress",
+    "price": 1199,
+    "image": "/catalog/drs-012.png",
+    "color": "#C9A227",
+    "style": [
+      "relaxed",
+      "shirt",
+      "casual"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Mustard%20Shirt%20Dress"
+  },
+  {
+    "id": "out-001",
+    "name": "Beige Trench Coat",
+    "brand": "Look DNA Studio",
+    "category": "outerwear",
+    "price": 2799,
+    "image": "/catalog/out-001.png",
+    "color": "#C8B08A",
+    "style": [
+      "tailored",
+      "trench",
+      "classic"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Beige%20Trench%20Coat"
+  },
+  {
+    "id": "out-002",
+    "name": "Black Faux Leather Jacket",
+    "brand": "Look DNA Studio",
+    "category": "outerwear",
+    "price": 2499,
+    "image": "/catalog/out-002.png",
+    "color": "#1A1A1A",
+    "style": [
+      "fitted",
+      "leather",
+      "streetwear"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Black%20Faux%20Leather%20Jacket"
+  },
+  {
+    "id": "out-003",
+    "name": "Light Denim Jacket",
+    "brand": "Look DNA Studio",
+    "category": "outerwear",
+    "price": 1799,
+    "image": "/catalog/out-003.png",
+    "color": "#8FA9C9",
+    "style": [
+      "relaxed",
+      "denim",
+      "casual"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Light%20Denim%20Jacket"
+  },
+  {
+    "id": "out-004",
+    "name": "Camel Wool Blazer",
+    "brand": "Look DNA Studio",
+    "category": "outerwear",
+    "price": 2299,
+    "image": "/catalog/out-004.png",
+    "color": "#B9875A",
+    "style": [
+      "tailored",
+      "blazer",
+      "formal"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Camel%20Wool%20Blazer"
+  },
+  {
+    "id": "out-005",
+    "name": "Cream Teddy Jacket",
+    "brand": "Look DNA Studio",
+    "category": "outerwear",
+    "price": 1999,
+    "image": "/catalog/out-005.png",
+    "color": "#EEE3D0",
+    "style": [
+      "oversized",
+      "fleece",
+      "casual"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Cream%20Teddy%20Jacket"
+  },
+  {
+    "id": "out-006",
+    "name": "Olive Utility Jacket",
+    "brand": "Look DNA Studio",
+    "category": "outerwear",
+    "price": 1899,
+    "image": "/catalog/out-006.png",
+    "color": "#5F6B3A",
+    "style": [
+      "relaxed",
+      "utility",
+      "streetwear"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Olive%20Utility%20Jacket"
+  },
+  {
+    "id": "lip-001",
+    "name": "Classic Red Matte Lipstick",
+    "brand": "Look DNA Beauty",
+    "category": "lipstick",
+    "price": 499,
+    "image": "/catalog/lip-001.png",
+    "color": "#B0202E",
+    "style": [
+      "matte"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Classic%20Red%20Matte%20Lipstick"
+  },
+  {
+    "id": "lip-002",
+    "name": "Brick Red Matte Lipstick",
+    "brand": "Look DNA Beauty",
+    "category": "lipstick",
+    "price": 499,
+    "image": "/catalog/lip-002.png",
+    "color": "#A8473F",
+    "style": [
+      "matte"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Brick%20Red%20Matte%20Lipstick"
+  },
+  {
+    "id": "lip-003",
+    "name": "Berry Matte Lipstick",
+    "brand": "Look DNA Beauty",
+    "category": "lipstick",
+    "price": 549,
+    "image": "/catalog/lip-003.png",
+    "color": "#8E2C48",
+    "style": [
+      "matte"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Berry%20Matte%20Lipstick"
+  },
+  {
+    "id": "lip-004",
+    "name": "Rosewood Satin Lipstick",
+    "brand": "Look DNA Beauty",
+    "category": "lipstick",
+    "price": 449,
+    "image": "/catalog/lip-004.png",
+    "color": "#B5485D",
+    "style": [
+      "satin"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Rosewood%20Satin%20Lipstick"
+  },
+  {
+    "id": "lip-005",
+    "name": "Coral Glossy Lipstick",
+    "brand": "Look DNA Beauty",
+    "category": "lipstick",
+    "price": 399,
+    "image": "/catalog/lip-005.png",
+    "color": "#E2725B",
+    "style": [
+      "gloss"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Coral%20Glossy%20Lipstick"
+  },
+  {
+    "id": "lip-006",
+    "name": "Nude Pink Satin Lipstick",
+    "brand": "Look DNA Beauty",
+    "category": "lipstick",
+    "price": 449,
+    "image": "/catalog/lip-006.png",
+    "color": "#C98B8B",
+    "style": [
+      "satin"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Nude%20Pink%20Satin%20Lipstick"
+  },
+  {
+    "id": "lip-007",
+    "name": "Warm Nude Matte Lipstick",
+    "brand": "Look DNA Beauty",
+    "category": "lipstick",
+    "price": 449,
+    "image": "/catalog/lip-007.png",
+    "color": "#B07A62",
+    "style": [
+      "matte"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Warm%20Nude%20Matte%20Lipstick"
+  },
+  {
+    "id": "lip-008",
+    "name": "Mauve Matte Lipstick",
+    "brand": "Look DNA Beauty",
+    "category": "lipstick",
+    "price": 499,
+    "image": "/catalog/lip-008.png",
+    "color": "#9E6B7B",
+    "style": [
+      "matte"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Mauve%20Matte%20Lipstick"
+  },
+  {
+    "id": "lip-009",
+    "name": "Plum Satin Lipstick",
+    "brand": "Look DNA Beauty",
+    "category": "lipstick",
+    "price": 549,
+    "image": "/catalog/lip-009.png",
+    "color": "#6E2C4F",
+    "style": [
+      "satin"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Plum%20Satin%20Lipstick"
+  },
+  {
+    "id": "lip-010",
+    "name": "Peach Glossy Lipstick",
+    "brand": "Look DNA Beauty",
+    "category": "lipstick",
+    "price": 349,
+    "image": "/catalog/lip-010.png",
+    "color": "#F0A07A",
+    "style": [
+      "gloss"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Peach%20Glossy%20Lipstick"
+  },
+  {
+    "id": "lip-011",
+    "name": "Cherry Glossy Lipstick",
+    "brand": "Look DNA Beauty",
+    "category": "lipstick",
+    "price": 399,
+    "image": "/catalog/lip-011.png",
+    "color": "#C2185B",
+    "style": [
+      "gloss"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Cherry%20Glossy%20Lipstick"
+  },
+  {
+    "id": "lip-012",
+    "name": "Terracotta Matte Lipstick",
+    "brand": "Look DNA Beauty",
+    "category": "lipstick",
+    "price": 499,
+    "image": "/catalog/lip-012.png",
+    "color": "#B5553C",
+    "style": [
+      "matte"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Terracotta%20Matte%20Lipstick"
+  },
+  {
+    "id": "lip-013",
+    "name": "Fuchsia Satin Lipstick",
+    "brand": "Look DNA Beauty",
+    "category": "lipstick",
+    "price": 449,
+    "image": "/catalog/lip-013.png",
+    "color": "#C72C7A",
+    "style": [
+      "satin"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Fuchsia%20Satin%20Lipstick"
+  },
+  {
+    "id": "lip-014",
+    "name": "Chocolate Matte Lipstick",
+    "brand": "Look DNA Beauty",
+    "category": "lipstick",
+    "price": 499,
+    "image": "/catalog/lip-014.png",
+    "color": "#6B3A2E",
+    "style": [
+      "matte"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Chocolate%20Matte%20Lipstick"
+  },
+  {
+    "id": "eye-001",
+    "name": "Bronze Shimmer Eyeshadow",
+    "brand": "Look DNA Beauty",
+    "category": "eyeshadow",
+    "price": 399,
+    "image": "/catalog/eye-001.png",
+    "color": "#9C6B3E",
+    "style": [
+      "shimmer"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Bronze%20Shimmer%20Eyeshadow"
+  },
+  {
+    "id": "eye-002",
+    "name": "Champagne Shimmer Eyeshadow",
+    "brand": "Look DNA Beauty",
+    "category": "eyeshadow",
+    "price": 349,
+    "image": "/catalog/eye-002.png",
+    "color": "#E6CBA8",
+    "style": [
+      "shimmer"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Champagne%20Shimmer%20Eyeshadow"
+  },
+  {
+    "id": "eye-003",
+    "name": "Taupe Matte Eyeshadow",
+    "brand": "Look DNA Beauty",
+    "category": "eyeshadow",
+    "price": 349,
+    "image": "/catalog/eye-003.png",
+    "color": "#8B7D70",
+    "style": [
+      "matte"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Taupe%20Matte%20Eyeshadow"
+  },
+  {
+    "id": "eye-004",
+    "name": "Plum Matte Eyeshadow",
+    "brand": "Look DNA Beauty",
+    "category": "eyeshadow",
+    "price": 399,
+    "image": "/catalog/eye-004.png",
+    "color": "#5E3A55",
+    "style": [
+      "matte"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Plum%20Matte%20Eyeshadow"
+  },
+  {
+    "id": "eye-005",
+    "name": "Rose Gold Shimmer Eyeshadow",
+    "brand": "Look DNA Beauty",
+    "category": "eyeshadow",
+    "price": 399,
+    "image": "/catalog/eye-005.png",
+    "color": "#C98C7A",
+    "style": [
+      "shimmer"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Rose%20Gold%20Shimmer%20Eyeshadow"
+  },
+  {
+    "id": "eye-006",
+    "name": "Smoky Charcoal Eyeshadow",
+    "brand": "Look DNA Beauty",
+    "category": "eyeshadow",
+    "price": 349,
+    "image": "/catalog/eye-006.png",
+    "color": "#3A3A3F",
+    "style": [
+      "matte"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Smoky%20Charcoal%20Eyeshadow"
+  },
+  {
+    "id": "eye-007",
+    "name": "Copper Shimmer Eyeshadow",
+    "brand": "Look DNA Beauty",
+    "category": "eyeshadow",
+    "price": 399,
+    "image": "/catalog/eye-007.png",
+    "color": "#B5653A",
+    "style": [
+      "shimmer"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Copper%20Shimmer%20Eyeshadow"
+  },
+  {
+    "id": "eye-008",
+    "name": "Navy Matte Eyeshadow",
+    "brand": "Look DNA Beauty",
+    "category": "eyeshadow",
+    "price": 349,
+    "image": "/catalog/eye-008.png",
+    "color": "#26324F",
+    "style": [
+      "matte"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Navy%20Matte%20Eyeshadow"
+  },
+  {
+    "id": "blu-001",
+    "name": "Peach Matte Blush",
+    "brand": "Look DNA Beauty",
+    "category": "blush",
+    "price": 399,
+    "image": "/catalog/blu-001.png",
+    "color": "#F2A27E",
+    "style": [
+      "matte"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Peach%20Matte%20Blush"
+  },
+  {
+    "id": "blu-002",
+    "name": "Rose Satin Blush",
+    "brand": "Look DNA Beauty",
+    "category": "blush",
+    "price": 399,
+    "image": "/catalog/blu-002.png",
+    "color": "#D9828A",
+    "style": [
+      "satin"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Rose%20Satin%20Blush"
+  },
+  {
+    "id": "blu-003",
+    "name": "Coral Matte Blush",
+    "brand": "Look DNA Beauty",
+    "category": "blush",
+    "price": 399,
+    "image": "/catalog/blu-003.png",
+    "color": "#E9765B",
+    "style": [
+      "matte"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Coral%20Matte%20Blush"
+  },
+  {
+    "id": "blu-004",
+    "name": "Berry Satin Blush",
+    "brand": "Look DNA Beauty",
+    "category": "blush",
+    "price": 449,
+    "image": "/catalog/blu-004.png",
+    "color": "#B4506A",
+    "style": [
+      "satin"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Berry%20Satin%20Blush"
+  },
+  {
+    "id": "blu-005",
+    "name": "Soft Pink Matte Blush",
+    "brand": "Look DNA Beauty",
+    "category": "blush",
+    "price": 349,
+    "image": "/catalog/blu-005.png",
+    "color": "#F0A6B4",
+    "style": [
+      "matte"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Soft%20Pink%20Matte%20Blush"
+  },
+  {
+    "id": "blu-006",
+    "name": "Terracotta Matte Blush",
+    "brand": "Look DNA Beauty",
+    "category": "blush",
+    "price": 449,
+    "image": "/catalog/blu-006.png",
+    "color": "#C0664A",
+    "style": [
+      "matte"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Terracotta%20Matte%20Blush"
+  },
+  {
+    "id": "blu-007",
+    "name": "Mauve Satin Blush",
+    "brand": "Look DNA Beauty",
+    "category": "blush",
+    "price": 399,
+    "image": "/catalog/blu-007.png",
+    "color": "#B9808F",
+    "style": [
+      "satin"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Mauve%20Satin%20Blush"
+  },
+  {
+    "id": "blu-008",
+    "name": "Bronze Shimmer Blush",
+    "brand": "Look DNA Beauty",
+    "category": "blush",
+    "price": 449,
+    "image": "/catalog/blu-008.png",
+    "color": "#B07A55",
+    "style": [
+      "shimmer"
+    ],
+    "link": "https://www.google.com/search?tbm=shop&q=Bronze%20Shimmer%20Blush"
+  }
+]
