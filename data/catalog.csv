@@ -1,0 +1,73 @@
+id,name,brand,category,price,image,link,color,style
+top-001,Lilac Oversized Knit Sweater,Look DNA Studio,top,1299,/catalog/top-001.png,https://www.google.com/search?tbm=shop&q=Lilac%20Oversized%20Knit%20Sweater,#C8A2C8,oversized|knit|casual
+top-002,Ivory Ribbed Knit Top,Look DNA Studio,top,799,/catalog/top-002.png,https://www.google.com/search?tbm=shop&q=Ivory%20Ribbed%20Knit%20Top,#F2EBDD,fitted|knit|minimal
+top-003,Black Fitted Crop Top,Look DNA Studio,top,599,/catalog/top-003.png,https://www.google.com/search?tbm=shop&q=Black%20Fitted%20Crop%20Top,#1E1E1E,fitted|cropped|party
+top-004,White Cotton Shirt,Look DNA Studio,top,999,/catalog/top-004.png,https://www.google.com/search?tbm=shop&q=White%20Cotton%20Shirt,#FAFAFA,relaxed|shirt|formal
+top-005,Sky Blue Linen Shirt,Look DNA Studio,top,1199,/catalog/top-005.png,https://www.google.com/search?tbm=shop&q=Sky%20Blue%20Linen%20Shirt,#9CC3E6,relaxed|linen|summer
+top-006,Rust Satin Blouse,Look DNA Studio,top,1399,/catalog/top-006.png,https://www.google.com/search?tbm=shop&q=Rust%20Satin%20Blouse,#B7472A,flowy|satin|party
+top-007,Sage Green Oversized Tee,Look DNA Studio,top,499,/catalog/top-007.png,https://www.google.com/search?tbm=shop&q=Sage%20Green%20Oversized%20Tee,#9CAF88,oversized|cotton|casual
+top-008,Mustard Knit Cardigan Top,Look DNA Studio,top,1099,/catalog/top-008.png,https://www.google.com/search?tbm=shop&q=Mustard%20Knit%20Cardigan%20Top,#D4A017,relaxed|knit|vintage
+top-009,Blush Pink Puff Sleeve Top,Look DNA Studio,top,899,/catalog/top-009.png,https://www.google.com/search?tbm=shop&q=Blush%20Pink%20Puff%20Sleeve%20Top,#F4C2C2,fitted|puff-sleeve|feminine
+top-010,Navy Striped Breton Top,Look DNA Studio,top,849,/catalog/top-010.png,https://www.google.com/search?tbm=shop&q=Navy%20Striped%20Breton%20Top,#1F2A44,relaxed|striped|classic
+top-011,Emerald Satin Cami,Look DNA Studio,top,749,/catalog/top-011.png,https://www.google.com/search?tbm=shop&q=Emerald%20Satin%20Cami,#1B7F5B,fitted|satin|party
+top-012,Charcoal Oversized Hoodie,Look DNA Studio,top,1499,/catalog/top-012.png,https://www.google.com/search?tbm=shop&q=Charcoal%20Oversized%20Hoodie,#3C3C3C,oversized|fleece|streetwear
+top-013,Lavender Cropped Cardigan,Look DNA Studio,top,999,/catalog/top-013.png,https://www.google.com/search?tbm=shop&q=Lavender%20Cropped%20Cardigan,#B9A6D9,cropped|knit|feminine
+top-014,Terracotta Linen Top,Look DNA Studio,top,899,/catalog/top-014.png,https://www.google.com/search?tbm=shop&q=Terracotta%20Linen%20Top,#C46A4A,relaxed|linen|summer
+btm-001,Blue Wide-Leg Jeans,Look DNA Studio,bottom,1499,/catalog/btm-001.png,https://www.google.com/search?tbm=shop&q=Blue%20Wide-Leg%20Jeans,#4A6FA5,wide-leg|denim|casual
+btm-002,Black Straight Trousers,Look DNA Studio,bottom,1299,/catalog/btm-002.png,https://www.google.com/search?tbm=shop&q=Black%20Straight%20Trousers,#1C1C1C,straight|tailored|formal
+btm-003,Beige Pleated Trousers,Look DNA Studio,bottom,1199,/catalog/btm-003.png,https://www.google.com/search?tbm=shop&q=Beige%20Pleated%20Trousers,#D8C3A5,wide-leg|pleated|minimal
+btm-004,White Wide-Leg Pants,Look DNA Studio,bottom,1099,/catalog/btm-004.png,https://www.google.com/search?tbm=shop&q=White%20Wide-Leg%20Pants,#F5F5F0,wide-leg|linen|summer
+btm-005,Olive Cargo Pants,Look DNA Studio,bottom,1399,/catalog/btm-005.png,https://www.google.com/search?tbm=shop&q=Olive%20Cargo%20Pants,#6B6B3A,relaxed|cargo|streetwear
+btm-006,Light Wash Mom Jeans,Look DNA Studio,bottom,1299,/catalog/btm-006.png,https://www.google.com/search?tbm=shop&q=Light%20Wash%20Mom%20Jeans,#9DB4D3,high-waist|denim|vintage
+btm-007,Black Pleated Midi Skirt,Look DNA Studio,bottom,999,/catalog/btm-007.png,https://www.google.com/search?tbm=shop&q=Black%20Pleated%20Midi%20Skirt,#202020,pleated|midi|classic
+btm-008,Denim Mini Skirt,Look DNA Studio,bottom,799,/catalog/btm-008.png,https://www.google.com/search?tbm=shop&q=Denim%20Mini%20Skirt,#5B7DB1,mini|denim|casual
+btm-009,Camel Satin Slip Skirt,Look DNA Studio,bottom,1099,/catalog/btm-009.png,https://www.google.com/search?tbm=shop&q=Camel%20Satin%20Slip%20Skirt,#C19A6B,midi|satin|party
+btm-010,Grey Jogger Pants,Look DNA Studio,bottom,699,/catalog/btm-010.png,https://www.google.com/search?tbm=shop&q=Grey%20Jogger%20Pants,#8A8A8A,relaxed|fleece|streetwear
+drs-001,Red Satin Slip Dress,Look DNA Studio,dress,1999,/catalog/drs-001.png,https://www.google.com/search?tbm=shop&q=Red%20Satin%20Slip%20Dress,#B22234,slip|satin|party
+drs-002,Black Little Bodycon Dress,Look DNA Studio,dress,1599,/catalog/drs-002.png,https://www.google.com/search?tbm=shop&q=Black%20Little%20Bodycon%20Dress,#151515,bodycon|mini|party
+drs-003,Floral Yellow Sundress,Look DNA Studio,dress,1399,/catalog/drs-003.png,https://www.google.com/search?tbm=shop&q=Floral%20Yellow%20Sundress,#F2C94C,flowy|floral|summer
+drs-004,Lilac Tiered Midi Dress,Look DNA Studio,dress,1799,/catalog/drs-004.png,https://www.google.com/search?tbm=shop&q=Lilac%20Tiered%20Midi%20Dress,#C8A2C8,flowy|tiered|feminine
+drs-005,Emerald Wrap Dress,Look DNA Studio,dress,2199,/catalog/drs-005.png,https://www.google.com/search?tbm=shop&q=Emerald%20Wrap%20Dress,#0F6B4F,wrap|midi|formal
+drs-006,White Linen Shirt Dress,Look DNA Studio,dress,1499,/catalog/drs-006.png,https://www.google.com/search?tbm=shop&q=White%20Linen%20Shirt%20Dress,#F7F5EF,relaxed|linen|minimal
+drs-007,Navy Polka Dot Dress,Look DNA Studio,dress,1299,/catalog/drs-007.png,https://www.google.com/search?tbm=shop&q=Navy%20Polka%20Dot%20Dress,#1D2B4F,flowy|polka-dot|vintage
+drs-008,Blush Pink Ruffle Dress,Look DNA Studio,dress,1699,/catalog/drs-008.png,https://www.google.com/search?tbm=shop&q=Blush%20Pink%20Ruffle%20Dress,#F2B5B5,ruffle|mini|feminine
+drs-009,Olive Knit Sweater Dress,Look DNA Studio,dress,1599,/catalog/drs-009.png,https://www.google.com/search?tbm=shop&q=Olive%20Knit%20Sweater%20Dress,#707A4A,fitted|knit|casual
+drs-010,Cobalt Blue Shift Dress,Look DNA Studio,dress,1399,/catalog/drs-010.png,https://www.google.com/search?tbm=shop&q=Cobalt%20Blue%20Shift%20Dress,#1F4FBF,shift|mini|formal
+drs-011,Mauve Satin Midi Dress,Look DNA Studio,dress,1899,/catalog/drs-011.png,https://www.google.com/search?tbm=shop&q=Mauve%20Satin%20Midi%20Dress,#B784A7,slip|satin|party
+drs-012,Mustard Shirt Dress,Look DNA Studio,dress,1199,/catalog/drs-012.png,https://www.google.com/search?tbm=shop&q=Mustard%20Shirt%20Dress,#C9A227,relaxed|shirt|casual
+out-001,Beige Trench Coat,Look DNA Studio,outerwear,2799,/catalog/out-001.png,https://www.google.com/search?tbm=shop&q=Beige%20Trench%20Coat,#C8B08A,tailored|trench|classic
+out-002,Black Faux Leather Jacket,Look DNA Studio,outerwear,2499,/catalog/out-002.png,https://www.google.com/search?tbm=shop&q=Black%20Faux%20Leather%20Jacket,#1A1A1A,fitted|leather|streetwear
+out-003,Light Denim Jacket,Look DNA Studio,outerwear,1799,/catalog/out-003.png,https://www.google.com/search?tbm=shop&q=Light%20Denim%20Jacket,#8FA9C9,relaxed|denim|casual
+out-004,Camel Wool Blazer,Look DNA Studio,outerwear,2299,/catalog/out-004.png,https://www.google.com/search?tbm=shop&q=Camel%20Wool%20Blazer,#B9875A,tailored|blazer|formal
+out-005,Cream Teddy Jacket,Look DNA Studio,outerwear,1999,/catalog/out-005.png,https://www.google.com/search?tbm=shop&q=Cream%20Teddy%20Jacket,#EEE3D0,oversized|fleece|casual
+out-006,Olive Utility Jacket,Look DNA Studio,outerwear,1899,/catalog/out-006.png,https://www.google.com/search?tbm=shop&q=Olive%20Utility%20Jacket,#5F6B3A,relaxed|utility|streetwear
+lip-001,Classic Red Matte Lipstick,Look DNA Beauty,lipstick,499,/catalog/lip-001.png,https://www.google.com/search?tbm=shop&q=Classic%20Red%20Matte%20Lipstick,#B0202E,matte
+lip-002,Brick Red Matte Lipstick,Look DNA Beauty,lipstick,499,/catalog/lip-002.png,https://www.google.com/search?tbm=shop&q=Brick%20Red%20Matte%20Lipstick,#A8473F,matte
+lip-003,Berry Matte Lipstick,Look DNA Beauty,lipstick,549,/catalog/lip-003.png,https://www.google.com/search?tbm=shop&q=Berry%20Matte%20Lipstick,#8E2C48,matte
+lip-004,Rosewood Satin Lipstick,Look DNA Beauty,lipstick,449,/catalog/lip-004.png,https://www.google.com/search?tbm=shop&q=Rosewood%20Satin%20Lipstick,#B5485D,satin
+lip-005,Coral Glossy Lipstick,Look DNA Beauty,lipstick,399,/catalog/lip-005.png,https://www.google.com/search?tbm=shop&q=Coral%20Glossy%20Lipstick,#E2725B,gloss
+lip-006,Nude Pink Satin Lipstick,Look DNA Beauty,lipstick,449,/catalog/lip-006.png,https://www.google.com/search?tbm=shop&q=Nude%20Pink%20Satin%20Lipstick,#C98B8B,satin
+lip-007,Warm Nude Matte Lipstick,Look DNA Beauty,lipstick,449,/catalog/lip-007.png,https://www.google.com/search?tbm=shop&q=Warm%20Nude%20Matte%20Lipstick,#B07A62,matte
+lip-008,Mauve Matte Lipstick,Look DNA Beauty,lipstick,499,/catalog/lip-008.png,https://www.google.com/search?tbm=shop&q=Mauve%20Matte%20Lipstick,#9E6B7B,matte
+lip-009,Plum Satin Lipstick,Look DNA Beauty,lipstick,549,/catalog/lip-009.png,https://www.google.com/search?tbm=shop&q=Plum%20Satin%20Lipstick,#6E2C4F,satin
+lip-010,Peach Glossy Lipstick,Look DNA Beauty,lipstick,349,/catalog/lip-010.png,https://www.google.com/search?tbm=shop&q=Peach%20Glossy%20Lipstick,#F0A07A,gloss
+lip-011,Cherry Glossy Lipstick,Look DNA Beauty,lipstick,399,/catalog/lip-011.png,https://www.google.com/search?tbm=shop&q=Cherry%20Glossy%20Lipstick,#C2185B,gloss
+lip-012,Terracotta Matte Lipstick,Look DNA Beauty,lipstick,499,/catalog/lip-012.png,https://www.google.com/search?tbm=shop&q=Terracotta%20Matte%20Lipstick,#B5553C,matte
+lip-013,Fuchsia Satin Lipstick,Look DNA Beauty,lipstick,449,/catalog/lip-013.png,https://www.google.com/search?tbm=shop&q=Fuchsia%20Satin%20Lipstick,#C72C7A,satin
+lip-014,Chocolate Matte Lipstick,Look DNA Beauty,lipstick,499,/catalog/lip-014.png,https://www.google.com/search?tbm=shop&q=Chocolate%20Matte%20Lipstick,#6B3A2E,matte
+eye-001,Bronze Shimmer Eyeshadow,Look DNA Beauty,eyeshadow,399,/catalog/eye-001.png,https://www.google.com/search?tbm=shop&q=Bronze%20Shimmer%20Eyeshadow,#9C6B3E,shimmer
+eye-002,Champagne Shimmer Eyeshadow,Look DNA Beauty,eyeshadow,349,/catalog/eye-002.png,https://www.google.com/search?tbm=shop&q=Champagne%20Shimmer%20Eyeshadow,#E6CBA8,shimmer
+eye-003,Taupe Matte Eyeshadow,Look DNA Beauty,eyeshadow,349,/catalog/eye-003.png,https://www.google.com/search?tbm=shop&q=Taupe%20Matte%20Eyeshadow,#8B7D70,matte
+eye-004,Plum Matte Eyeshadow,Look DNA Beauty,eyeshadow,399,/catalog/eye-004.png,https://www.google.com/search?tbm=shop&q=Plum%20Matte%20Eyeshadow,#5E3A55,matte
+eye-005,Rose Gold Shimmer Eyeshadow,Look DNA Beauty,eyeshadow,399,/catalog/eye-005.png,https://www.google.com/search?tbm=shop&q=Rose%20Gold%20Shimmer%20Eyeshadow,#C98C7A,shimmer
+eye-006,Smoky Charcoal Eyeshadow,Look DNA Beauty,eyeshadow,349,/catalog/eye-006.png,https://www.google.com/search?tbm=shop&q=Smoky%20Charcoal%20Eyeshadow,#3A3A3F,matte
+eye-007,Copper Shimmer Eyeshadow,Look DNA Beauty,eyeshadow,399,/catalog/eye-007.png,https://www.google.com/search?tbm=shop&q=Copper%20Shimmer%20Eyeshadow,#B5653A,shimmer
+eye-008,Navy Matte Eyeshadow,Look DNA Beauty,eyeshadow,349,/catalog/eye-008.png,https://www.google.com/search?tbm=shop&q=Navy%20Matte%20Eyeshadow,#26324F,matte
+blu-001,Peach Matte Blush,Look DNA Beauty,blush,399,/catalog/blu-001.png,https://www.google.com/search?tbm=shop&q=Peach%20Matte%20Blush,#F2A27E,matte
+blu-002,Rose Satin Blush,Look DNA Beauty,blush,399,/catalog/blu-002.png,https://www.google.com/search?tbm=shop&q=Rose%20Satin%20Blush,#D9828A,satin
+blu-003,Coral Matte Blush,Look DNA Beauty,blush,399,/catalog/blu-003.png,https://www.google.com/search?tbm=shop&q=Coral%20Matte%20Blush,#E9765B,matte
+blu-004,Berry Satin Blush,Look DNA Beauty,blush,449,/catalog/blu-004.png,https://www.google.com/search?tbm=shop&q=Berry%20Satin%20Blush,#B4506A,satin
+blu-005,Soft Pink Matte Blush,Look DNA Beauty,blush,349,/catalog/blu-005.png,https://www.google.com/search?tbm=shop&q=Soft%20Pink%20Matte%20Blush,#F0A6B4,matte
+blu-006,Terracotta Matte Blush,Look DNA Beauty,blush,449,/catalog/blu-006.png,https://www.google.com/search?tbm=shop&q=Terracotta%20Matte%20Blush,#C0664A,matte
+blu-007,Mauve Satin Blush,Look DNA Beauty,blush,399,/catalog/blu-007.png,https://www.google.com/search?tbm=shop&q=Mauve%20Satin%20Blush,#B9808F,satin
+blu-008,Bronze Shimmer Blush,Look DNA Beauty,blush,449,/catalog/blu-008.png,https://www.google.com/search?tbm=shop&q=Bronze%20Shimmer%20Blush,#B07A55,shimmer

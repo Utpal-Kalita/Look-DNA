@@ -20,6 +20,10 @@ export async function enforceRateLimit(
   windowSeconds: number,
 ): Promise<void> {
   assertSameOrigin(request);
+  // For the local 10-image test run only (scripts/live-test.mjs). Never set on Vercel.
+  if (process.env.DISABLE_RATE_LIMIT === "1" && process.env.VERCEL !== "1") {
+    return;
+  }
 
   const now = Date.now();
   const windowId = Math.floor(now / (windowSeconds * 1000));
