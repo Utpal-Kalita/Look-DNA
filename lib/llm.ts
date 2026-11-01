@@ -57,7 +57,7 @@ interface Attempt {
 }
 
 export function mockLlmEnabled(): boolean {
-  return process.env.MOCK_LLM === "1";
+  return process.env.MOCK_LLM === "1" && process.env.VERCEL_ENV !== "production";
 }
 
 /**
