@@ -78,6 +78,7 @@ export async function extractLookItems(image: ImageUpload): Promise<LookItem[]> 
         : await requestClaude(image);
     } catch (error) {
       lastError = error;
+      console.warn(`extraction attempt ${attempt + 1} (${provider}) failed:`, error instanceof Error ? error.message : error);
       if (error instanceof AppError && error.status < 500) {
         throw error;
       }
@@ -114,8 +115,10 @@ async function requestGemini(image: ImageUpload, lowThinking: boolean): Promise<
   geminiClient ??= new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
   const { $schema: _ignored, ...jsonSchema } = z.toJSONSchema(extractionSchema) as Record<string, unknown>;
 
+  const model = process.env.GEMINI_MODEL || DEFAULT_GEMINI_MODEL;
+  const started = Date.now();
   const response = await geminiClient.models.generateContent({
-    model: process.env.GEMINI_MODEL || DEFAULT_GEMINI_MODEL,
+    model,
     contents: [
       {
         role: "user",
@@ -136,6 +139,7 @@ async function requestGemini(image: ImageUpload, lowThinking: boolean): Promise<
   });
 
   const finishReason = response.candidates?.[0]?.finishReason;
+  console.info(`gemini ${model} answered in ${Date.now() - started} ms (lowThinking=${lowThinking}, finish=${finishReason})`);
   if (response.promptFeedback?.blockReason || finishReason === "SAFETY" || finishReason === "PROHIBITED_CONTENT") {
     throw new AppError(
       "This image could not be analysed. Try a different inspiration image.",
