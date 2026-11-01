@@ -68,8 +68,9 @@ function plan(image: ImageUpload): Attempt[] {
   const attempts: Attempt[] = [];
   if (process.env.GROQ_API_KEY) {
     const model = process.env.GROQ_MODEL || DEFAULT_GROQ_MODEL;
-    attempts.push({ provider: "groq", run: () => requestGroq(image, model) });
-    attempts.push({ provider: "groq", run: () => requestGroq(image, model) });
+    for (let i = 0; i < 3; i += 1) {
+      attempts.push({ provider: "groq", run: () => requestGroq(image, model) });
+    }
   }
   if (process.env.GEMINI_API_KEY) {
     // Main model, then the lighter fallback (Google returns 503 "high demand" at peaks).
@@ -144,6 +145,9 @@ async function requestGroq(image: ImageUpload, model: string): Promise<LookItem[
     body: JSON.stringify({
       model,
       temperature: 0.2,
+      // The reply is a few hundred tokens; a small cap keeps each request well
+      // inside Groq's output-tokens-per-minute limit.
+      max_tokens: 700,
       response_format: { type: "json_object" },
       messages: [
         { role: "system", content: `${SYSTEM_PROMPT}\n\n${JSON_INSTRUCTIONS}` },
@@ -162,7 +166,14 @@ async function requestGroq(image: ImageUpload, model: string): Promise<LookItem[
     | { choices?: { message?: { content?: string } }[]; error?: { message?: string } }
     | null;
   if (!response.ok) {
-    throw new GroqError(payload?.error?.message ?? `Groq returned ${response.status}`, response.status);
+    const message = payload?.error?.message ?? `Groq returned ${response.status}`;
+    // Per-minute limits come with a short wait ("try again in 925ms"); wait it
+    // out once so the next Groq attempt can succeed instead of falling through.
+    const wait = response.status === 429 ? retryAfterMs(message, response.headers.get("retry-after")) : null;
+    if (wait !== null && wait <= 6_000) {
+      await new Promise((resolve) => setTimeout(resolve, wait + 250));
+    }
+    throw new GroqError(message, response.status);
   }
   const text = payload?.choices?.[0]?.message?.content;
   if (!text) {
@@ -172,6 +183,17 @@ async function requestGroq(image: ImageUpload, model: string): Promise<LookItem[
   // Throws on malformed JSON or schema mismatch, which moves on to the next attempt.
   const parsed = extractionSchema.parse(JSON.parse(stripFences(text)));
   return cleanItems(parsed.items);
+}
+
+/** Milliseconds to wait from Groq's 429 message or Retry-After header, if given. */
+export function retryAfterMs(message: string, header: string | null): number | null {
+  const match = /try again in ([\d.]+)\s*(ms|s)\b/i.exec(message);
+  if (match) {
+    const value = Number.parseFloat(match[1]);
+    return Math.ceil(match[2].toLowerCase() === "ms" ? value : value * 1000);
+  }
+  const seconds = header ? Number.parseFloat(header) : Number.NaN;
+  return Number.isFinite(seconds) ? Math.ceil(seconds * 1000) : null;
 }
 
 /** JSON mode needs the shape spelled out in the prompt. */
