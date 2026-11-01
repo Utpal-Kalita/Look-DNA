@@ -61,6 +61,7 @@ const runs = [];
 for (const file of inspirations) {
   const name = path.basename(file);
   const started = Date.now();
+  waitedMs = 0;
   const run = { name, items: 0, matched: 0, total: 0, underBudget: false, seconds: 0, tryOnMode: "-", error: "" };
   try {
     const extract = await postImage("/api/extract", "inspiration", file);
@@ -74,7 +75,9 @@ for (const file of inspirations) {
     run.total = match.body.total;
     run.underBudget = match.body.total <= BUDGET;
 
-    if (!SKIP_TRYON && !NO_SELFIE) {
+    if (match.body.matches.length === 0) {
+      run.tryOnMode = "no close match";
+    } else if (!SKIP_TRYON && !NO_SELFIE) {
       const form = new FormData();
       form.append("selfie", await blob(selfie), path.basename(selfie));
       form.append("matches", JSON.stringify(match.body.matches));
@@ -86,12 +89,13 @@ for (const file of inspirations) {
     run.error = error.message;
   }
   // Skin tone is computed once up front, as it is per selfie, not per look.
-  run.seconds = (Date.now() - started) / 1000;
+  run.seconds = (Date.now() - started - waitedMs) / 1000;
   runs.push(run);
   console.log(`${name}: ${run.matched}/${run.items} matched, ₹${run.total}, ${run.seconds.toFixed(1)}s, ${run.tryOnMode}${run.error ? `, ERROR ${run.error}` : ""}`);
 }
 
-const ok = runs.filter((r) => !r.error);
+// Timing is upload to try-on, so only runs that reached a try-on count.
+const ok = runs.filter((r) => !r.error && !["-", "no close match"].includes(r.tryOnMode));
 const itemsTotal = runs.reduce((s, r) => s + r.items, 0);
 const matchedTotal = runs.reduce((s, r) => s + r.matched, 0);
 const matchRate = itemsTotal ? Math.round((matchedTotal / itemsTotal) * 100) : 0;
@@ -154,6 +158,9 @@ async function postJson(route, body) {
   return post(route, JSON.stringify(body), { "content-type": "application/json" });
 }
 
+/** Time spent waiting out rate limits, subtracted from each run's timing. */
+let waitedMs = 0;
+
 async function post(route, body, headers = {}) {
   // The live site rate-limits per IP; wait out a 429 instead of failing the run.
   for (let attempt = 0; attempt < 8; attempt += 1) {
@@ -162,8 +169,9 @@ async function post(route, body, headers = {}) {
     if (response.status !== 429) {
       return { ok: response.ok, status: response.status, body: json };
     }
-    console.log(`  rate limited on ${route}, waiting 75s`);
+    console.log(`  rate limited on ${route}, waiting 75s (not counted in timings)`);
     await new Promise((resolve) => setTimeout(resolve, 75_000));
+    waitedMs += 75_000;
   }
   return { ok: false, status: 429, body: { error: { message: "rate limited" } } };
 }

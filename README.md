@@ -197,14 +197,37 @@ All three use YouCam's async task flow (upload file, create task, poll until don
 
 ## Results
 
-Results from the 10-image test go here. Run `npm run test:live` (below) and paste in `test/results.md`.
+10-image test run on 1 Nov 2026 against the live site (https://look-dna.vercel.app) with live YouCam, Groq and Gemini calls, a ₹3,000 budget, and the same head-to-hips photo for every try-on. Command: `npm run test:live` (see Development below).
 
 | Metric | Target | Result |
 | --- | --- | --- |
-| Look items matched to a catalog product | 80% or more | _pending_ |
-| Total look cost vs budget | Under budget in 10 of 10 runs | _pending_ |
-| Time from upload to try-on result | Under 60 seconds | _pending_ |
-| Poor-quality selfies caught by the quality gate | All test cases | _pending_ |
+| Look items matched to a catalog or live store product | 80% or more | **81%** (13 of 16 items) |
+| Total look cost vs budget | Under budget in 10 of 10 runs | **10 of 10** |
+| Time from upload to try-on result | Under 60 seconds | **median 23.0 s, slowest 32.7 s** (8 runs that reached try-on) |
+| Poor-quality selfies caught by the quality gate | All test cases | **4 of 4 caught** (dark, blurry, no face, two people); 2 of 2 good photos passed |
+
+<details><summary>Per-image runs</summary>
+
+| Image | Items | Matched | Total (₹) | Seconds | Try-on |
+| --- | --- | --- | --- | --- | --- |
+| 01 | 1 | 1 | 1,950 | 29.4 | clothes |
+| 02 | 1 | 0 | 0 | 1.7 | no close match (strapless maroon satin dress) |
+| 03 | 4 | 3 | 2,143 | 32.7 | clothes + lip |
+| 04 | 1 | 1 | 2,760 | 18.7 | clothes |
+| 05 | 1 | 0 | 0 | 1.8 | no close match (cobalt metallic shift dress) |
+| 06 | 2 | 2 | 1,598 | 12.8 | clothes |
+| 07 | 2 | 2 | 1,611 | 23.0 | clothes + lip |
+| 08 | 2 | 2 | 2,698 | 13.0 | clothes |
+| 09 | 1 | 1 | 1,436 | 12.9 | clothes |
+| 10 | 1 | 1 | 1,754 | 25.9 | clothes |
+
+</details>
+
+Notes on the method:
+- Inspiration images are retailer photos of complete outfits; the two that found no product scoring 50% or more show "no close match" rather than a poor product. They had no try-on, so they are left out of the timing.
+- The live site rate-limits each IP. The runner waits 75 s when limited; those waits are not counted in the timings above (images 04, 07 and 10 waited 1, 3 and 1 times).
+- Skin tone came from YouCam's analysis of a levelled face crop, with a local estimate when YouCam declines only the head pose.
+- Test photos are kept out of the repository.
 
 ## Development
 
