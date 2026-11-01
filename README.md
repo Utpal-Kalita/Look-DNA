@@ -4,7 +4,7 @@ Look DNA turns a fashion or beauty inspiration image into a complete, purchasabl
 
 The project is being built for the **YouCam API Skin AI & eCommerce VTO Hackathon**, in the **eCommerce VTO** track.
 
-> **Project status:** Full six-screen flow and all five API routes are built and run end to end in mock mode. The catalog (`data/catalog.json`, 72 items) is a **demo catalog** with house-brand names, generated flat product images in `public/catalog/`, and Google Shopping search links. Replace it with real products and clean front-facing garment photos before the demo.
+> **Project status:** Full six-screen flow and all five API routes are live at https://look-dna.vercel.app with real YouCam and Gemini calls. The catalog (`data/catalog.json`) holds 71 real products from 8 Indian brands, pulled from the brands' public Shopify product feeds with their own photos, INR prices and buy links.
 
 ## Product Flow
 
@@ -239,6 +239,9 @@ For live extraction set `GEMINI_API_KEY` (server-side only). `/api/extract` send
 On Vercel, set the same variables in Project Settings → Environment Variables.
 
 ### Catalog
+
+`data/catalog.csv` lists 71 real products (tops, bottoms, dresses, outerwear, lipsticks, eyeshadows, blushes) from Bonkers Corner, Style Union, Kazo, The Label Life, Forever New, Salt Attire, SUGAR Cosmetics and Swiss Beauty, taken from each store's public `products.json` feed on 1 Nov 2026. Each lipstick, eyeshadow and blush shade is its own row with the colour sampled from its swatch photo; garment colours come from the product name where it states one, otherwise from the photo. Prices and stock change, so re-check before the demo.
+
 
 Edit `data/catalog.csv` (one row per product), then run `npm run catalog:import`. It checks every row, makes sure each image downloads and is a JPEG or PNG of at least 300px, samples the colour of clothing images when the `color` column is blank, and writes `data/catalog.json`. Add `-- --dry` to check without writing. Column details are at the top of `scripts/import-catalog.mjs`.
 

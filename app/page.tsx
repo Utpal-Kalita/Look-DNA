@@ -32,10 +32,20 @@ function Chip({ color, label }: { color: string; label: string }) {
 
 /** The signature: one look, broken down the way the app does it. */
 function LookSheet() {
+  // A real result of /api/match against data/catalog.json: a red midi look, warm undertone, ₹3,000 budget.
   const pieces = [
-    { src: "/catalog/top-001.png", name: "Lilac oversized knit sweater", price: "₹1,299", match: "98% match" },
-    { src: "/catalog/btm-008.png", name: "Denim mini skirt", price: "₹799", match: "81% match, fits budget" },
-    { src: "/catalog/lip-002.png", name: "Brick red matte lipstick", price: "₹499", match: "97% match" },
+    {
+      src: "https://cdn.shopify.com/s/files/1/0261/2386/2082/files/KazoSS26_23636.jpg?v=1767161066&width=200",
+      name: "Kazo, Athena midi dress with belt",
+      price: "₹1,754",
+      match: "67% match",
+    },
+    {
+      src: "https://cdn.shopify.com/s/files/1/0906/2558/files/Glide-Peptide-Serum-Lipstick-1-11.jpg?v=1789987713&width=200",
+      name: "SUGAR, Glide Peptide Serum Lipstick, Positano Peach",
+      price: "₹499",
+      match: "92% match",
+    },
   ];
   return (
     <aside className="sheet" aria-label="Example Look DNA for one saved look">
@@ -62,7 +72,7 @@ function LookSheet() {
       </div>
       <div className="total">
         <span className="label muted">Total, budget ₹3,000</span>
-        <span className="total-figure">₹2,597</span>
+        <span className="total-figure">₹2,253</span>
       </div>
     </aside>
   );

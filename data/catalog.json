@@ -1,1022 +1,917 @@
 [
   {
     "id": "top-001",
-    "name": "Lilac Oversized Knit Sweater",
-    "brand": "Look DNA Studio",
+    "name": "Betty Round Neck Fashion Tee With Chevron Pattern",
+    "brand": "Style Union",
     "category": "top",
-    "price": 1299,
-    "image": "/catalog/top-001.png",
-    "color": "#C8A2C8",
+    "price": 699,
+    "image": "https://cdn.shopify.com/s/files/1/0623/4754/2777/files/YWFT00255OFFWHITE_1.jpg?v=1750689355&width=800",
+    "color": "#C5B9A8",
     "style": [
-      "oversized",
+      "cropped",
       "knit",
-      "casual"
+      "shirt"
     ],
-    "link": "https://www.google.com/search?tbm=shop&q=Lilac%20Oversized%20Knit%20Sweater"
+    "link": "https://www.styleunion.in/products/betty-round-neck-fashion-tee-with-chevron-pattern-ywft00255"
   },
   {
     "id": "top-002",
-    "name": "Ivory Ribbed Knit Top",
-    "brand": "Look DNA Studio",
+    "name": "Midnight Satin Dressy/Formal Satin Tie-Up Top - Black",
+    "brand": "Salt Attire",
     "category": "top",
-    "price": 799,
-    "image": "/catalog/top-002.png",
-    "color": "#F2EBDD",
+    "price": 1225,
+    "image": "https://cdn.shopify.com/s/files/1/0859/4217/3988/files/Midnight_Satin_Dressy_Formal_Satin_Tie-Up_Top-_Black.jpg?v=1751015939&width=800",
+    "color": "#1C1C1C",
     "style": [
-      "fitted",
-      "knit",
-      "minimal"
+      "casual",
+      "formal",
+      "satin"
     ],
-    "link": "https://www.google.com/search?tbm=shop&q=Ivory%20Ribbed%20Knit%20Top"
+    "link": "https://www.saltattire.com/products/midnight-satin-dressy-formal-satin-tie-up-top-black"
   },
   {
     "id": "top-003",
-    "name": "Black Fitted Crop Top",
-    "brand": "Look DNA Studio",
+    "name": "Black & Grey Checked Piping Top",
+    "brand": "The Label Life",
     "category": "top",
-    "price": 599,
-    "image": "/catalog/top-003.png",
-    "color": "#1E1E1E",
-    "style": [
-      "fitted",
-      "cropped",
-      "party"
-    ],
-    "link": "https://www.google.com/search?tbm=shop&q=Black%20Fitted%20Crop%20Top"
+    "price": 915,
+    "image": "https://cdn.shopify.com/s/files/1/0329/7499/5591/files/Black_GreyCheckedPipingTop2.jpg?v=1720780185&width=800",
+    "color": "#1C1C1C",
+    "style": [],
+    "link": "https://www.thelabellife.com/products/black-grey-checked-piping-top"
   },
   {
     "id": "top-004",
-    "name": "White Cotton Shirt",
-    "brand": "Look DNA Studio",
+    "name": "Lia Balloon Sleeves Top-Pink",
+    "brand": "Salt Attire",
     "category": "top",
-    "price": 999,
-    "image": "/catalog/top-004.png",
-    "color": "#FAFAFA",
+    "price": 1350,
+    "image": "https://cdn.shopify.com/s/files/1/0859/4217/3988/files/1-3TOP-04-2041-1_864dfa8f-296d-4884-846b-14f2e0a3a966.jpg?v=1755945695&width=800",
+    "color": "#F2A7BB",
     "style": [
-      "relaxed",
-      "shirt",
-      "formal"
+      "formal",
+      "puff-sleeve",
+      "slip"
     ],
-    "link": "https://www.google.com/search?tbm=shop&q=White%20Cotton%20Shirt"
+    "link": "https://www.saltattire.com/products/lia-balloon-sleeves-top-pink-color"
   },
   {
     "id": "top-005",
-    "name": "Sky Blue Linen Shirt",
-    "brand": "Look DNA Studio",
+    "name": "Denver Top",
+    "brand": "Kazo",
     "category": "top",
-    "price": 1199,
-    "image": "/catalog/top-005.png",
-    "color": "#9CC3E6",
-    "style": [
-      "relaxed",
-      "linen",
-      "summer"
-    ],
-    "link": "https://www.google.com/search?tbm=shop&q=Sky%20Blue%20Linen%20Shirt"
+    "price": 1474,
+    "image": "https://cdn.shopify.com/s/files/1/0261/2386/2082/files/KazoSS26_23028.jpg?v=1767173450&width=800",
+    "color": "#555051",
+    "style": [],
+    "link": "https://www.kazo.com/products/kz01881"
   },
   {
     "id": "top-006",
-    "name": "Rust Satin Blouse",
-    "brand": "Look DNA Studio",
+    "name": "Odyssey Gathered V-Neck Buttoned Top-Pink",
+    "brand": "Salt Attire",
     "category": "top",
-    "price": 1399,
-    "image": "/catalog/top-006.png",
-    "color": "#B7472A",
+    "price": 2205,
+    "image": "https://cdn.shopify.com/s/files/1/0859/4217/3988/files/1-TOP-05-4234-1.jpg?v=1787045544&width=800",
+    "color": "#F2A7BB",
     "style": [
-      "flowy",
+      "formal",
       "satin",
-      "party"
+      "slip"
     ],
-    "link": "https://www.google.com/search?tbm=shop&q=Rust%20Satin%20Blouse"
+    "link": "https://www.saltattire.com/products/odyssey-gathered-v-neck-buttoned-top-pink-color"
   },
   {
     "id": "top-007",
-    "name": "Sage Green Oversized Tee",
-    "brand": "Look DNA Studio",
+    "name": "Navy Knit Off Shoulder Top",
+    "brand": "The Label Life",
     "category": "top",
-    "price": 499,
-    "image": "/catalog/top-007.png",
-    "color": "#9CAF88",
+    "price": 1074,
+    "image": "https://cdn.shopify.com/s/files/1/0329/7499/5591/files/NavyKnitOffShoulderTop2.jpg?v=1760190914&width=800",
+    "color": "#1F2A44",
     "style": [
-      "oversized",
-      "cotton",
-      "casual"
+      "knit"
     ],
-    "link": "https://www.google.com/search?tbm=shop&q=Sage%20Green%20Oversized%20Tee"
+    "link": "https://www.thelabellife.com/products/navy-knit-off-shoulder-top"
   },
   {
     "id": "top-008",
-    "name": "Mustard Knit Cardigan Top",
-    "brand": "Look DNA Studio",
+    "name": "Aaliyah Ribbed Polo T-Shirt",
+    "brand": "Forever New",
     "category": "top",
-    "price": 1099,
-    "image": "/catalog/top-008.png",
-    "color": "#D4A017",
+    "price": 1695,
+    "image": "https://cdn.shopify.com/s/files/1/0707/6331/5283/files/30479207_F.jpg?v=1784095579&width=800",
+    "color": "#D9CECA",
     "style": [
-      "relaxed",
-      "knit",
-      "vintage"
+      "shirt"
     ],
-    "link": "https://www.google.com/search?tbm=shop&q=Mustard%20Knit%20Cardigan%20Top"
+    "link": "https://www.forevernew.co.in/products/aaliyah-ribbed-polo-t-shirt-camel"
   },
   {
     "id": "top-009",
-    "name": "Blush Pink Puff Sleeve Top",
-    "brand": "Look DNA Studio",
+    "name": "Como Shirt",
+    "brand": "Kazo",
     "category": "top",
-    "price": 899,
-    "image": "/catalog/top-009.png",
-    "color": "#F4C2C2",
+    "price": 1474,
+    "image": "https://cdn.shopify.com/s/files/1/0261/2386/2082/files/KazoSS_26_3rsShoot1645.jpg?v=1770208683&width=800",
+    "color": "#C39B9E",
     "style": [
-      "fitted",
-      "puff-sleeve",
-      "feminine"
+      "shirt"
     ],
-    "link": "https://www.google.com/search?tbm=shop&q=Blush%20Pink%20Puff%20Sleeve%20Top"
+    "link": "https://www.kazo.com/products/kz02001"
   },
   {
     "id": "top-010",
-    "name": "Navy Striped Breton Top",
-    "brand": "Look DNA Studio",
+    "name": "Side Ruching All Over Print Cherry Print Tee",
+    "brand": "Style Union",
     "category": "top",
-    "price": 849,
-    "image": "/catalog/top-010.png",
-    "color": "#1F2A44",
+    "price": 199,
+    "image": "https://cdn.shopify.com/s/files/1/0623/4754/2777/files/YWFT00210BLACK_1.jpg?v=1762157120&width=800",
+    "color": "#AAAEAF",
     "style": [
-      "relaxed",
-      "striped",
-      "classic"
+      "cotton",
+      "cropped",
+      "knit",
+      "shirt"
     ],
-    "link": "https://www.google.com/search?tbm=shop&q=Navy%20Striped%20Breton%20Top"
+    "link": "https://www.styleunion.in/products/side-ruching-all-over-print-cherry-print-tee-ywft00210"
   },
   {
     "id": "top-011",
-    "name": "Emerald Satin Cami",
-    "brand": "Look DNA Studio",
+    "name": "Sage strappy ribbed knit top",
+    "brand": "The Label Life",
     "category": "top",
-    "price": 749,
-    "image": "/catalog/top-011.png",
-    "color": "#1B7F5B",
+    "price": 1071,
+    "image": "https://cdn.shopify.com/s/files/1/0329/7499/5591/files/SageStrappyRibbedKnitTop4_afdf0498-25eb-4352-9bc8-dbf425975142.jpg?v=1787302288&width=800",
+    "color": "#9CAF88",
     "style": [
-      "fitted",
-      "satin",
-      "party"
+      "cotton",
+      "knit"
     ],
-    "link": "https://www.google.com/search?tbm=shop&q=Emerald%20Satin%20Cami"
+    "link": "https://www.thelabellife.com/products/sage-strappy-ribbed-knit-top"
   },
   {
     "id": "top-012",
-    "name": "Charcoal Oversized Hoodie",
-    "brand": "Look DNA Studio",
+    "name": "Chulo Top",
+    "brand": "Kazo",
     "category": "top",
-    "price": 1499,
-    "image": "/catalog/top-012.png",
-    "color": "#3C3C3C",
-    "style": [
-      "oversized",
-      "fleece",
-      "streetwear"
-    ],
-    "link": "https://www.google.com/search?tbm=shop&q=Charcoal%20Oversized%20Hoodie"
+    "price": 1466,
+    "image": "https://cdn.shopify.com/s/files/1/0261/2386/2082/files/1_cb344207-6627-4da0-8705-9791a44888fc.jpg?v=1777698273&width=800",
+    "color": "#1D1F2F",
+    "style": [],
+    "link": "https://www.kazo.com/products/kz01993blue"
   },
   {
     "id": "top-013",
-    "name": "Lavender Cropped Cardigan",
-    "brand": "Look DNA Studio",
+    "name": "Child Of God Oversized T-shirt",
+    "brand": "Bonkers Corner",
     "category": "top",
     "price": 999,
-    "image": "/catalog/top-013.png",
-    "color": "#B9A6D9",
+    "image": "https://cdn.shopify.com/s/files/1/0653/0541/1684/files/BACK.jpg?v=1767265458&width=800",
+    "color": "#B06A6C",
     "style": [
-      "cropped",
-      "knit",
-      "feminine"
+      "oversized",
+      "shirt"
     ],
-    "link": "https://www.google.com/search?tbm=shop&q=Lavender%20Cropped%20Cardigan"
-  },
-  {
-    "id": "top-014",
-    "name": "Terracotta Linen Top",
-    "brand": "Look DNA Studio",
-    "category": "top",
-    "price": 899,
-    "image": "/catalog/top-014.png",
-    "color": "#C46A4A",
-    "style": [
-      "relaxed",
-      "linen",
-      "summer"
-    ],
-    "link": "https://www.google.com/search?tbm=shop&q=Terracotta%20Linen%20Top"
+    "link": "https://www.bonkerscorner.com/products/child-of-god-oversized-t-shirt-1"
   },
   {
     "id": "btm-001",
-    "name": "Blue Wide-Leg Jeans",
-    "brand": "Look DNA Studio",
+    "name": "Lizzie Mid Rise Pant",
+    "brand": "Forever New",
     "category": "bottom",
-    "price": 1499,
-    "image": "/catalog/btm-001.png",
-    "color": "#4A6FA5",
-    "style": [
-      "wide-leg",
-      "denim",
-      "casual"
-    ],
-    "link": "https://www.google.com/search?tbm=shop&q=Blue%20Wide-Leg%20Jeans"
+    "price": 2495,
+    "image": "https://cdn.shopify.com/s/files/1/0707/6331/5283/files/30536802_F1.jpg?v=1788780090&width=800",
+    "color": "#806D63",
+    "style": [],
+    "link": "https://www.forevernew.co.in/products/lizzie-mid-rise-pant-black"
   },
   {
     "id": "btm-002",
-    "name": "Black Straight Trousers",
-    "brand": "Look DNA Studio",
+    "name": "Hyper Blue Loose Fit Joggers",
+    "brand": "Bonkers Corner",
     "category": "bottom",
     "price": 1299,
-    "image": "/catalog/btm-002.png",
-    "color": "#1C1C1C",
-    "style": [
-      "straight",
-      "tailored",
-      "formal"
-    ],
-    "link": "https://www.google.com/search?tbm=shop&q=Black%20Straight%20Trousers"
+    "image": "https://cdn.shopify.com/s/files/1/0653/0541/1684/files/HyperBlueLooseFitJoggers_6_df4343cb-0fd1-4953-b793-0d16eb57c969.jpg?v=1784804281&width=800",
+    "color": "#3B5FA8",
+    "style": [],
+    "link": "https://www.bonkerscorner.com/products/hyper-blue-loose-fit-joggers-1"
   },
   {
     "id": "btm-003",
-    "name": "Beige Pleated Trousers",
-    "brand": "Look DNA Studio",
+    "name": "Forest Green Straight Fit Trousers",
+    "brand": "The Label Life",
     "category": "bottom",
     "price": 1199,
-    "image": "/catalog/btm-003.png",
-    "color": "#D8C3A5",
+    "image": "https://cdn.shopify.com/s/files/1/0329/7499/5591/files/ForestGreenStraightFitTrousers3.jpg?v=1692171779&width=800",
+    "color": "#3E7A4A",
     "style": [
-      "wide-leg",
-      "pleated",
-      "minimal"
+      "flared",
+      "straight"
     ],
-    "link": "https://www.google.com/search?tbm=shop&q=Beige%20Pleated%20Trousers"
+    "link": "https://www.thelabellife.com/products/forest-greentraight-fit-trousers"
   },
   {
     "id": "btm-004",
-    "name": "White Wide-Leg Pants",
-    "brand": "Look DNA Studio",
+    "name": "Vittori Trousers",
+    "brand": "Kazo",
     "category": "bottom",
-    "price": 1099,
-    "image": "/catalog/btm-004.png",
-    "color": "#F5F5F0",
-    "style": [
-      "wide-leg",
-      "linen",
-      "summer"
-    ],
-    "link": "https://www.google.com/search?tbm=shop&q=White%20Wide-Leg%20Pants"
+    "price": 1644,
+    "image": "https://cdn.shopify.com/s/files/1/0261/2386/2082/files/KazoSS264th3738.jpg?v=1772519505&width=800",
+    "color": "#151C2E",
+    "style": [],
+    "link": "https://www.kazo.com/products/kz01893navy"
   },
   {
     "id": "btm-005",
-    "name": "Olive Cargo Pants",
-    "brand": "Look DNA Studio",
+    "name": "Sunshine Yellow Loose Fit Joggers",
+    "brand": "Bonkers Corner",
     "category": "bottom",
-    "price": 1399,
-    "image": "/catalog/btm-005.png",
-    "color": "#6B6B3A",
-    "style": [
-      "relaxed",
-      "cargo",
-      "streetwear"
-    ],
-    "link": "https://www.google.com/search?tbm=shop&q=Olive%20Cargo%20Pants"
+    "price": 1299,
+    "image": "https://cdn.shopify.com/s/files/1/0653/0541/1684/files/329.png?v=1786016324&width=800",
+    "color": "#F2D04A",
+    "style": [],
+    "link": "https://www.bonkerscorner.com/products/sunshine-yellow-loose-fit-joggers"
   },
   {
     "id": "btm-006",
-    "name": "Light Wash Mom Jeans",
-    "brand": "Look DNA Studio",
+    "name": "Ardor Longline Pencil Skirt - Blue",
+    "brand": "Salt Attire",
     "category": "bottom",
-    "price": 1299,
-    "image": "/catalog/btm-006.png",
-    "color": "#9DB4D3",
+    "price": 1497,
+    "image": "https://cdn.shopify.com/s/files/1/0859/4217/3988/files/Ardor-Longline-Penil-Skirt-Blue_0ff3b873-1ca6-4ae3-b180-084d0af86425.jpg?v=1752090022&width=800",
+    "color": "#3B5FA8",
     "style": [
-      "high-waist",
-      "denim",
-      "vintage"
+      "formal"
     ],
-    "link": "https://www.google.com/search?tbm=shop&q=Light%20Wash%20Mom%20Jeans"
+    "link": "https://www.saltattire.com/products/ardor-longline-pencil-skirt-blue-color"
   },
   {
     "id": "btm-007",
-    "name": "Black Pleated Midi Skirt",
-    "brand": "Look DNA Studio",
+    "name": "Printed Flared Maxi Skirt",
+    "brand": "Style Union",
     "category": "bottom",
-    "price": 999,
-    "image": "/catalog/btm-007.png",
-    "color": "#202020",
+    "price": 1499,
+    "image": "https://cdn.shopify.com/s/files/1/0623/4754/2777/files/ESK00076RED_1.webp?v=1793108633&width=800",
+    "color": "#D3A39E",
     "style": [
-      "pleated",
-      "midi",
-      "classic"
+      "flared",
+      "maxi",
+      "printed"
     ],
-    "link": "https://www.google.com/search?tbm=shop&q=Black%20Pleated%20Midi%20Skirt"
+    "link": "https://www.styleunion.in/products/esk00076"
   },
   {
     "id": "btm-008",
-    "name": "Denim Mini Skirt",
-    "brand": "Look DNA Studio",
+    "name": "Ardor Long pencil fit skirt-Tan Brown",
+    "brand": "Salt Attire",
     "category": "bottom",
-    "price": 799,
-    "image": "/catalog/btm-008.png",
-    "color": "#5B7DB1",
+    "price": 1746,
+    "image": "https://cdn.shopify.com/s/files/1/0859/4217/3988/files/1-3SKI-00-0068-1_f78b4658-70f7-4111-995b-91958b8d0fc1.jpg?v=1768363289&width=800",
+    "color": "#C8A27A",
     "style": [
-      "mini",
-      "denim",
-      "casual"
+      "formal"
     ],
-    "link": "https://www.google.com/search?tbm=shop&q=Denim%20Mini%20Skirt"
+    "link": "https://www.saltattire.com/products/ardor-long-pencil-fit-skirt-tan-brown-color"
   },
   {
     "id": "btm-009",
-    "name": "Camel Satin Slip Skirt",
-    "brand": "Look DNA Studio",
+    "name": "Plum Satin Wide Leg Trousers",
+    "brand": "The Label Life",
     "category": "bottom",
-    "price": 1099,
-    "image": "/catalog/btm-009.png",
-    "color": "#C19A6B",
+    "price": 2072,
+    "image": "https://cdn.shopify.com/s/files/1/0329/7499/5591/files/PlumSatinWideLegTrousers2.jpg?v=1723454989&width=800",
+    "color": "#5E2C4F",
     "style": [
-      "midi",
+      "high-waist",
+      "party",
       "satin",
-      "party"
+      "straight",
+      "wide-leg"
     ],
-    "link": "https://www.google.com/search?tbm=shop&q=Camel%20Satin%20Slip%20Skirt"
+    "link": "https://www.thelabellife.com/products/plum-satin-wide-leg-trousers"
   },
   {
     "id": "btm-010",
-    "name": "Grey Jogger Pants",
-    "brand": "Look DNA Studio",
+    "name": "Claudia A-Line Girls Skirt",
+    "brand": "Forever New",
     "category": "bottom",
-    "price": 699,
-    "image": "/catalog/btm-010.png",
-    "color": "#8A8A8A",
+    "price": 2295,
+    "image": "https://cdn.shopify.com/s/files/1/0707/6331/5283/files/oldimlall_onbody_29223801_f.jpg?v=1782060831&width=800",
+    "color": "#E5CCB0",
     "style": [
-      "relaxed",
-      "fleece",
-      "streetwear"
+      "a-line"
     ],
-    "link": "https://www.google.com/search?tbm=shop&q=Grey%20Jogger%20Pants"
+    "link": "https://www.forevernew.co.in/products/claudia-a-line-girls-skirt-empress-floral"
+  },
+  {
+    "id": "btm-011",
+    "name": "Straight Fit Betty High Rise Knitted Indigo Long Skirt With Side Slit",
+    "brand": "Style Union",
+    "category": "bottom",
+    "price": 599,
+    "image": "https://cdn.shopify.com/s/files/1/0623/4754/2777/files/YWSK00036INDIGO_1.jpg?v=1741160505&width=800",
+    "color": "#6F7580",
+    "style": [
+      "cotton",
+      "knit",
+      "midi",
+      "straight"
+    ],
+    "link": "https://www.styleunion.in/products/straight-fit-solid-full-length-high-rise-skirt-ywsk00036"
+  },
+  {
+    "id": "btm-012",
+    "name": "Valentine Pull On Pants",
+    "brand": "Kazo",
+    "category": "bottom",
+    "price": 1441,
+    "image": "https://cdn.shopify.com/s/files/1/0261/2386/2082/files/KazoSS_2611514.jpg?v=1767172922&width=800",
+    "color": "#482122",
+    "style": [],
+    "link": "https://www.kazo.com/products/kz01886"
   },
   {
     "id": "drs-001",
-    "name": "Red Satin Slip Dress",
-    "brand": "Look DNA Studio",
+    "name": "Maren Flutter Sleeve Midi Dress",
+    "brand": "Forever New",
     "category": "dress",
-    "price": 1999,
-    "image": "/catalog/drs-001.png",
-    "color": "#B22234",
+    "price": 3495,
+    "image": "https://cdn.shopify.com/s/files/1/0707/6331/5283/files/30069702_f.jpg?v=1782061268&width=800",
+    "color": "#7D665E",
     "style": [
-      "slip",
-      "satin",
-      "party"
+      "midi"
     ],
-    "link": "https://www.google.com/search?tbm=shop&q=Red%20Satin%20Slip%20Dress"
+    "link": "https://www.forevernew.co.in/products/maren-flutter-sleeve-midi-dress-choc-myra-floral"
   },
   {
     "id": "drs-002",
-    "name": "Black Little Bodycon Dress",
-    "brand": "Look DNA Studio",
+    "name": "Rimini Shift Dress - Aqua",
+    "brand": "Salt Attire",
     "category": "dress",
-    "price": 1599,
-    "image": "/catalog/drs-002.png",
-    "color": "#151515",
+    "price": 1710,
+    "image": "https://cdn.shopify.com/s/files/1/0859/4217/3988/files/Rimini_Shift_Dress-Aqua.jpg?v=1751017747&width=800",
+    "color": "#B8E0D9",
     "style": [
-      "bodycon",
+      "casual",
+      "cotton",
+      "linen",
       "mini",
-      "party"
+      "puff-sleeve"
     ],
-    "link": "https://www.google.com/search?tbm=shop&q=Black%20Little%20Bodycon%20Dress"
+    "link": "https://www.saltattire.com/products/rimini-shift-dress-aqua-color"
   },
   {
     "id": "drs-003",
-    "name": "Floral Yellow Sundress",
-    "brand": "Look DNA Studio",
+    "name": "Rouge Balloon Sleeve Skater Dress",
+    "brand": "The Label Life",
     "category": "dress",
-    "price": 1399,
-    "image": "/catalog/drs-003.png",
-    "color": "#F2C94C",
+    "price": 2392,
+    "image": "https://cdn.shopify.com/s/files/1/0329/7499/5591/files/RougeBalloonSleeveSkaterDress1.jpg?v=1697023522&width=800",
+    "color": "#CE6D6D",
     "style": [
-      "flowy",
-      "floral",
-      "summer"
+      "mini",
+      "satin"
     ],
-    "link": "https://www.google.com/search?tbm=shop&q=Floral%20Yellow%20Sundress"
+    "link": "https://www.thelabellife.com/products/rouge-balloon-sleeve-skater-dress"
   },
   {
     "id": "drs-004",
-    "name": "Lilac Tiered Midi Dress",
-    "brand": "Look DNA Studio",
+    "name": "Ortega Ruched Bodycon Dress-Purple",
+    "brand": "Salt Attire",
     "category": "dress",
-    "price": 1799,
-    "image": "/catalog/drs-004.png",
-    "color": "#C8A2C8",
+    "price": 2550,
+    "image": "https://cdn.shopify.com/s/files/1/0859/4217/3988/files/1-3DRE-04-2062-1_37334041-3c52-4ca5-9480-73069e904246.jpg?v=1758020976&width=800",
+    "color": "#6B3F8C",
     "style": [
-      "flowy",
-      "tiered",
-      "feminine"
+      "bodycon",
+      "casual",
+      "knit",
+      "slip"
     ],
-    "link": "https://www.google.com/search?tbm=shop&q=Lilac%20Tiered%20Midi%20Dress"
+    "link": "https://www.saltattire.com/products/ortega-ruched-bodycon-dress-purple-color"
   },
   {
     "id": "drs-005",
-    "name": "Emerald Wrap Dress",
-    "brand": "Look DNA Studio",
+    "name": "Countryside Midi Dress",
+    "brand": "Kazo",
     "category": "dress",
-    "price": 2199,
-    "image": "/catalog/drs-005.png",
-    "color": "#0F6B4F",
+    "price": 2918,
+    "image": "https://cdn.shopify.com/s/files/1/0261/2386/2082/files/AW26shoot311691.jpg?v=1783930007&width=800",
+    "color": "#D0A075",
     "style": [
-      "wrap",
       "midi",
-      "formal"
+      "mini"
     ],
-    "link": "https://www.google.com/search?tbm=shop&q=Emerald%20Wrap%20Dress"
+    "link": "https://www.kazo.com/products/kz02166"
   },
   {
     "id": "drs-006",
-    "name": "White Linen Shirt Dress",
-    "brand": "Look DNA Studio",
+    "name": "Blush Ballet Mood Dress",
+    "brand": "Bonkers Corner",
     "category": "dress",
-    "price": 1499,
-    "image": "/catalog/drs-006.png",
-    "color": "#F7F5EF",
-    "style": [
-      "relaxed",
-      "linen",
-      "minimal"
-    ],
-    "link": "https://www.google.com/search?tbm=shop&q=White%20Linen%20Shirt%20Dress"
+    "price": 1599,
+    "image": "https://cdn.shopify.com/s/files/1/0653/0541/1684/files/S5-250.jpg?v=1787227973&width=800",
+    "color": "#F2C4C4",
+    "style": [],
+    "link": "https://www.bonkerscorner.com/products/blush-ballet-mood-dress"
   },
   {
     "id": "drs-007",
-    "name": "Navy Polka Dot Dress",
-    "brand": "Look DNA Studio",
+    "name": "Flare Fit Embroidered Dress",
+    "brand": "Style Union",
     "category": "dress",
-    "price": 1299,
-    "image": "/catalog/drs-007.png",
-    "color": "#1D2B4F",
+    "price": 769,
+    "image": "https://cdn.shopify.com/s/files/1/0623/4754/2777/files/ID00004TEAL_1_f10a06ec-4b10-4622-a75c-96bd65cc0eb1.jpg?v=1740665721&width=800",
+    "color": "#29343A",
     "style": [
-      "flowy",
-      "polka-dot",
-      "vintage"
+      "flared",
+      "tiered"
     ],
-    "link": "https://www.google.com/search?tbm=shop&q=Navy%20Polka%20Dot%20Dress"
+    "link": "https://www.styleunion.in/products/flare-fit-embroidered-dress-id00004"
   },
   {
     "id": "drs-008",
-    "name": "Blush Pink Ruffle Dress",
-    "brand": "Look DNA Studio",
+    "name": "Athena Midi Dress W Belt",
+    "brand": "Kazo",
     "category": "dress",
-    "price": 1699,
-    "image": "/catalog/drs-008.png",
-    "color": "#F2B5B5",
+    "price": 1754,
+    "image": "https://cdn.shopify.com/s/files/1/0261/2386/2082/files/KazoSS26_23636.jpg?v=1767161066&width=800",
+    "color": "#782E3A",
     "style": [
-      "ruffle",
-      "mini",
-      "feminine"
+      "midi",
+      "mini"
     ],
-    "link": "https://www.google.com/search?tbm=shop&q=Blush%20Pink%20Ruffle%20Dress"
+    "link": "https://www.kazo.com/products/kz01857"
   },
   {
     "id": "drs-009",
-    "name": "Olive Knit Sweater Dress",
-    "brand": "Look DNA Studio",
+    "name": "Regular Fit Checkered Dress",
+    "brand": "Style Union",
     "category": "dress",
-    "price": 1599,
-    "image": "/catalog/drs-009.png",
-    "color": "#707A4A",
+    "price": 1199,
+    "image": "https://cdn.shopify.com/s/files/1/0623/4754/2777/files/WD00481RED_1.webp?v=1790832098&width=800",
+    "color": "#BA8378",
     "style": [
-      "fitted",
-      "knit",
-      "casual"
+      "puff-sleeve"
     ],
-    "link": "https://www.google.com/search?tbm=shop&q=Olive%20Knit%20Sweater%20Dress"
+    "link": "https://www.styleunion.in/products/wd00481"
   },
   {
     "id": "drs-010",
-    "name": "Cobalt Blue Shift Dress",
-    "brand": "Look DNA Studio",
+    "name": "Erica Midi Length Dress-Magenta",
+    "brand": "Salt Attire",
     "category": "dress",
-    "price": 1399,
-    "image": "/catalog/drs-010.png",
-    "color": "#1F4FBF",
+    "price": 2760,
+    "image": "https://cdn.shopify.com/s/files/1/0859/4217/3988/files/1-TOP-05-4163-1.jpg?v=1785819479&width=800",
+    "color": "#B0287A",
     "style": [
-      "shift",
-      "mini",
-      "formal"
+      "a-line",
+      "formal",
+      "midi"
     ],
-    "link": "https://www.google.com/search?tbm=shop&q=Cobalt%20Blue%20Shift%20Dress"
+    "link": "https://www.saltattire.com/products/erica-waist-embellishement-fit-flare-dress-magenta-color"
   },
   {
     "id": "drs-011",
-    "name": "Mauve Satin Midi Dress",
-    "brand": "Look DNA Studio",
+    "name": "Casa Mini Dress W Belt",
+    "brand": "Kazo",
     "category": "dress",
-    "price": 1899,
-    "image": "/catalog/drs-011.png",
-    "color": "#B784A7",
+    "price": 1790,
+    "image": "https://cdn.shopify.com/s/files/1/0261/2386/2082/files/KazoSS_26_3rsShoot1347.jpg?v=1770211896&width=800",
+    "color": "#586172",
     "style": [
-      "slip",
-      "satin",
-      "party"
+      "mini"
     ],
-    "link": "https://www.google.com/search?tbm=shop&q=Mauve%20Satin%20Midi%20Dress"
+    "link": "https://www.kazo.com/products/kz01906"
   },
   {
     "id": "drs-012",
-    "name": "Mustard Shirt Dress",
-    "brand": "Look DNA Studio",
+    "name": "Turkish Blue Satin Maxi",
+    "brand": "The Label Life",
     "category": "dress",
-    "price": 1199,
-    "image": "/catalog/drs-012.png",
-    "color": "#C9A227",
+    "price": 1796,
+    "image": "https://cdn.shopify.com/s/files/1/0329/7499/5591/files/TurkishBlueSatinMaxi3.jpg?v=1761541133&width=800",
+    "color": "#3B5FA8",
     "style": [
-      "relaxed",
-      "shirt",
-      "casual"
+      "maxi",
+      "satin"
     ],
-    "link": "https://www.google.com/search?tbm=shop&q=Mustard%20Shirt%20Dress"
+    "link": "https://www.thelabellife.com/products/turkish-blue-satin-maxi-n"
+  },
+  {
+    "id": "drs-013",
+    "name": "Ava Slip Teen Dress",
+    "brand": "Forever New",
+    "category": "dress",
+    "price": 2595,
+    "image": "https://cdn.shopify.com/s/files/1/0707/6331/5283/files/oldimlall_onbody_29264401_f.jpg?v=1782060747&width=800",
+    "color": "#BFC0C3",
+    "style": [
+      "slip"
+    ],
+    "link": "https://www.forevernew.co.in/products/ava-slip-teen-dress-sorrento-blue"
+  },
+  {
+    "id": "drs-014",
+    "name": "Plum Satin Balloon Sleeve Dress",
+    "brand": "The Label Life",
+    "category": "dress",
+    "price": 1395,
+    "image": "https://cdn.shopify.com/s/files/1/0329/7499/5591/files/PlumSatinBalloonSleeveDress2.jpg?v=1694846087&width=800",
+    "color": "#5E2C4F",
+    "style": [
+      "mini",
+      "party",
+      "satin",
+      "straight"
+    ],
+    "link": "https://www.thelabellife.com/products/plum-satin-balloon-sleeve-dress"
   },
   {
     "id": "out-001",
-    "name": "Beige Trench Coat",
-    "brand": "Look DNA Studio",
+    "name": "Elara Waist Flap Slim Fit Tweed Blazer-Beige",
+    "brand": "Salt Attire",
     "category": "outerwear",
-    "price": 2799,
-    "image": "/catalog/out-001.png",
-    "color": "#C8B08A",
+    "price": 4250,
+    "image": "https://cdn.shopify.com/s/files/1/0859/4217/3988/files/1-3BLA-04-1168-1.jpg?v=1791536177&width=800",
+    "color": "#D9C7A8",
     "style": [
-      "tailored",
-      "trench",
-      "classic"
-    ],
-    "link": "https://www.google.com/search?tbm=shop&q=Beige%20Trench%20Coat"
-  },
-  {
-    "id": "out-002",
-    "name": "Black Faux Leather Jacket",
-    "brand": "Look DNA Studio",
-    "category": "outerwear",
-    "price": 2499,
-    "image": "/catalog/out-002.png",
-    "color": "#1A1A1A",
-    "style": [
-      "fitted",
-      "leather",
-      "streetwear"
-    ],
-    "link": "https://www.google.com/search?tbm=shop&q=Black%20Faux%20Leather%20Jacket"
-  },
-  {
-    "id": "out-003",
-    "name": "Light Denim Jacket",
-    "brand": "Look DNA Studio",
-    "category": "outerwear",
-    "price": 1799,
-    "image": "/catalog/out-003.png",
-    "color": "#8FA9C9",
-    "style": [
-      "relaxed",
-      "denim",
-      "casual"
-    ],
-    "link": "https://www.google.com/search?tbm=shop&q=Light%20Denim%20Jacket"
-  },
-  {
-    "id": "out-004",
-    "name": "Camel Wool Blazer",
-    "brand": "Look DNA Studio",
-    "category": "outerwear",
-    "price": 2299,
-    "image": "/catalog/out-004.png",
-    "color": "#B9875A",
-    "style": [
-      "tailored",
       "blazer",
       "formal"
     ],
-    "link": "https://www.google.com/search?tbm=shop&q=Camel%20Wool%20Blazer"
+    "link": "https://www.saltattire.com/products/elara-waist-flap-slim-fit-tweed-blazer-beige-color"
+  },
+  {
+    "id": "out-002",
+    "name": "Cobalt Button Down Cardigan",
+    "brand": "The Label Life",
+    "category": "outerwear",
+    "price": 1295,
+    "image": "https://cdn.shopify.com/s/files/1/0329/7499/5591/products/CobaltButtonDownCardigan_1.jpg?v=1663835369&width=800",
+    "color": "#1F4FBF",
+    "style": [],
+    "link": "https://www.thelabellife.com/products/cobalt-button-down-cardigan"
+  },
+  {
+    "id": "out-003",
+    "name": "Cherry Oversized Puffer Jacket",
+    "brand": "The Label Life",
+    "category": "outerwear",
+    "price": 2194,
+    "image": "https://cdn.shopify.com/s/files/1/0329/7499/5591/products/CherryOversizedPufferJacket_1.jpg?v=1663837025&width=800",
+    "color": "#893346",
+    "style": [
+      "knit",
+      "midi",
+      "oversized",
+      "puff-sleeve",
+      "ruffle"
+    ],
+    "link": "https://www.thelabellife.com/products/cherry-oversized-puffer-jacket"
+  },
+  {
+    "id": "out-004",
+    "name": "Dean Jacket",
+    "brand": "Kazo",
+    "category": "outerwear",
+    "price": 4490,
+    "image": "https://cdn.shopify.com/s/files/1/0261/2386/2082/files/1_308973a4-cf5f-4a01-b97a-b1e25fc6f8b1.jpg?v=1790833735&width=800",
+    "color": "#424D5F",
+    "style": [
+      "mini"
+    ],
+    "link": "https://www.kazo.com/products/kz02199"
   },
   {
     "id": "out-005",
-    "name": "Cream Teddy Jacket",
-    "brand": "Look DNA Studio",
+    "name": "Spunky Ruched Sleeve Blazer -Sky Blue",
+    "brand": "Salt Attire",
     "category": "outerwear",
-    "price": 1999,
-    "image": "/catalog/out-005.png",
-    "color": "#EEE3D0",
+    "price": 4200,
+    "image": "https://cdn.shopify.com/s/files/1/0859/4217/3988/files/1-3BLA-00-0066-1.jpg?v=1761801503&width=800",
+    "color": "#9CC3E6",
     "style": [
-      "oversized",
-      "fleece",
-      "casual"
+      "blazer",
+      "formal"
     ],
-    "link": "https://www.google.com/search?tbm=shop&q=Cream%20Teddy%20Jacket"
-  },
-  {
-    "id": "out-006",
-    "name": "Olive Utility Jacket",
-    "brand": "Look DNA Studio",
-    "category": "outerwear",
-    "price": 1899,
-    "image": "/catalog/out-006.png",
-    "color": "#5F6B3A",
-    "style": [
-      "relaxed",
-      "utility",
-      "streetwear"
-    ],
-    "link": "https://www.google.com/search?tbm=shop&q=Olive%20Utility%20Jacket"
+    "link": "https://www.saltattire.com/products/spunky-ruched-sleeve-blazer-sky-blue"
   },
   {
     "id": "lip-001",
-    "name": "Classic Red Matte Lipstick",
-    "brand": "Look DNA Beauty",
+    "name": "Non-Transfer Lipstick – Hot-Red",
+    "brand": "Swiss Beauty",
     "category": "lipstick",
-    "price": 499,
-    "image": "/catalog/lip-001.png",
-    "color": "#B0202E",
-    "style": [
-      "matte"
-    ],
-    "link": "https://www.google.com/search?tbm=shop&q=Classic%20Red%20Matte%20Lipstick"
+    "price": 399,
+    "image": "https://cdn.shopify.com/s/files/1/0595/6691/5779/files/SB-S17_06_B_1e45b77c-7dc3-49be-8232-aa8d2b1dd165.jpg?v=1748634745&width=800",
+    "color": "#BC141C",
+    "style": [],
+    "link": "https://swissbeauty.in/products/non-transfer-matte-lipstick-bare-sb-s17-15?variant=41887476351171"
   },
   {
     "id": "lip-002",
-    "name": "Brick Red Matte Lipstick",
-    "brand": "Look DNA Beauty",
+    "name": "Select High On Shine Lipstick – Admirer Plum",
+    "brand": "Swiss Beauty",
     "category": "lipstick",
-    "price": 499,
-    "image": "/catalog/lip-002.png",
-    "color": "#A8473F",
-    "style": [
-      "matte"
-    ],
-    "link": "https://www.google.com/search?tbm=shop&q=Brick%20Red%20Matte%20Lipstick"
+    "price": 410,
+    "image": "https://cdn.shopify.com/s/files/1/0595/6691/5779/files/SB-LP21_06_Admirer_Plum_c85beb28-6507-4152-aabe-2b27b1a4fab3.jpg?v=1763021342&width=800",
+    "color": "#73397C",
+    "style": [],
+    "link": "https://swissbeauty.in/products/select-high-on-shine-lipstick?variant=48629975580987"
   },
   {
     "id": "lip-003",
-    "name": "Berry Matte Lipstick",
-    "brand": "Look DNA Beauty",
+    "name": "Ultrastay Transferproof Lipstick-4 – 01 Pink Paradise",
+    "brand": "SUGAR Cosmetics",
     "category": "lipstick",
-    "price": 549,
-    "image": "/catalog/lip-003.png",
-    "color": "#8E2C48",
+    "price": 249,
+    "image": "https://cdn.shopify.com/s/files/1/0906/2558/files/Ultrastay-Transferproof-Lipstick-1.jpg?v=1787914937&width=800",
+    "color": "#E55585",
     "style": [
       "matte"
     ],
-    "link": "https://www.google.com/search?tbm=shop&q=Berry%20Matte%20Lipstick"
+    "link": "https://in.sugarcosmetics.com/products/ultrastay-transferproof-lipstick-4?variant=45962491723859"
   },
   {
     "id": "lip-004",
-    "name": "Rosewood Satin Lipstick",
-    "brand": "Look DNA Beauty",
+    "name": "Matte Cat Lip Crayon – Regal Camarine",
+    "brand": "Swiss Beauty",
     "category": "lipstick",
-    "price": 449,
-    "image": "/catalog/lip-004.png",
-    "color": "#B5485D",
+    "price": 299,
+    "image": "https://cdn.shopify.com/s/files/1/0595/6691/5779/files/SB-215_02_RegalCamarine_411ed3c2-d9aa-4a58-a6ad-4ff4a29b020c.jpg?v=1748633499&width=800",
+    "color": "#7B453B",
     "style": [
-      "satin"
+      "matte"
     ],
-    "link": "https://www.google.com/search?tbm=shop&q=Rosewood%20Satin%20Lipstick"
+    "link": "https://swissbeauty.in/products/matte-cat-lip-crayon?variant=44590529413435"
   },
   {
     "id": "lip-005",
-    "name": "Coral Glossy Lipstick",
-    "brand": "Look DNA Beauty",
+    "name": "Matte Lip Palette – Multi-Color-02",
+    "brand": "Swiss Beauty",
     "category": "lipstick",
-    "price": 399,
-    "image": "/catalog/lip-005.png",
-    "color": "#E2725B",
+    "price": 549,
+    "image": "https://cdn.shopify.com/s/files/1/0595/6691/5779/files/SB-210-02c_02d5fde1-e7f9-4c47-95c4-3ac86c6e42f1.jpg?v=1748634753&width=800",
+    "color": "#850E3B",
     "style": [
-      "gloss"
+      "matte"
     ],
-    "link": "https://www.google.com/search?tbm=shop&q=Coral%20Glossy%20Lipstick"
+    "link": "https://swissbeauty.in/products/matte-lip-palette?variant=41887477596355"
   },
   {
     "id": "lip-006",
-    "name": "Nude Pink Satin Lipstick",
-    "brand": "Look DNA Beauty",
+    "name": "Glide Peptide Serum Lipstick – 09 Boston Blush",
+    "brand": "SUGAR Cosmetics",
     "category": "lipstick",
-    "price": 449,
-    "image": "/catalog/lip-006.png",
-    "color": "#C98B8B",
-    "style": [
-      "satin"
-    ],
-    "link": "https://www.google.com/search?tbm=shop&q=Nude%20Pink%20Satin%20Lipstick"
+    "price": 499,
+    "image": "https://cdn.shopify.com/s/files/1/0906/2558/files/Glide-Peptide-Serum-Lipstick-17.jpg?v=1787395748&width=800",
+    "color": "#C37681",
+    "style": [],
+    "link": "https://in.sugarcosmetics.com/products/glide-peptide-serum-lipstick?variant=45845338259539"
   },
   {
     "id": "lip-007",
-    "name": "Warm Nude Matte Lipstick",
-    "brand": "Look DNA Beauty",
+    "name": "Ultrastay Transferproof Lipstick-3 – 20 Wine Wonder",
+    "brand": "SUGAR Cosmetics",
     "category": "lipstick",
-    "price": 449,
-    "image": "/catalog/lip-007.png",
-    "color": "#B07A62",
+    "price": 249,
+    "image": "https://cdn.shopify.com/s/files/1/0906/2558/files/Ultrastay-Transferproof-Lipstick-1-29.jpg?v=1787914980&width=800",
+    "color": "#DA2451",
     "style": [
       "matte"
     ],
-    "link": "https://www.google.com/search?tbm=shop&q=Warm%20Nude%20Matte%20Lipstick"
+    "link": "https://in.sugarcosmetics.com/products/ultrastay-transferproof-lipstick-3?variant=45962485006419"
   },
   {
     "id": "lip-008",
-    "name": "Mauve Matte Lipstick",
-    "brand": "Look DNA Beauty",
+    "name": "Non-Transfer Lipstick – Royal-Maroon",
+    "brand": "Swiss Beauty",
     "category": "lipstick",
-    "price": 499,
-    "image": "/catalog/lip-008.png",
-    "color": "#9E6B7B",
-    "style": [
-      "matte"
-    ],
-    "link": "https://www.google.com/search?tbm=shop&q=Mauve%20Matte%20Lipstick"
+    "price": 399,
+    "image": "https://cdn.shopify.com/s/files/1/0595/6691/5779/files/SB-S17_13_B_35624934-a41c-418b-a040-1aadee44074a.jpg?v=1748634746&width=800",
+    "color": "#5C0D10",
+    "style": [],
+    "link": "https://swissbeauty.in/products/non-transfer-matte-lipstick-bare-sb-s17-15?variant=41887476580547"
   },
   {
     "id": "lip-009",
-    "name": "Plum Satin Lipstick",
-    "brand": "Look DNA Beauty",
+    "name": "Select High On Shine Lipstick – Plush Plum",
+    "brand": "Swiss Beauty",
     "category": "lipstick",
-    "price": 549,
-    "image": "/catalog/lip-009.png",
-    "color": "#6E2C4F",
-    "style": [
-      "satin"
-    ],
-    "link": "https://www.google.com/search?tbm=shop&q=Plum%20Satin%20Lipstick"
+    "price": 410,
+    "image": "https://cdn.shopify.com/s/files/1/0595/6691/5779/files/SB-LP21_17_Plush_Plum_beca3755-6f56-4515-bcad-f5366f381f29.jpg?v=1763021343&width=800",
+    "color": "#6D314B",
+    "style": [],
+    "link": "https://swissbeauty.in/products/select-high-on-shine-lipstick?variant=50466981249339"
   },
   {
     "id": "lip-010",
-    "name": "Peach Glossy Lipstick",
-    "brand": "Look DNA Beauty",
+    "name": "Glide Peptide Serum Lipstick – 01 Santorini Sunset",
+    "brand": "SUGAR Cosmetics",
     "category": "lipstick",
-    "price": 349,
-    "image": "/catalog/lip-010.png",
-    "color": "#F0A07A",
-    "style": [
-      "gloss"
-    ],
-    "link": "https://www.google.com/search?tbm=shop&q=Peach%20Glossy%20Lipstick"
+    "price": 412,
+    "image": "https://cdn.shopify.com/s/files/1/0906/2558/files/Glide-Peptide-Serum-Lipstick_1e5723be.jpg?v=1789814255&width=800",
+    "color": "#AB5846",
+    "style": [],
+    "link": "https://in.sugarcosmetics.com/products/glide-peptide-serum-lipstick?variant=42554418004051"
   },
   {
     "id": "lip-011",
-    "name": "Cherry Glossy Lipstick",
-    "brand": "Look DNA Beauty",
+    "name": "Glide Peptide Serum Lipstick – 05 Parisian Pink",
+    "brand": "SUGAR Cosmetics",
     "category": "lipstick",
-    "price": 399,
-    "image": "/catalog/lip-011.png",
-    "color": "#C2185B",
-    "style": [
-      "gloss"
-    ],
-    "link": "https://www.google.com/search?tbm=shop&q=Cherry%20Glossy%20Lipstick"
+    "price": 412,
+    "image": "https://cdn.shopify.com/s/files/1/0906/2558/files/Glide-Peptide-Serum-Lipstick-9_bdcd7946.jpg?v=1787395698&width=800",
+    "color": "#A4425C",
+    "style": [],
+    "link": "https://in.sugarcosmetics.com/products/glide-peptide-serum-lipstick?variant=42554418135123"
   },
   {
     "id": "lip-012",
-    "name": "Terracotta Matte Lipstick",
-    "brand": "Look DNA Beauty",
+    "name": "Non-transfer Matte Lipstick – Dynamitte Berry",
+    "brand": "Swiss Beauty",
     "category": "lipstick",
-    "price": 499,
-    "image": "/catalog/lip-012.png",
-    "color": "#B5553C",
+    "price": 329,
+    "image": "https://cdn.shopify.com/s/files/1/0595/6691/5779/files/SB-209_19c.jpg?v=1748634208&width=800",
+    "color": "#481C1B",
     "style": [
       "matte"
     ],
-    "link": "https://www.google.com/search?tbm=shop&q=Terracotta%20Matte%20Lipstick"
+    "link": "https://swissbeauty.in/products/non-transfer-matte-lipstick-sb-209?variant=41887440240835"
   },
   {
     "id": "lip-013",
-    "name": "Fuchsia Satin Lipstick",
-    "brand": "Look DNA Beauty",
+    "name": "Ultrastay Transferproof Lipstick-2 – 16 Petal Perfection",
+    "brand": "SUGAR Cosmetics",
     "category": "lipstick",
-    "price": 449,
-    "image": "/catalog/lip-013.png",
-    "color": "#C72C7A",
+    "price": 249,
+    "image": "https://cdn.shopify.com/s/files/1/0906/2558/files/Ultrastay-Transferproof-Lipstick-1-25.jpg?v=1787914974&width=800",
+    "color": "#D94C6A",
     "style": [
-      "satin"
+      "matte"
     ],
-    "link": "https://www.google.com/search?tbm=shop&q=Fuchsia%20Satin%20Lipstick"
+    "link": "https://in.sugarcosmetics.com/products/ultrastay-transferproof-lipstick-2?variant=45962477764691"
   },
   {
     "id": "lip-014",
-    "name": "Chocolate Matte Lipstick",
-    "brand": "Look DNA Beauty",
+    "name": "Non-transfer Matte Lipstick – Pop Red",
+    "brand": "Swiss Beauty",
     "category": "lipstick",
-    "price": 499,
-    "image": "/catalog/lip-014.png",
-    "color": "#6B3A2E",
+    "price": 329,
+    "image": "https://cdn.shopify.com/s/files/1/0595/6691/5779/files/SB-209_14c.jpg?v=1748634207&width=800",
+    "color": "#98172D",
     "style": [
       "matte"
     ],
-    "link": "https://www.google.com/search?tbm=shop&q=Chocolate%20Matte%20Lipstick"
+    "link": "https://swissbeauty.in/products/non-transfer-matte-lipstick-sb-209?variant=41887440044227"
+  },
+  {
+    "id": "lip-015",
+    "name": "Glide Peptide Serum Lipstick - 3 – 02 Positano Peach",
+    "brand": "SUGAR Cosmetics",
+    "category": "lipstick",
+    "price": 499,
+    "image": "https://cdn.shopify.com/s/files/1/0906/2558/files/Glide-Peptide-Serum-Lipstick-1-11.jpg?v=1789987713&width=800",
+    "color": "#A74B4C",
+    "style": [
+      "matte"
+    ],
+    "link": "https://in.sugarcosmetics.com/products/glide-peptide-serum-lipstick-5?variant=46003172442195"
   },
   {
     "id": "eye-001",
-    "name": "Bronze Shimmer Eyeshadow",
-    "brand": "Look DNA Beauty",
+    "name": "Ultimate Eyeshadow Palette – 2",
+    "brand": "Swiss Beauty",
     "category": "eyeshadow",
-    "price": 399,
-    "image": "/catalog/eye-001.png",
-    "color": "#9C6B3E",
-    "style": [
-      "shimmer"
-    ],
-    "link": "https://www.google.com/search?tbm=shop&q=Bronze%20Shimmer%20Eyeshadow"
+    "price": 329,
+    "image": "https://cdn.shopify.com/s/files/1/0595/6691/5779/files/SB-706_02_7236b1c2-db69-419d-83d3-8c1f3b2d759f.jpg?v=1748634801&width=800",
+    "color": "#F87E77",
+    "style": [],
+    "link": "https://swissbeauty.in/products/ultimate-eyeshadow-palette-01-sb-706-01?variant=41887479267523"
   },
   {
     "id": "eye-002",
-    "name": "Champagne Shimmer Eyeshadow",
-    "brand": "Look DNA Beauty",
+    "name": "Blend The Rules Eyeshadow Palette – 03 Fantasy (Mystique Mauve)",
+    "brand": "SUGAR Cosmetics",
     "category": "eyeshadow",
-    "price": 349,
-    "image": "/catalog/eye-002.png",
-    "color": "#E6CBA8",
+    "price": 1249,
+    "image": "https://cdn.shopify.com/s/files/1/0906/2558/files/Blend-The-Rules-Eyeshadow-Palette-10.jpg?v=1743677316&width=800",
+    "color": "#E39683",
     "style": [
-      "shimmer"
+      "matte"
     ],
-    "link": "https://www.google.com/search?tbm=shop&q=Champagne%20Shimmer%20Eyeshadow"
+    "link": "https://in.sugarcosmetics.com/products/blend-the-rules-eyeshadow-palette?variant=42411736203347"
   },
   {
     "id": "eye-003",
-    "name": "Taupe Matte Eyeshadow",
-    "brand": "Look DNA Beauty",
+    "name": "Ultimate Eyeshadow Palette – 4",
+    "brand": "Swiss Beauty",
     "category": "eyeshadow",
-    "price": 349,
-    "image": "/catalog/eye-003.png",
-    "color": "#8B7D70",
-    "style": [
-      "matte"
-    ],
-    "link": "https://www.google.com/search?tbm=shop&q=Taupe%20Matte%20Eyeshadow"
+    "price": 329,
+    "image": "https://cdn.shopify.com/s/files/1/0595/6691/5779/files/SB-706_04_f28950a4-cd10-4a07-a9b3-e5eeacb1cafd.jpg?v=1748634801&width=800",
+    "color": "#D67F53",
+    "style": [],
+    "link": "https://swissbeauty.in/products/ultimate-eyeshadow-palette-01-sb-706-01?variant=41887479333059"
   },
   {
     "id": "eye-004",
-    "name": "Plum Matte Eyeshadow",
-    "brand": "Look DNA Beauty",
+    "name": "Blend The Rules Eyeshadow Palette – 05 Willow (Brazen Browns)",
+    "brand": "SUGAR Cosmetics",
     "category": "eyeshadow",
-    "price": 399,
-    "image": "/catalog/eye-004.png",
-    "color": "#5E3A55",
+    "price": 1249,
+    "image": "https://cdn.shopify.com/s/files/1/0906/2558/files/Blend-The-Rules-Eyeshadow-Palette-12.jpg?v=1743677318&width=800",
+    "color": "#E99783",
     "style": [
       "matte"
     ],
-    "link": "https://www.google.com/search?tbm=shop&q=Plum%20Matte%20Eyeshadow"
+    "link": "https://in.sugarcosmetics.com/products/blend-the-rules-eyeshadow-palette?variant=42411736268883"
   },
   {
     "id": "eye-005",
-    "name": "Rose Gold Shimmer Eyeshadow",
-    "brand": "Look DNA Beauty",
+    "name": "Ultimate Eyeshadow Palette – 5",
+    "brand": "Swiss Beauty",
     "category": "eyeshadow",
-    "price": 399,
-    "image": "/catalog/eye-005.png",
-    "color": "#C98C7A",
-    "style": [
-      "shimmer"
-    ],
-    "link": "https://www.google.com/search?tbm=shop&q=Rose%20Gold%20Shimmer%20Eyeshadow"
-  },
-  {
-    "id": "eye-006",
-    "name": "Smoky Charcoal Eyeshadow",
-    "brand": "Look DNA Beauty",
-    "category": "eyeshadow",
-    "price": 349,
-    "image": "/catalog/eye-006.png",
-    "color": "#3A3A3F",
-    "style": [
-      "matte"
-    ],
-    "link": "https://www.google.com/search?tbm=shop&q=Smoky%20Charcoal%20Eyeshadow"
-  },
-  {
-    "id": "eye-007",
-    "name": "Copper Shimmer Eyeshadow",
-    "brand": "Look DNA Beauty",
-    "category": "eyeshadow",
-    "price": 399,
-    "image": "/catalog/eye-007.png",
-    "color": "#B5653A",
-    "style": [
-      "shimmer"
-    ],
-    "link": "https://www.google.com/search?tbm=shop&q=Copper%20Shimmer%20Eyeshadow"
-  },
-  {
-    "id": "eye-008",
-    "name": "Navy Matte Eyeshadow",
-    "brand": "Look DNA Beauty",
-    "category": "eyeshadow",
-    "price": 349,
-    "image": "/catalog/eye-008.png",
-    "color": "#26324F",
-    "style": [
-      "matte"
-    ],
-    "link": "https://www.google.com/search?tbm=shop&q=Navy%20Matte%20Eyeshadow"
+    "price": 329,
+    "image": "https://cdn.shopify.com/s/files/1/0595/6691/5779/files/SB-706_05_cb205517-ce5d-49b0-978e-744bef9cb2fb.jpg?v=1748634801&width=800",
+    "color": "#D09E73",
+    "style": [],
+    "link": "https://swissbeauty.in/products/ultimate-eyeshadow-palette-01-sb-706-01?variant=41887479365827"
   },
   {
     "id": "blu-001",
-    "name": "Peach Matte Blush",
-    "brand": "Look DNA Beauty",
+    "name": "Cheek-A-Boo 3-in-1 Face Palette with Blusher , Contour and Highlighter – 3",
+    "brand": "Swiss Beauty",
     "category": "blush",
-    "price": 399,
-    "image": "/catalog/blu-001.png",
-    "color": "#F2A27E",
-    "style": [
-      "matte"
-    ],
-    "link": "https://www.google.com/search?tbm=shop&q=Peach%20Matte%20Blush"
+    "price": 349,
+    "image": "https://cdn.shopify.com/s/files/1/0595/6691/5779/files/SB838-C1.jpg?v=1766561689&width=800",
+    "color": "#DCAB90",
+    "style": [],
+    "link": "https://swissbeauty.in/products/cheek-a-boo-face-palette-with-blusher-contour-and-highlighter-palette?variant=44191221383483"
   },
   {
     "id": "blu-002",
-    "name": "Rose Satin Blush",
-    "brand": "Look DNA Beauty",
+    "name": "Cloud Nine Niacinamide Glow Blush – 04 Candy Pink",
+    "brand": "SUGAR Cosmetics",
     "category": "blush",
-    "price": 399,
-    "image": "/catalog/blu-002.png",
-    "color": "#D9828A",
-    "style": [
-      "satin"
-    ],
-    "link": "https://www.google.com/search?tbm=shop&q=Rose%20Satin%20Blush"
+    "price": 599,
+    "image": "https://cdn.shopify.com/s/files/1/0906/2558/files/Cloud-Nine-Niacinamide-Glow-Blush-4_b2b4df9b.jpg?v=1792666794&width=800",
+    "color": "#E52F65",
+    "style": [],
+    "link": "https://in.sugarcosmetics.com/products/cloud-nine-niacinamide-glow-blush?variant=42411565776979"
   },
   {
     "id": "blu-003",
-    "name": "Coral Matte Blush",
-    "brand": "Look DNA Beauty",
+    "name": "Cloud Nine Niacinamide Glow Blush – 05 Bingo Plum",
+    "brand": "SUGAR Cosmetics",
     "category": "blush",
-    "price": 399,
-    "image": "/catalog/blu-003.png",
-    "color": "#E9765B",
-    "style": [
-      "matte"
-    ],
-    "link": "https://www.google.com/search?tbm=shop&q=Coral%20Matte%20Blush"
+    "price": 599,
+    "image": "https://cdn.shopify.com/s/files/1/0906/2558/files/Cloud-Nine-Niacinamide-Glow-Blush-5_80adbe22.jpg?v=1792666805&width=800",
+    "color": "#6F2637",
+    "style": [],
+    "link": "https://in.sugarcosmetics.com/products/cloud-nine-niacinamide-glow-blush?variant=42411567939667"
   },
   {
     "id": "blu-004",
-    "name": "Berry Satin Blush",
-    "brand": "Look DNA Beauty",
+    "name": "Cream It Up Blush – Cheek-O-Pink",
+    "brand": "Swiss Beauty",
     "category": "blush",
-    "price": 449,
-    "image": "/catalog/blu-004.png",
-    "color": "#B4506A",
-    "style": [
-      "satin"
-    ],
-    "link": "https://www.google.com/search?tbm=shop&q=Berry%20Satin%20Blush"
+    "price": 299,
+    "image": "https://cdn.shopify.com/s/files/1/0595/6691/5779/files/SB-840_05_Cheek-O-Pink-1.jpg?v=1791968896&width=800",
+    "color": "#C3748A",
+    "style": [],
+    "link": "https://swissbeauty.in/products/cream-it-up-blusher?variant=45760109543739"
   },
   {
     "id": "blu-005",
-    "name": "Soft Pink Matte Blush",
-    "brand": "Look DNA Beauty",
+    "name": "Swiss Beauty Softy Blush – Peach",
+    "brand": "Swiss Beauty",
     "category": "blush",
     "price": 349,
-    "image": "/catalog/blu-005.png",
-    "color": "#F0A6B4",
-    "style": [
-      "matte"
-    ],
-    "link": "https://www.google.com/search?tbm=shop&q=Soft%20Pink%20Matte%20Blush"
+    "image": "https://cdn.shopify.com/s/files/1/0595/6691/5779/files/03._Peach_1.jpg?v=1773127553&width=800",
+    "color": "#EF7A70",
+    "style": [],
+    "link": "https://swissbeauty.in/products/swiss-beauty-softy-blush?variant=51028727791931"
   },
   {
     "id": "blu-006",
-    "name": "Terracotta Matte Blush",
-    "brand": "Look DNA Beauty",
+    "name": "Cloud Nine Niacinamide Glow Blush – 02 Peachy Parade",
+    "brand": "SUGAR Cosmetics",
     "category": "blush",
-    "price": 449,
-    "image": "/catalog/blu-006.png",
-    "color": "#C0664A",
-    "style": [
-      "matte"
-    ],
-    "link": "https://www.google.com/search?tbm=shop&q=Terracotta%20Matte%20Blush"
+    "price": 599,
+    "image": "https://cdn.shopify.com/s/files/1/0906/2558/files/Cloud-Nine-Niacinamide-Glow-Blush-2_54564e6a.jpg?v=1792666771&width=800",
+    "color": "#E1433A",
+    "style": [],
+    "link": "https://in.sugarcosmetics.com/products/cloud-nine-niacinamide-glow-blush?variant=42411560566867"
   },
   {
     "id": "blu-007",
-    "name": "Mauve Satin Blush",
-    "brand": "Look DNA Beauty",
+    "name": "Ultra Blush Palette – Multi-Color-03",
+    "brand": "Swiss Beauty",
     "category": "blush",
-    "price": 399,
-    "image": "/catalog/blu-007.png",
-    "color": "#B9808F",
-    "style": [
-      "satin"
-    ],
-    "link": "https://www.google.com/search?tbm=shop&q=Mauve%20Satin%20Blush"
-  },
-  {
-    "id": "blu-008",
-    "name": "Bronze Shimmer Blush",
-    "brand": "Look DNA Beauty",
-    "category": "blush",
-    "price": 449,
-    "image": "/catalog/blu-008.png",
-    "color": "#B07A55",
-    "style": [
-      "shimmer"
-    ],
-    "link": "https://www.google.com/search?tbm=shop&q=Bronze%20Shimmer%20Blush"
+    "price": 599,
+    "image": "https://cdn.shopify.com/s/files/1/0595/6691/5779/products/SB-881-03a.jpg?v=1748634597&width=800",
+    "color": "#C6796B",
+    "style": [],
+    "link": "https://swissbeauty.in/products/ultra-blush-palette-swiss-beauty-cosmetics?variant=41887465308355"
   }
 ]
