@@ -27,7 +27,8 @@ export function createCacheKey(
     .update(JSON.stringify(variant ?? null))
     .digest("hex");
 
-  const mode = process.env.MOCK_YOUCAM === "1" ? "mock" : "live";
+  const mode =
+    process.env.MOCK_YOUCAM === "1" && process.env.VERCEL_ENV !== "production" ? "mock" : "live";
   return `look-dna:v1:${mode}:${operation}:${imageHash}:${variantHash}`;
 }
 

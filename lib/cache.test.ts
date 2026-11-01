@@ -43,3 +43,19 @@ describe("cache", () => {
     expect(producer).toHaveBeenCalledTimes(1);
   });
 });
+
+describe("production ignores mock flags", () => {
+  it("never uses mock YouCam or LLM output on a production deployment", async () => {
+    const { mockYouCamEnabled } = await import("@/lib/mocks");
+    const { mockLlmEnabled } = await import("@/lib/llm");
+    vi.stubEnv("MOCK_YOUCAM", "1");
+    vi.stubEnv("MOCK_LLM", "1");
+    vi.stubEnv("VERCEL_ENV", "preview");
+    expect(mockYouCamEnabled()).toBe(true);
+    expect(mockLlmEnabled()).toBe(true);
+    vi.stubEnv("VERCEL_ENV", "production");
+    expect(mockYouCamEnabled()).toBe(false);
+    expect(mockLlmEnabled()).toBe(false);
+    vi.unstubAllEnvs();
+  });
+});
