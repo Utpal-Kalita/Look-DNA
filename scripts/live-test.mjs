@@ -25,10 +25,16 @@ const root = process.cwd();
 const inspirations = await images("test/inspirations");
 const goodSelfies = await images("test/selfies/good");
 const badSelfies = await images("test/selfies/bad");
-if (inspirations.length === 0 || goodSelfies.length === 0) {
-  console.error("Add images to test/inspirations and test/selfies/good first.");
+// USER_TONE="#C68E6B:warm" runs the inspiration half without a selfie
+// (no quality gate, skin tone or try-on).
+const FIXED_TONE = process.env.USER_TONE
+  ? { hex: process.env.USER_TONE.split(":")[0], undertone: process.env.USER_TONE.split(":")[1] ?? "neutral" }
+  : null;
+if (inspirations.length === 0 || (goodSelfies.length === 0 && !FIXED_TONE)) {
+  console.error("Add images to test/inspirations and test/selfies/good first (or set USER_TONE).");
   process.exit(1);
 }
+const NO_SELFIE = goodSelfies.length === 0;
 
 // Quality gate: good selfies should pass, bad ones should be caught.
 const gate = [];
@@ -40,12 +46,15 @@ for (const [file, expectPass] of [...goodSelfies.map((f) => [f, true]), ...badSe
 }
 
 const selfie = goodSelfies[0];
-const tone = await postImage("/api/skin-tone", "selfie", selfie);
-if (!tone.ok) {
-  console.error("Skin tone failed:", tone.body);
-  process.exit(1);
+let userTone = FIXED_TONE;
+if (!NO_SELFIE) {
+  const tone = await postImage("/api/skin-tone", "selfie", selfie);
+  if (!tone.ok) {
+    console.error("Skin tone failed:", tone.body);
+    process.exit(1);
+  }
+  userTone = tone.body.userTone;
 }
-const userTone = tone.body.userTone;
 console.log(`skin tone ${userTone.hex} (${userTone.undertone})\n`);
 
 const runs = [];
@@ -65,7 +74,7 @@ for (const file of inspirations) {
     run.total = match.body.total;
     run.underBudget = match.body.total <= BUDGET;
 
-    if (!SKIP_TRYON) {
+    if (!SKIP_TRYON && !NO_SELFIE) {
       const form = new FormData();
       form.append("selfie", await blob(selfie), path.basename(selfie));
       form.append("matches", JSON.stringify(match.body.matches));
@@ -96,14 +105,14 @@ const date = new Date().toISOString().slice(0, 10);
 
 const md = `## 10-image test results (${date})
 
-Budget ₹${BUDGET.toLocaleString("en-IN")}, ${runs.length} inspiration images, live YouCam and Gemini APIs${SKIP_TRYON ? " (try-on skipped)" : ""}.
+Budget ₹${BUDGET.toLocaleString("en-IN")}, ${runs.length} inspiration images, live YouCam and Gemini APIs${SKIP_TRYON || NO_SELFIE ? " (try-on skipped)" : ""}${NO_SELFIE ? `, fixed skin tone ${userTone.hex} (${userTone.undertone}), no selfie` : ""}.
 
 | Metric | Target | Result |
 | --- | --- | --- |
 | Look items matched to a catalog product | 80% or more | ${matchRate}% (${matchedTotal} of ${itemsTotal}) |
 | Total look cost vs budget | Under budget in 10 of 10 runs | ${underBudget} of ${runs.length} |
-| Time from upload to try-on result | Under 60 seconds | median ${median.toFixed(1)}s, slowest ${slowest.toFixed(1)}s${SKIP_TRYON ? " (no try-on)" : ""} |
-| Poor-quality selfies caught by the quality gate | All test cases | ${badCaught} of ${gate.length - goodSelfies.length} caught; ${goodPassed} of ${goodSelfies.length} good selfies passed |
+| Time from upload to try-on result | Under 60 seconds | median ${median.toFixed(1)}s, slowest ${slowest.toFixed(1)}s${SKIP_TRYON || NO_SELFIE ? " (extract + match only)" : ""} |
+| Poor-quality selfies caught by the quality gate | All test cases | ${gate.length ? `${badCaught} of ${gate.length - goodSelfies.length} caught; ${goodPassed} of ${goodSelfies.length} good selfies passed` : "not run (no selfies)"} |
 
 <details><summary>Per-image runs</summary>
 
@@ -146,7 +155,15 @@ async function postJson(route, body) {
 }
 
 async function post(route, body, headers = {}) {
-  const response = await fetch(`${BASE_URL}${route}`, { method: "POST", body, headers, signal: AbortSignal.timeout(300_000) });
-  const json = await response.json().catch(() => null);
-  return { ok: response.ok, status: response.status, body: json };
+  // The live site rate-limits per IP; wait out a 429 instead of failing the run.
+  for (let attempt = 0; attempt < 8; attempt += 1) {
+    const response = await fetch(`${BASE_URL}${route}`, { method: "POST", body, headers, signal: AbortSignal.timeout(300_000) });
+    const json = await response.json().catch(() => null);
+    if (response.status !== 429) {
+      return { ok: response.ok, status: response.status, body: json };
+    }
+    console.log(`  rate limited on ${route}, waiting 75s`);
+    await new Promise((resolve) => setTimeout(resolve, 75_000));
+  }
+  return { ok: false, status: 429, body: { error: { message: "rate limited" } } };
 }

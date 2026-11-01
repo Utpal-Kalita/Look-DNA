@@ -19,3 +19,8 @@
 # TypeScript
 *.tsbuildinfo
 .hallmark/
+
+# test images: may be third-party photos, keep local
+test/inspirations/*
+test/selfies/**/*
+!test/**/.gitkeep
