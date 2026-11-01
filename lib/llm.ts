@@ -1,6 +1,7 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { betaZodOutputFormat } from "@anthropic-ai/sdk/helpers/beta/zod";
-import { ApiError as GeminiApiError, GoogleGenAI } from "@google/genai";
+import { ApiError as GeminiApiError, GoogleGenAI, ThinkingLevel } from "@google/genai";
+import sharp from "sharp";
 import * as z from "zod/v4";
 
 import { AppError } from "@/lib/errors";
@@ -73,7 +74,7 @@ export async function extractLookItems(image: ImageUpload): Promise<LookItem[]> 
   for (let attempt = 0; attempt < 2; attempt += 1) {
     try {
       return provider === "gemini"
-        ? await requestGemini(image)
+        ? await requestGemini(image, attempt === 0)
         : await requestClaude(image);
     } catch (error) {
       lastError = error;
@@ -102,10 +103,14 @@ function isRetryable(error: unknown): boolean {
       : error instanceof GeminiApiError
         ? error.status
         : undefined;
-  return status === undefined || status === 429 || status >= 500;
+  // 400 is retried once because the retry drops thinkingConfig, which a model may reject.
+  return status === undefined || status === 400 || status === 429 || status >= 500;
 }
 
-async function requestGemini(image: ImageUpload): Promise<LookItem[]> {
+/** Each Gemini attempt must finish well inside the 60 s function limit. */
+const GEMINI_ATTEMPT_TIMEOUT_MS = 25_000;
+
+async function requestGemini(image: ImageUpload, lowThinking: boolean): Promise<LookItem[]> {
   geminiClient ??= new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
   const { $schema: _ignored, ...jsonSchema } = z.toJSONSchema(extractionSchema) as Record<string, unknown>;
 
@@ -115,7 +120,7 @@ async function requestGemini(image: ImageUpload): Promise<LookItem[]> {
       {
         role: "user",
         parts: [
-          { inlineData: { mimeType: image.contentType, data: image.bytes.toString("base64") } },
+          { inlineData: { mimeType: "image/jpeg", data: (await shrinkForModel(image.bytes)).toString("base64") } },
           { text: "Extract the Look DNA from this inspiration image." },
         ],
       },
@@ -124,6 +129,9 @@ async function requestGemini(image: ImageUpload): Promise<LookItem[]> {
       systemInstruction: SYSTEM_PROMPT,
       responseMimeType: "application/json",
       responseJsonSchema: jsonSchema,
+      abortSignal: AbortSignal.timeout(GEMINI_ATTEMPT_TIMEOUT_MS),
+      // Extraction needs little reasoning; the retry drops this in case a model rejects it.
+      ...(lowThinking ? { thinkingConfig: { thinkingLevel: ThinkingLevel.LOW } } : {}),
     },
   });
 
@@ -143,6 +151,14 @@ async function requestGemini(image: ImageUpload): Promise<LookItem[]> {
   // Throws on malformed JSON or schema mismatch, which triggers the retry.
   const parsed = extractionSchema.parse(JSON.parse(text));
   return cleanItems(parsed.items);
+}
+
+/** 1024 px is plenty to read garments and shades, and uploads faster. */
+async function shrinkForModel(bytes: Buffer): Promise<Buffer> {
+  return sharp(bytes)
+    .resize({ width: 1024, height: 1024, fit: "inside", withoutEnlargement: true })
+    .jpeg({ quality: 85 })
+    .toBuffer();
 }
 
 async function requestClaude(image: ImageUpload): Promise<LookItem[]> {
