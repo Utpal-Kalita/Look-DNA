@@ -260,6 +260,7 @@ function rankCandidates(
 }
 
 const TYPE_FAMILY: Record<string, string> = {
+  kurta: "kurta",
   shirt: "covered",
   blouse: "covered",
   "t-shirt": "covered",
@@ -288,6 +289,7 @@ function compatibleTypes(wanted: string, have: string | null): boolean {
 
 /** Garment types within a category, most specific first ("t-shirt" before "shirt"). */
 const GARMENT_TYPES: [string, RegExp][] = [
+  ["kurta", /\bkurta-?sets?\b|\bkurtas?\b|\bkurtis?\b|\banarkalis?\b|\bsalwar\b/i],
   ["t-shirt", /\bt-?shirts?\b|\btees?\b/i],
   ["polo", /\bpolos?\b/i],
   ["tank", /\btanks?\b|\bcamis?\b|\bhalter\b|\bstrappy\b|\btube top\b|\bsleeveless\b|\bvest\b/i],
