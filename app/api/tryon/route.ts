@@ -349,9 +349,9 @@ function liveProduct(match: ProductMatch) {
 function outfitOrder<T extends { product: { category: string } }>(garments: T[]): T[] {
   const byCategory = (name: string) => garments.find(({ product }) => product.category.toLowerCase() === name);
   const dress = byCategory("dress");
-  const upper = byCategory("top") ?? byCategory("kurta");
+  const upper = byCategory("kurta") ?? byCategory("top");
   const bottom = byCategory("bottom");
   const outer = byCategory("outerwear");
-  const order = dress ? [dress, outer] : [upper, bottom, outer];
+  const order = dress ? [dress, outer] : (upper?.product.category.toLowerCase() === "kurta") ? [upper, bottom] : [upper, bottom, outer];
   return order.filter((g): g is T => Boolean(g));
 }
