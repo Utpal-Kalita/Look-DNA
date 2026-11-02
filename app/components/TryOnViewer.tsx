@@ -32,7 +32,8 @@ export function TryOnViewer({
   inspiration: string | null;
   view: CompareView;
 }) {
-  const note = MODE_NOTES[result.mode];
+  const missing = result.skipped?.length ? `We couldn't show your ${result.skipped.join(" and ")} this time; the rest is on you.` : null;
+  const note = [MODE_NOTES[result.mode], missing].filter(Boolean).join(" ") || null;
 
   if (view === "compare" && inspiration) {
     return (

@@ -81,12 +81,13 @@ async function createTryOn(
         : await findCatalogItem(match.productId),
     })),
   );
-  const clothing = resolved.find(({ product }) =>
-    garmentCategory(product.category),
+  // The whole outfit, layered in order; a dress already covers top and bottom.
+  const garments = outfitOrder(
+    resolved.filter(({ product }) => garmentCategory(product.category)),
   );
   const lipstick = resolved.find(({ product }) => isLipstick(product.category));
 
-  if (!clothing && !lipstick) {
+  if (garments.length === 0 && !lipstick) {
     throw new AppError(
       "Try-on needs at least one clothing or lipstick match.",
       422,
@@ -97,19 +98,26 @@ async function createTryOn(
   const selfieFileId = await uploadImageToYouCam(selfie);
   let clothesImage: string | undefined;
   let clothesError: unknown;
+  const applied: string[] = [];
+  const skipped: string[] = [];
 
-  if (clothing) {
+  // Each garment goes on the previous result; one failing keeps the rest.
+  for (const { product } of garments) {
     try {
-      const garment = await garmentReference(clothing.product.image, origin);
+      const garment = await garmentReference(product.image, origin);
       clothesImage = await runClothesTryOn({
-        source: { fileId: selfieFileId },
+        source: clothesImage ? { url: clothesImage } : { fileId: selfieFileId },
         garment,
-        garmentCategory: garmentCategory(clothing.product.category)!,
+        garmentCategory: garmentCategory(product.category)!,
       });
+      applied.push(product.category);
     } catch (error) {
+      console.warn(`tryon: ${product.category} failed`, error instanceof Error ? error.message : error);
       clothesError = error;
+      skipped.push(product.category);
     }
   }
+  const outfit = { applied, skipped };
 
   if (!lipstick) {
     if (!clothesImage) {
@@ -127,6 +135,7 @@ async function createTryOn(
       image: clothesImage!,
       clothesImage,
       mode: "clothes-only",
+      ...outfit,
     };
   }
 
@@ -142,6 +151,7 @@ async function createTryOn(
         image: makeupImage,
         makeupImage,
         mode: "makeup-only",
+        ...outfit,
       };
     } catch (makeupError) {
       throw makeupError ?? clothesError;
@@ -159,6 +169,7 @@ async function createTryOn(
       clothesImage,
       makeupImage: combinedImage,
       mode: "combined",
+      ...outfit,
     };
   } catch {
     try {
@@ -172,12 +183,14 @@ async function createTryOn(
         clothesImage,
         makeupImage,
         mode: "side-by-side",
+        ...outfit,
       };
     } catch {
       return {
         image: clothesImage,
         clothesImage,
         mode: "clothes-only",
+        ...outfit,
       };
     }
   }
@@ -327,4 +340,18 @@ function liveProduct(match: ProductMatch) {
     throw new AppError("This product's image cannot be used for try-on.", 422, "GARMENT_IMAGE_INVALID");
   }
   return { id: match.productId, category: match.category, image: match.image };
+}
+
+/**
+ * The order garments go on: a one-piece (dress) first and instead of a
+ * separate top and bottom, otherwise top or kurta, then bottom; outerwear last.
+ */
+function outfitOrder<T extends { product: { category: string } }>(garments: T[]): T[] {
+  const byCategory = (name: string) => garments.find(({ product }) => product.category.toLowerCase() === name);
+  const dress = byCategory("dress");
+  const upper = byCategory("top") ?? byCategory("kurta");
+  const bottom = byCategory("bottom");
+  const outer = byCategory("outerwear");
+  const order = dress ? [dress, outer] : [upper, bottom, outer];
+  return order.filter((g): g is T => Boolean(g));
 }

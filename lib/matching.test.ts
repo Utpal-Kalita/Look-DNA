@@ -93,3 +93,23 @@ describe("shop for", () => {
     expect(menOnlyDark.matches[0].productId).toBe("u");
   });
 });
+
+describe("garment type", () => {
+  const tops: CatalogItem[] = [
+    { id: "tank", name: "White Crop Tank Top", brand: "A", category: "top", price: 500, image: "/a.png", color: "#F5F5F2", style: [], link: "https://example.com/a" },
+    { id: "shirt", name: "White Cotton Shirt", brand: "B", category: "top", price: 900, image: "/b.png", color: "#ECE8DF", style: [], link: "https://example.com/b" },
+    { id: "tee", name: "White Oversized T-Shirt", brand: "C", category: "top", price: 600, image: "/c.png", color: "#F5F5F2", style: [], link: "https://example.com/c" },
+  ];
+
+  it("keeps a shirt a shirt, and a t-shirt a t-shirt", () => {
+    const shirt = matchLook({ items: [{ category: "top", color: "#F5F5F2", style: ["shirt", "relaxed"] }], userTone: null, budget: 5000 }, tops);
+    expect(shirt.matches[0].productId).toBe("shirt");
+    const tee = matchLook({ items: [{ category: "top", color: "#F5F5F2", style: ["t-shirt"] }], userTone: null, budget: 5000 }, tops);
+    expect(tee.matches[0].productId).toBe("tee");
+  });
+
+  it("falls back to any top when no product is that type", () => {
+    const result = matchLook({ items: [{ category: "top", color: "#F5F5F2", style: ["hoodie"] }], userTone: null, budget: 5000 }, tops);
+    expect(result.matches).toHaveLength(1);
+  });
+});
