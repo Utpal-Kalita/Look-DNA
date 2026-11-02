@@ -32,11 +32,11 @@ const extractionSchema = z.object({
 const SYSTEM_PROMPT = `You extract the "Look DNA" from a fashion or beauty inspiration image for a shopping app.
 
 Return each visible element of the look that someone could buy:
-- Clothing: top, bottom (trousers, jeans, skirts, shorts, palazzos, salwar), dress, kurta (any kurta, kurti, kurta set, salwar suit or anarkali), outerwear (jackets, coats, blazers). Use "dress" for a western one-piece instead of top + bottom. A kurta worn with matching pants is one "kurta" item; add a "bottom" only if the bottom is clearly a different piece.
+- Clothing: top, bottom (trousers, jeans, skirts, shorts, palazzos, salwar), dress, kurta (any kurta, kurti, kurta set, salwar suit or anarkali), outerwear (jackets, coats, blazers). Use "dress" for a western one-piece instead of top + bottom. A kurta worn with matching pants is one "kurta" item; add a "bottom" only if the bottom is clearly a different piece. Never classify an ethnic kurta, kurti or Indian tunic as "top" or "outerwear". If an item is a kurta, do NOT also extract it as outerwear or a top.
 - Makeup: lipstick, eyeshadow, blush. Only include makeup that is clearly visible.
 
 For each element give its dominant colour as a hex code sampled from the image (not a generic colour name), and style tags.
-For clothing, make the FIRST style tag the garment type, exactly one of: shirt, t-shirt, polo, tank, sweater, hoodie, blouse, crop-top (tops); jeans, trousers, skirt, shorts (bottoms); jacket, blazer, coat (outerwear). A button-up collared top is "shirt", not "top". Then add tags such as: skirt (for any skirt), sleeveless (tanks, camis), denim (jeans), oversized, fitted, cropped, relaxed, wide-leg, straight, high-waist, mini, midi, flowy, slip, wrap, bodycon, tailored, pleated, tiered, ruffle, puff-sleeve, knit, denim, satin, linen, leather, fleece, cotton, floral, striped, polka-dot, casual, formal, party, minimal, vintage, streetwear, feminine, classic, summer, ethnic, straight-kurta, overshirt, polo, chinos, cargo, bomber, varsity, crew-neck, slim, boxy, tapered, baggy, corduroy, checked, graphic, a-line, printed, embroidered, block-print, festive, silk, chanderi.
+For clothing, make the FIRST style tag the garment type, exactly one of: kurta, kurti (for kurta); shirt, t-shirt, polo, tank, sweater, hoodie, blouse, crop-top (tops); jeans, trousers, skirt, shorts (bottoms); jacket, blazer, coat (outerwear). A button-up collared top is "shirt", not "top". Then add tags such as: skirt (for any skirt), sleeveless (tanks, camis), denim (jeans), oversized, fitted, cropped, relaxed, wide-leg, straight, high-waist, mini, midi, flowy, slip, wrap, bodycon, tailored, pleated, tiered, ruffle, puff-sleeve, knit, denim, satin, linen, leather, fleece, cotton, floral, striped, polka-dot, casual, formal, party, minimal, vintage, streetwear, feminine, classic, summer, ethnic, straight-kurta, overshirt, polo, chinos, cargo, bomber, varsity, crew-neck, slim, boxy, tapered, baggy, corduroy, checked, graphic, a-line, printed, embroidered, block-print, festive, silk, chanderi.
 For makeup, the style list may be empty; set finish to matte, satin, gloss or shimmer. For clothing set finish to "none".
 
 At most one item per category. If the image shows no fashion or makeup, return an empty items list. Describe only the look, never the person's body or skin.`;
@@ -342,6 +342,13 @@ export function cleanItems(items: z.infer<typeof extractionSchema>["items"]): Lo
       item.finish = raw.finish;
     }
     result.push(item);
+  }
+
+  const kurta = result.find((item) => item.category === "kurta");
+  if (kurta) {
+    return result.filter(
+      (item) => item === kurta || (item.category !== "outerwear" && item.category !== "top"),
+    );
   }
 
   return result;
