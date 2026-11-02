@@ -57,7 +57,7 @@ const CATEGORY_NOUN: Record<string, { women: string; men: string; pattern: RegEx
 };
 
 /** Style words that make a better search noun than the category default. */
-const NOUN_STYLES = ["jeans", "skirt", "chinos", "joggers", "cargo", "blazer", "overshirt", "bomber", "polo", "sweater", "cardigan", "shirt", "anarkali"];
+const NOUN_STYLES = ["t-shirt", "jeans", "skirt", "shorts", "trousers", "chinos", "joggers", "cargo", "blazer", "jacket", "coat", "overshirt", "bomber", "polo", "sweater", "hoodie", "cardigan", "blouse", "crop-top", "shirt", "anarkali"];
 
 export function liveSearchEnabled(): boolean {
   return process.env.LIVE_SEARCH !== "0";

@@ -90,6 +90,9 @@ export type TryOnMode =
   | "makeup-only";
 
 export interface TryOnResult {
+  /** Garment categories put on, in order, and any that could not be shown. */
+  applied?: string[];
+  skipped?: string[];
   image: string;
   clothesImage?: string;
   makeupImage?: string;

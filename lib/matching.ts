@@ -227,7 +227,7 @@ function rankCandidates(
   exclude: Set<string>,
   shopFor?: ShopFor,
 ): Candidate[] {
-  return catalog
+  const candidates = catalog
     .filter(
       (product) =>
         !exclude.has(product.id) &&
@@ -243,6 +243,45 @@ function rankCandidates(
         a.product.price - b.product.price ||
         a.product.id.localeCompare(b.product.id),
     );
+
+  // A shirt stays a shirt: when the look names a garment type and any
+  // candidate is that type, offer only those.
+  const wanted = garmentTypeOfItem(item);
+  if (wanted) {
+    const sameType = candidates.filter((candidate) => garmentTypeOfName(candidate.product.name) === wanted);
+    if (sameType.length > 0) {
+      return sameType;
+    }
+  }
+  return candidates;
+}
+
+/** Garment types within a category, most specific first ("t-shirt" before "shirt"). */
+const GARMENT_TYPES: [string, RegExp][] = [
+  ["t-shirt", /\bt-?shirts?\b|\btees?\b/i],
+  ["polo", /\bpolos?\b/i],
+  ["tank", /\btanks?\b|\bcamis?\b|\bhalter\b|\bstrappy\b|\btube top\b|\bsleeveless\b|\bvest\b/i],
+  ["sweater", /\bsweaters?\b|\bcardigans?\b|\bpullovers?\b|\bjumpers?\b/i],
+  ["hoodie", /\bhood(ie|ed)\b|\bsweatshirts?\b/i],
+  ["shirt", /\bshirts?\b|\bbutton[- ]?down\b|\bovershirts?\b/i],
+  ["blouse", /\bblouses?\b/i],
+  ["jeans", /\bjeans?\b|\bdenims?\b/i],
+  ["shorts", /\bshorts\b/i],
+  ["trousers", /\btrousers?\b|\bpants?\b|\bchinos\b|\bjoggers\b|\bcargos?\b|\bpalazzos?\b/i],
+];
+
+export function garmentTypeOfName(name: string): string | null {
+  return GARMENT_TYPES.find(([, pattern]) => pattern.test(name))?.[0] ?? null;
+}
+
+function garmentTypeOfItem(item: LookItem): string | null {
+  for (const tag of item.style ?? []) {
+    const type = garmentTypeOfName(tag.replace(/-/g, " ") === "t shirt" ? "t-shirt" : tag);
+    if (type) {
+      return type;
+    }
+  }
+  return null;
 }
 
 // ---------------------------------------------------------------------------
