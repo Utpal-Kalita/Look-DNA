@@ -113,3 +113,23 @@ describe("garment type", () => {
     expect(result.matches).toHaveLength(1);
   });
 });
+
+describe("garment type fallback", () => {
+  const pool: CatalogItem[] = [
+    { id: "tube", name: "Beige Tube Top", brand: "A", category: "top", price: 200, image: "/a.png", color: "#F2E6C2", style: [], link: "https://example.com/a" },
+    { id: "halter", name: "Red Halter Knit Top", brand: "B", category: "top", price: 650, image: "/b.png", color: "#9B1220", style: ["knit"], link: "https://example.com/b" },
+    { id: "shirt", name: "Cream Cotton Shirt", brand: "C", category: "top", price: 900, image: "/c.png", color: "#EFE6C8", style: [], link: "https://example.com/c" },
+  ];
+
+  it("offers a similar type, never a tube top for a blouse", () => {
+    const r = matchLook({ items: [{ category: "top", color: "#F6E7A8", style: ["blouse"] }], userTone: null, budget: 5000 }, pool);
+    expect(r.matches[0].productId).toBe("shirt");
+  });
+
+  it("says no close match instead of a halter for a sweater when nothing fits", () => {
+    const noShirt = pool.filter((p) => p.id !== "shirt");
+    const r = matchLook({ items: [{ category: "top", color: "#9B1220", style: ["sweater", "knit"] }], userTone: null, budget: 5000 }, noShirt);
+    expect(r.matches).toHaveLength(0);
+    expect(r.unmatched).toEqual(["top"]);
+  });
+});

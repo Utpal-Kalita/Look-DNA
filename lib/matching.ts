@@ -252,8 +252,38 @@ function rankCandidates(
     if (sameType.length > 0) {
       return sameType;
     }
+    // No exact type: allow similar types, never a tank for a covered top
+    // (or the reverse); nothing compatible means "no close match".
+    return candidates.filter((candidate) => compatibleTypes(wanted, garmentTypeOfName(candidate.product.name)));
   }
   return candidates;
+}
+
+const TYPE_FAMILY: Record<string, string> = {
+  shirt: "covered",
+  blouse: "covered",
+  "t-shirt": "covered",
+  polo: "covered",
+  sweater: "warm",
+  hoodie: "warm",
+  tank: "bare",
+  jeans: "trousers",
+  trousers: "trousers",
+  shorts: "shorts",
+};
+
+/** Whether a product of type `have` can stand in for a wanted type. */
+function compatibleTypes(wanted: string, have: string | null): boolean {
+  if (!have) {
+    // Untyped names ("Riviere Top") can stand in, except for a bare top wanted.
+    return wanted !== "tank";
+  }
+  const a = TYPE_FAMILY[wanted];
+  const b = TYPE_FAMILY[have];
+  if (!a || !b) return true;
+  if (a === b) return true;
+  // A shirt or blouse look can take a knit, and a knit look a long top.
+  return (a === "covered" && b === "warm") || (a === "warm" && b === "covered");
 }
 
 /** Garment types within a category, most specific first ("t-shirt" before "shirt"). */
